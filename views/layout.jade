@@ -1,0 +1,44 @@
+doctype html
+
+block variables
+	- var language = "de"
+
+include mixins
+
+html(lang=language)
+
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,initial-scale=1.0")
+		block title
+			title= document.title
+			if document.description
+				meta(name="description", content=document.description)
+		<!--[if gt IE 8]><!-->
+		block styles
+			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya:700,400")
+			if verbose
+				link(rel="stylesheet", href="/css/style.css")
+			else
+				style
+					include ../build/css/style.css
+		include icon
+		<!--<![endif]-->
+
+	body
+		main
+			header
+				include ../assets/img/logo.svg
+				h1.print= document.short
+			section.slogan
+				block main
+		include vcard
+		include footer
+		<!--[if gt IE 9]><!-->
+		block scripts
+			if verbose 
+				script(src="/js/loadJS.js")
+				script(async, src="/js/ctm.js")
+			else
+				script(async, src="/js/main.js")
+		<!--<![endif]-->

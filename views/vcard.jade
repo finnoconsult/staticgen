@@ -1,0 +1,26 @@
+section.vcard
+	h2.print Angaben zum Unternehmen
+	p.fn.n.org
+		b
+			span(lang=language!=="de"?"de":null) FInno Consult 
+			abbr(lang=language!=="de"?"de":null) GmbH
+	p.print
+		img.logo(lang=language!=="de"?"de":null, src="/img/logo.svg", alt="Firmenlogo")
+	p.adr
+		a(lang=language!=="de"?"de":null, href="https://www.google.com/maps/place/Rasumofskygasse+26,+1030+Wien", title="In Google Maps anzeigen")
+			span.street-address(lang=language!=="de"?"de":null) Rasumofskygasse&nbsp;26
+			br
+			span.postal-code 1030
+			| &nbsp;
+			span.locality(lang=language!=="de"?"de":null) Wien
+			br.print
+			span.country-name.print(lang=language!=="de"?"de":null) Österreich
+	p
+		+mail("info@finnoconsult.at")
+		br
+		a.url(href="http://finnoconsult.at") finnoconsult.at
+	p.legal
+		small
+			| UID ATU69201838
+			br
+			| FN 426099t

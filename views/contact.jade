@@ -1,0 +1,18 @@
+extends ./layout.jade
+
+block main
+	p.narrow Bei FInno Consult gibt es in Kürze eine Reihe von Neuigkeiten. Wenn Sie sich registrieren erfahren Sie davon zuerst.
+	form(action="http://mailthis.to/finnoconsult", method="post")
+		p
+			label(for="email") Ihr Name
+			br
+			input(type="text", name="name", id="name", placeholder="Vorname Nachname")
+		p
+			label(for="email") Ihre e-Mail Adresse
+			br
+			input(type="email", name="email", id="email", placeholder="mail@unternehmen.at", required)
+		p.form-action
+			button.button(type="submit") Senden
+		input(type="text", name="_honey", value="", style="display:none")
+		input(type="hidden", name="_replyto", value="%email")
+		input(type="hidden" name="_after" value="http://finnoconsult.at/contacted")
