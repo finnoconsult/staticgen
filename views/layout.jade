@@ -3,8 +3,6 @@ doctype html
 block variables
 	- var language = "de"
 
-include mixins
-
 html(lang=language)
 
 	head
@@ -26,10 +24,10 @@ html(lang=language)
 		<!--<![endif]-->
 
 	body
+		header.site
+			include ../assets/img/logo.svg
 		main
-			header
-				include ../assets/img/logo.svg
-				h1.print= document.short
+			h1.print= document.short
 			section.slogan
 				block main
 		include vcard

@@ -12,7 +12,7 @@
 		});
 		loadJS("/js/particle-network.min.js", function () {
 			var particleCanvas = document.createElement("div");
-			particleCanvas.className = "particles";
+			particleCanvas.className = "particles screen";
 			document.querySelector("body").appendChild(particleCanvas);
 			new ParticleNetwork(particleCanvas, {
 				particleColor: "#cdf6cd",

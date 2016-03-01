@@ -5,9 +5,9 @@ module.exports = {
 		{"node": "document.description", "set": "Innovationsberatung für Unternehmen im Finanz- und Versicherungswesen."},
 	],
 	"contact.jade": [
-		{"node": "document.short", "set": "Kontakt"},
+		{"node": "document.short", "set": "Newsletter"},
 		{"node": "document.title", "set": "Kontakt - FInno Consult"},
-		{"node": "document.description", "set": "Reden wir darüber! Mit FInno Consult in Kontakt treten."},
+		{"node": "document.description", "set": "Information über FInno Consult erhalten."},
 	],
 	"contact-sent.jade": [
 		{"node": "document.short", "set": "Anmeldung erfolgreich"},

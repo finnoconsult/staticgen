@@ -1,4 +1,4 @@
-section.vcard
+aside.vcard
 	h2.print Angaben zum Unternehmen
 	p.fn.n.org
 		b
@@ -16,7 +16,11 @@ section.vcard
 			br.print
 			span.country-name.print(lang=language!=="de"?"de":null) Österreich
 	p
-		+mail("info@finnoconsult.at")
+		span.email info
+			abbr(lang=language!=="en"?"en":null, title="at") &#64;
+			span(lang=language!=="de"?"de":null) finnoconsult
+			abbr(lang=language!=="en"?"en":null, title="dot") &#46;
+			span(lang=language!=="de"?"de":null) at
 		br
 		a.url(href="http://finnoconsult.at") finnoconsult.at
 	p.legal
