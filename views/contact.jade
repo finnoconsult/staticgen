@@ -1,7 +1,9 @@
 extends ./layout.jade
 
 block main
-	p.narrow Bei FInno Consult gibt es in Kürze eine Reihe von Neuigkeiten. Wenn Sie sich registrieren erfahren Sie davon zuerst.
+	p.narrow
+		b Bei Finnoconsult gibt es in Kürze eine Reihe von Neuigkeiten. 
+		| Wenn Sie sich registrieren erfahren Sie davon zuerst.
 	form.screen(action="http://mailthis.to/finnoconsult", method="post")
 		p
 			label(for="email") Ihr Name
@@ -15,4 +17,4 @@ block main
 			button.button(type="submit") Senden
 		input(type="text", name="_honey", value="", style="display:none")
 		input(type="hidden", name="_replyto", value="%email")
-		input(type="hidden" name="_after" value="http://finnoconsult.at/contacted")
+		input(type="hidden" name="_after" value=link.self + "/contacted")

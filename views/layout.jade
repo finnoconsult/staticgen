@@ -1,9 +1,5 @@
 doctype html
-
-block variables
-	- var language = "de"
-
-html(lang=language)
+html(lang="de")
 
 	head
 		meta(charset="utf-8")
@@ -14,7 +10,7 @@ html(lang=language)
 				meta(name="description", content=document.description)
 		<!--[if gt IE 8]><!-->
 		block styles
-			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya:700,400")
+			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Alegreya")
 			if verbose
 				link(rel="stylesheet", href="/css/style.css")
 			else
@@ -25,7 +21,8 @@ html(lang=language)
 
 	body
 		header.site
-			include ../assets/img/logo.svg
+			a(rel="home", href="/")
+				img.logo(src="/img/logo.svg", alt="Verweis zur Startseite")
 		main
 			h1.print= document.short
 			section.slogan

@@ -1,6 +1,6 @@
 module.exports = {
 	"home.jade": [
-		{"node": "document.short", "set": "Kurzinformation"},
+		{"node": "document.short", "set": "Über uns"},
 		{"node": "document.title", "set": "FInno Consult :: FinTech Innovationsberatung"},
 		{"node": "document.description", "set": "Innovationsberatung für Unternehmen im Finanz- und Versicherungswesen."},
 	],

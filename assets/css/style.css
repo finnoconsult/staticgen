@@ -30,11 +30,11 @@ html {
 }
 
 a {
-	color: #00bd59;
 	text-decoration: inherit;
 }
-a.hide-link {
-	color: inherit;
+
+nav a {
+	display: block;
 }
 
 img {
@@ -42,6 +42,7 @@ img {
 	border: none;
 }
 
+a.hide-link,
 button,
 input,
 textarea {
@@ -49,10 +50,24 @@ textarea {
 	font: inherit;
 }
 
+h1,
+h2,
+h3,
 .button,
+em,
 strong,
 b {
+	font-family: "Alegreya Sans", sans-serif;
 	font-weight: 700;
+}
+
+strong {
+	color: #000;
+}
+.button,
+em,
+b {
+	color: #00bd59;
 }
 
 small,
@@ -120,11 +135,6 @@ abbr[title] {
 	label[for],
 	button {
 		cursor: pointer;
-	}
-
-	em,
-	small {
-		color: rgba(0,0,0,.67);
 	}
 
 	.button,
@@ -232,11 +242,6 @@ abbr[title] {
 
 @media screen and (min-width: 48em) {
 
-	header svg {
-		height: 2.71875em;
-		width: 20.90625em;
-	}
-
 	.slogan {
 		margin-top: 8em;
 	}
@@ -293,14 +298,13 @@ abbr[title] {
 		max-width: 77mm;
 	}
 
-	header.site svg,
 	.logo {
 		position: absolute;
 		right: 0;
 		height: 2.9mm;
 		width: 22.3mm;
 	}
-	.logo {
+	.vcard .logo {
 		bottom: 1mm;
 	}
 

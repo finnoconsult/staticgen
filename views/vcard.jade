@@ -1,28 +1,27 @@
 aside.vcard
 	h2.print Angaben zum Unternehmen
 	p.fn.n.org
-		b
-			span(lang=language!=="de"?"de":null) FInno Consult 
-			abbr(lang=language!=="de"?"de":null) GmbH
+		b FInno Consult 
+			abbr GmbH
 	p.print
-		img.logo(lang=language!=="de"?"de":null, src="/img/logo.svg", alt="Firmenlogo")
+		img.logo(src="/img/logo.svg", alt="Firmenlogo")
 	p.adr
-		a(lang=language!=="de"?"de":null, href="https://www.google.com/maps/place/Rasumofskygasse+26,+1030+Wien", title="In Google Maps anzeigen")
-			span.street-address(lang=language!=="de"?"de":null) Rasumofskygasse&nbsp;26
+		a.hide-link(href="https://www.google.com/maps/place/Rasumofskygasse+26,+1030+Wien", title="In Google Maps anzeigen")
+			span.street-address Rasumofskygasse&nbsp;26
 			br
 			span.postal-code 1030
 			| &nbsp;
-			span.locality(lang=language!=="de"?"de":null) Wien
+			span.locality Wien
 			br.print
-			span.country-name.print(lang=language!=="de"?"de":null) Österreich
+			span.country-name.print Österreich
 	p
-		span.email info
-			abbr(lang=language!=="en"?"en":null, title="at") &#64;
-			span(lang=language!=="de"?"de":null) finnoconsult
-			abbr(lang=language!=="en"?"en":null, title="dot") &#46;
-			span(lang=language!=="de"?"de":null) at
+		span.email.hide-link info
+			abbr(lang="en", title="at") &#64;
+			= link.self.split("/")[2].split(".").slice(-2)[0]
+			abbr(title="punkt") &#46;
+			abbr= link.self.split("/")[2].split(".").pop()
 		br
-		a.url(href="http://finnoconsult.at") finnoconsult.at
+		a.url.hide-link(href=link.self)= link.self.split("/")[2]
 	p.legal
 		small
 			| UID ATU69201838
