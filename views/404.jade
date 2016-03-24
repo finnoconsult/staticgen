@@ -1,1 +1,11 @@
-extends ./home.jade
+extends ./layout.jade
+
+append styles
+	style .missing{text-align:center}.missing::before{content:"?";display:block;font-size:6em}
+
+block main
+	main.narrative.invert
+		h1= document.heading
+		p.missing Leider gibt es diese Seite nicht.
+		p.form-action.screen
+			a.button(href="/") Zur Startseite

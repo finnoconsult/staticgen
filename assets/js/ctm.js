@@ -1,26 +1,14 @@
-(function (document) {
+/*! functionCutTheMustard: execute callback in "Mustard Cutting" browsers. (c)2016 @cssence, TRINN Consulting. License */
+var ctm = (function (document, window) {
 	"use strict";
-	if ("querySelectorAll" in document) {
-		[].forEach.call(document.querySelectorAll(".email"), function (plain) {
-			var anchor = document.createElement("a");
-			anchor.className = plain.className;
-			anchor.href = "mail" + "to:" + plain.textContent;
-			anchor.innerHTML = plain.innerHTML;
-			plain.classList.remove("email");
-			plain.innerHTML = "";
-			plain.appendChild(anchor);
-		});
-		loadJS("/js/particle-network.min.js", function () {
-			var particleCanvas = document.createElement("div");
-			particleCanvas.className = "particles screen";
-			document.querySelector("body").appendChild(particleCanvas);
-			new ParticleNetwork(particleCanvas, {
-				particleColor: "#cdf6cd",
-				background: "#fff",
-				interactive: true,
-				speed: "low",
-				density: "high"
-			});
-		});
+	var makesTheCut = false;
+	if ("querySelector" in document && typeof (document.body || document.documentElement).style.transition === "string") {
+		makesTheCut = true;
+		var toggle = document.querySelector("html").classList;
+		toggle.remove("no-js");
+		toggle.add("js");
 	}
-}(document));
+	return function (cb) {
+		return makesTheCut && typeof cb === "function" ? cb(document, window) : false;
+	};
+}(document, window));

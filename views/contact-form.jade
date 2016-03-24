@@ -1,0 +1,18 @@
+form(action="http://mailthis.to/finnoconsult", method="post")
+	p
+		label(for="email") Ihr Name
+		br
+		input(type="text", name="name", id="name", placeholder="Vorname Nachname", maxlength="200")
+	p
+		label(for="email") Ihre E-Mail
+		br
+		input(type="email", name="email", id="email", placeholder="mail@unternehmen.at", required, maxlength="200")
+	p
+		label(for="phone") Ihr Anliegen
+		br
+		textarea(name="message", id="message", maxlength="7000", placeholder="Ich interessiere mich für… \n\nBitte kontaktieren Sie mich unter…")
+	p.form-action
+		input(type="text", name="_honey", value="", style="display:none")
+		input(type="hidden", name="_replyto", value="%email")
+		input(type="hidden" name="_after" value=homepage + "/contacted")
+		button.button(type="submit") Senden

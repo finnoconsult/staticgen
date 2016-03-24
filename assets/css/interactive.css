@@ -1,0 +1,60 @@
+@media screen and (min-width: 48em) {
+	.js #orientation[data-rsg]::before {
+		transform: translateX(50%);
+		opacity: 1;
+	}
+	.js #orientation::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -300%;
+		bottom: 0;
+		width: 400%;
+		opacity: 0;
+		background: linear-gradient(301.75deg, rgb(0,189,89) 0, rgb(0,189,89) calc(50% - 4em), #fff calc(50% - 4em));
+		transition: transform 2s linear, opacity .5s linear 2s;
+	}
+	.js #orientation[data-rsg] .bubble-breakout {
+		opacity: 0;
+	}
+	.js #orientation .bubble-breakout {
+		transition: opacity .5s ease-in-out 3s;
+	}
+	.js #experience[data-rsg] p {
+		opacity: .25;
+		transform: translateY(2em);
+	}
+	.js #experience[data-rsg] .bubble-photo {
+		opacity: 0;
+		transform: translateY(-4em) scale(.5);
+	}
+	.js #experience .bubble-photo,
+	.js #experience p {
+		transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+	}
+	.js #activation[data-rsg] .bubble,
+	.js #engagement[data-rsg] p {
+		opacity: 0;
+	}
+	.js #activation .bubble,
+	.js #engagement p {
+		transition: opacity .5s ease-in-out;
+	}
+	.js #activation .bubble:nth-child(2),
+	.js #engagement p:nth-of-type(2) {
+		transition-delay: .5s;
+	}
+	.js #activation .bubble:nth-child(3),
+	.js #engagement p:nth-of-type(3) {
+		transition-delay: 1s;
+	}
+}
+
+@media screen and (min-width: 64em) {
+	.js #orientation[data-rsg] .bubble-xl {
+		transform: translateX(50%);
+	}
+	.js #orientation .bubble-xl {
+		transition: transform .75s ease-in-out 2.25s;
+	}
+}

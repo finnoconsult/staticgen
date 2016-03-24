@@ -1,12 +1,10 @@
 extends ./layout.jade
 
 block main
-	p.narrow 
-		b Bei Finnoconsult gibt es in Kürze eine Reihe von Neuigkeiten. 
-		| Da Sie sich registriert haben erfahren Sie davon zuerst.
-	p.form-action 
-		strong Vielen Dank.
-		br
-		| Wir bleiben in Kontakt.
-	p.form-action.screen
-		a.button(href="/") Zur Startseite
+	main.narrative
+		h1= document.heading
+		p
+			strong Vielen Dank
+			|  für Ihre Nachricht. Wir bleiben in Kontakt.
+		p.form-action.screen
+			a.button(href="/") Zur Startseite

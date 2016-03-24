@@ -17,7 +17,8 @@ module.exports = function (pkg, data) {
 		error: function (req, res) {
 			res.status(404).send(JSON.stringify({
 				status: 404,
-				path: req.path
+				path: req.path,
+				method: req.method
 			}));
 		}
 	};

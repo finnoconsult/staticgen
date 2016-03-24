@@ -1,6 +1,0 @@
-{
-	"/": "home.jade",
-	"/contact": "contact.jade",
-	"/contacted": "contact-sent.jade",
-	"/404": "home.jade"
-}

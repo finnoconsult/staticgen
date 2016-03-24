@@ -1,0 +1,28 @@
+body {
+	width: 700px; /* TODO */
+	margin: 0;
+	padding: 24px;
+	background: #fff;
+	border-left: 144px solid #00bd59;
+	border-right: 144px solid #fff;
+	color: #231f20;
+	font: 400 16px/1.25 sans-serif;
+}
+a {
+	color: #00bd59;
+}
+a:visited {
+	color: #00bd59;
+}
+img {
+	border: none;
+	width: 200px;
+}
+header .screen {
+	display: none;
+}
+hr {
+	height: 0;
+	border: 1px solid #00bd59;
+	border-top-color: #231f20;
+}

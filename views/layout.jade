@@ -1,5 +1,5 @@
 doctype html
-html(lang="de")
+html.no-js(lang="de")
 
 	head
 		meta(charset="utf-8")
@@ -8,6 +8,7 @@ html(lang="de")
 			title= document.title
 			if document.description
 				meta(name="description", content=document.description)
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/oldie.css"><![endif]-->
 		<!--[if gt IE 8]><!-->
 		block styles
 			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Alegreya")
@@ -17,23 +18,26 @@ html(lang="de")
 				style
 					include ../build/css/style.css
 		include icon
+		if verbose
+			script(src="/js/ctm.js")
+			script(src="/js/loadJS.js")
+		else
+			script
+				include ../build/js/ctm.js
+			script
+				include ../build/js/loadJS.js
 		<!--<![endif]-->
 
 	body
-		header.site
-			a(rel="home", href="/")
-				img.logo(src="/img/logo.svg", alt="Verweis zur Startseite")
-		main
-			h1.print= document.short
-			section.slogan
-				block main
-		include vcard
+		include header
+		block main
+		include navigation
 		include footer
-		<!--[if gt IE 9]><!-->
+		<!--[if gt IE 8]><!-->
 		block scripts
-			if verbose 
-				script(src="/js/loadJS.js")
-				script(async, src="/js/ctm.js")
+			if verbose
+				script(async, src="/js/slide.js")
 			else
-				script(async, src="/js/main.js")
+				script
+					include ../build/js/slide.js
 		<!--<![endif]-->

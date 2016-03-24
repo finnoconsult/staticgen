@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 			unminified: {
 				expand: true,
 				cwd: "<%= dir.rendered %>/",
-				src: ["img/*.max.*", "js/*.js", "!js/main.js", "!js/*.min.js"]
+				src: ["img/*.max.*"]
 			}
 		},
 
@@ -46,9 +46,10 @@ module.exports = function (grunt) {
 		uglify: {
 			scripts: {
 				options: { screwIE8: true },
-				files: {
-					"<%= dir.temp %>/js/main.js": ["<%= dir.assets %>/js/loadJS.js", "<%= dir.assets %>/js/ctm.js"]
-				}
+				expand: true,
+				cwd: "<%= dir.assets %>/",
+				src: ["js/*.js", "!js/*.min.js"],
+				dest: "<%= dir.temp %>/"
 			}
 		},
 
@@ -65,12 +66,6 @@ module.exports = function (grunt) {
 				cwd: "<%= dir.temp %>",
 				src: "**",
 				dest: "<%= dir.rendered %>/"
-			},
-			data: {
-				expand: true,
-				cwd: "<%= dir.db %>",
-				src: ["**", "!*.jade", "!*.css", "!*.json",  "!*.js"],
-				dest: "<%= dir.rendered %>/"
 			}
 		},
 
@@ -85,23 +80,10 @@ module.exports = function (grunt) {
 						return data.get(path);
 					}
 				},
-				files: data.map(pkg.config.folders.views, pkg.config.folders.rendered)
-			}
-		},
-
-		// file create
-		create: {
-			cname: {
-				file: "<%= dir.rendered %>/CNAME",
-				content: data.get("*").link.self.split("/")[2]
+				files: data.files(pkg.config.folders.views, pkg.config.folders.rendered)
 			}
 		}
 
-	});
-
-	grunt.registerMultiTask("create", "Simple file creation", function () {
-		grunt.file.write(this.data.file, this.data.content);
-		grunt.log.writeln("File \"" + this.data.file + "\" created.");
 	});
 
 	// required external tasks
@@ -120,7 +102,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"release",
 		"Generate static site",
-		["clean:live", "copy:assets", "copy:build", "copy:data", "jade", "build", "clean:unminified", "create:cname"]
+		["clean:live", "copy:assets", "copy:build", "jade", "build", "clean:unminified"]
 	);
 	grunt.registerTask("default", ["build", "release"]);
 };

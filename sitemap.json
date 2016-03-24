@@ -1,0 +1,60 @@
+[
+	{
+		"path": "/",
+		"template": "home.jade",
+		"name": "Über uns",
+		"document": {
+			"title": "FinTech Innovationsberatung von Finnoconsult",
+			"description": "Innovationsberatung für Unternehmen im Finanz- und Versicherungswesen.",
+			"heading": "Über uns"
+		}
+	}, {
+		"path": "/coming-soon",
+		"template": "coming-soon.jade",
+		"name": "FinnoScore",
+		"note": "in Kürze",
+		"language": "en",
+		"document": {
+			"title": "Coming Soon · Finnoconsult",
+			"heading": "Aktuelle Themen"
+		}
+	}, {
+		"path": "/coming-soon",
+		"template": "coming-soon.jade",
+		"name": "Blog",
+		"note": "ab Mai 2016",
+		"document": {
+			"title": "Coming Soon · Finnoconsult",
+			"heading": "Aktuelle Themen"
+		}
+	}, {
+		"path": "/contact",
+		"template": "contact.jade",
+		"document": {
+			"title": "Kontakt · Finnoconsult",
+			"description": "Treten Sie mit uns in Kontakt.",
+			"heading": "Was können wir für Sie tun?"
+		}
+	}, {
+		"path": "/contacted",
+		"template": "contact-sent.jade",
+		"document": {
+			"title": "Vielen Dank · Finnoconsult",
+			"heading": "Nachricht erhalten"
+		}
+	}, {
+		"path": "/imprint",
+		"template": "imprint.jade",
+		"document": {
+			"title": "Impressum · Finnoconsult",
+			"heading": "Impressum"
+		}
+	}, {
+		"path": "/404",
+		"template": "404.jade",
+		"document": {
+			"title": "404 · Finnoconsult",
+			"heading": "Seite existiert nicht"
+		}
+	}
+]

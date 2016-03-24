@@ -1,107 +1,54 @@
 module.exports = function (pkg) {
 	"use strict";
-	var path = require("path");
-	var fs = require("fs");
-	var jade = require("jade");
-	var cache = {};
-	var load = function (file) {
-		if (pkg.config.verbose || !cache[file]) {
-			var fn = {
-				withPath: path.join(__dirname, pkg.config.folders.db, file),
-				extension: file.split(".").pop()
-			};
-			if (fn.extension === "json" || fn.extension === "js") {
-				cache[file] = require(fn.withPath);
-			} else {
-				cache[file] = fs.readFileSync(fn.withPath, "utf8");
-			}
+	var mapData = require(require("path").join(__dirname, "sitemap.json"));
+	var mapping = {};
+	mapData.forEach(function (item) {
+		if (item.path) {
+			item.file = (item.path + (item.path.slice(-1) === "/" ? "index.html" : ".html")).slice(1);
+			mapping[item.path] = item;
 		}
-		return cache[file];
-	};
-	var getTemplates = function () {
-		return load("sitemap.json");
-	};
-	var getFile = function (href) {
-		return (href + (href.slice(-1) === "/" ? "index.html" : ".html")).slice(1);
-	};
-	try {
-		if (!fs.statSync(path.join(__dirname, "data")).isDirectory()) {
-			throw new Error("Invalid folder /data");
-		}
-		pkg.config.folders.db = "data";
-	} catch (err) {
-		console.warn("No valid data directory found, resorting to demo mode.");
-	}
+	});
 	return {
-		get: function (href) {
+		get: function (path) {
 			var data = {
 				verbose: pkg.config.verbose,
-				path: href,
-				link: {
-					self: pkg.homepage,
-					to: function (uri) {
-						return (!data.verbose && data.link.delegate ? data.link.delegate.slice(0, -1) : "") + uri;
+				homepage: pkg.homepage,
+				path: path,
+				//anchorify: function (selector, heading, reference) {
+					//return "<a href=\"$1\" data-anchor=\"$3\">$2</a>".replace("$1", selector).replace("$2", heading).replace("$3", reference || heading);
+				//},
+				finnofy: function (text) {
+					var replacement = "Finno".replace("nn", "<i class=\"nn\">nn</i>");
+					return text.replace("Finno", replacement);
+				},
+				sitemap: function (options) {
+					if (options.list) {
+						return mapData.filter(function (item) { return item[options.list]; });
+					} else if (options.find) {
+						return mapData.filter(function (item) { return item[options.find] && item[options.find].toLowerCase() === options.value.toLowerCase(); })[0];
 					}
+					return [];
 				}
 			};
-			var augment = function (assignment) {
-				var key = data;
-				var value;
-				assignment.node.split(".").slice(0, -1).forEach(function (node) {
-					if (!key[node]) {
-						key[node] = {};
-					}
-					key = key[node];
-				});
-				var file;
-				if (assignment.load) {
-					file = typeof assignment.load === "function" ? assignment.load(data) : assignment.load;
-					value = load(file);
-				} else if (assignment.render) {
-					file = typeof assignment.render === "function" ? assignment.render(data) : assignment.render;
-					value = jade.renderFile(path.join(__dirname, pkg.config.folders.db, file), data);
-				} else if (assignment.set) {
-					value = typeof assignment.set === "function" ? assignment.set(data) : assignment.set;
-				}
-				key[assignment.node.split(".").pop()] = value;
-			};
-			var fetch = load("fetch.js");
-			(fetch["*"] || []).forEach(augment);
-			if (href === "*") {
-				return data;
+			if (!mapping[path]) {
+				return {error: 404, path: data.path};
 			}
-			var templates = getTemplates();
-			if (!templates[href]) {
-				data.error = 404;
-				href = "/404";
-				if (!templates[href]) {
-					return {error: 404, path: data.path};
-				}
-			}
-			data.file = getFile(href);
-			data.template = templates[href];
-			(fetch[data.template] || []).forEach(augment);
+			data.template = mapping[path].template;
+			data.document = mapping[path].document;
 			return data;
 		},
-		/*toFile: function (href) {
-			return getFile(href);
-		},*/
-		toPath: function (dest, file) {
-			return Object.keys(getTemplates()).filter(function (href) { return [dest, getFile(href)].join("/") === file; })[0];
+		toPath: function (dest, file) { // batch/grunt
+			var query = file.split("/").slice(1).join("/");
+			return mapData.filter(function (item) { return item.file === query; })[0].path;
 		},
-		/*toTemplate: function (href) {
-			return templates[href];
-		},*/
-		list: function () {
-			return templates.refresh().keys();
-		},
-		map: function (src, dest) {
-			var map = {};
-			var templates = getTemplates();
-			Object.keys(templates).forEach(function (href) {
-				map[[dest, getFile(href)].join("/")] = [src, templates[href]].join("/");
+		files: function (srcFolder, destFolder) { // batch/grunt
+			var fileMap = {};
+			mapData.forEach(function (item) {
+				var dest = destFolder + "/" + item.file;
+				var src = srcFolder + "/" + item.template;
+				fileMap[dest] = src;
 			});
-			return map;
+			return fileMap;
 		}
 	};
 };
