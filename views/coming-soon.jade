@@ -1,7 +1,7 @@
 extends ./layout.jade
 
 append styles
-	style main p{max-width:30em}
+	style @media screen{main p{max-width:30em}}
 
 block main
 	main.narrative.invert
@@ -11,6 +11,6 @@ block main
 		h3(lang=finnoscore.language)!= finnofy(finnoscore.name)
 		p Der #[strong= finnoscore.name] ist im Moment nur für ausgewählte Kunden zugänglich. Allerdings bereiten wir gerade die erste Version für die Öffentlichkeit vor und werden diese #[b= sitemap({find: "name", value: "FinnoScore"}).note] auf unserer Webseite publizieren.
 		h3 Blog
-		p Um mit der rasanten Geschwindigkeit, mit der die Finanzindustrie aktuell der digitalen Transformation unterworfen wird, Schritt halten zu können, haben wir uns dazu entschlossen, einen Blog zu betreiben. Mit dem Ziel, den Besuchern unserer Seite direkten Zugang zu aktuellen Innovationen und Trends zu bieten, um in der FinTech-Welt nicht den Überblick zu verlieren. Unser Blog startet #[b= sitemap({find: "name", value: "Blog"}).note].
+		p Um mit der rasanten Geschwindigkeit, mit der die Finanzindustrie aktuell der digitalen Transformation unterworfen wird, Schritt halten zu können, haben wir uns dazu entschlossen, einen Blog zu betreiben. Mit dem Ziel, den Besuchern unserer Seite direkten Zugang zu aktuellen Innovationen und Trends zu bieten, um in der FinTech-Welt nicht den Überblick zu verlieren. Unseren Blog gibt es #[b= sitemap({find: "name", value: "Blog"}).note].
 		p.form-action.screen
 			a.button(href="/contact") Weitere Informationen anfordern

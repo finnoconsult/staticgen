@@ -18,7 +18,7 @@ module.exports = function (pkg) {
 					//return "<a href=\"$1\" data-anchor=\"$3\">$2</a>".replace("$1", selector).replace("$2", heading).replace("$3", reference || heading);
 				//},
 				finnofy: function (text) {
-					var replacement = "Finno".replace("nn", "<i class=\"nn\">nn</i>");
+					var replacement = "Finno".replace("nn", "<span class=\"nn\">nn</span>");
 					return text.replace("Finno", replacement);
 				},
 				sitemap: function (options) {

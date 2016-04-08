@@ -1,0 +1,156 @@
+::selection {
+	background: #2378b8;
+	color: #fff;
+	text-shadow: none;
+}
+::placeholder {
+	color: #ccd2dc;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+hr {
+	display: none;
+}
+
+@media screen {
+	* {
+		font-size: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+	}
+}
+
+html {
+	box-sizing: border-box;
+	font: 400 11pt/1.375 "Alegreya", serif;
+	color: #000;
+}
+main {
+	display: block; /*IE*/
+}
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+img {
+	max-width: 100%;
+	border: none;
+}
+button,
+input,
+textarea {
+	color: inherit;
+	font: inherit;
+}
+h1,
+h2,
+h3 {
+	font-size: 150%;
+	margin: 1em 0;
+}
+.logo,
+h1,
+h2,
+h3,
+figure,
+table,
+dt,
+label,
+.button,
+a.slide,
+em,
+strong,
+b {
+	font-family: "Alegreya Sans", sans-serif;
+	font-weight: 700;
+	line-height: 1.25;
+}
+figure,
+td {
+	font-weight: 400;
+}
+th,
+td {
+	vertical-align: top;
+}
+li {
+	list-style-type: square;
+}
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-spacing: 0;
+	text-align: left;
+}
+em,
+b,
+ins {
+	color: #00bd59;
+}
+small,
+sup,
+code {
+	font-size: 87.5%;
+}
+table,
+figure,
+ol,
+ul,
+dl {
+	margin: 1.5em 0;
+}
+li,
+p {
+	margin: .75em 0;
+}
+dt {
+	line-height: 1.4;
+}
+sup {
+	position: relative;
+	bottom: .5em;
+	vertical-align: inherit;
+}
+abbr {
+	border-bottom: none;
+	text-decoration: none;
+}
+label {
+	display: inline-block;
+	margin: .25em 0;
+	padding: 0 .67em;
+}
+input,
+textarea {
+	display: block;
+	width: 100%;
+	background: #fff;
+	border: 1px solid #ccd2dc;
+}
+textarea {
+	resize: vertical;
+	min-height: 10em;
+}
+.button,
+input,
+textarea {
+	padding: .5em;
+}
+
+.col-price {
+	text-align: right;
+}
+.price {
+	display: inline-block;
+	min-width: 3em;
+}
+
+li.bubble,
+.legal {
+	margin: 0;
+}

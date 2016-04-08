@@ -11,7 +11,7 @@ form(action="http://mailthis.to/finnoconsult", method="post")
 		label(for="phone") Ihr Anliegen
 		br
 		textarea(name="message", id="message", maxlength="7000", placeholder="Ich interessiere mich für… \n\nBitte kontaktieren Sie mich unter…")
-	p.form-action
+	p.form-action.screen
 		input(type="text", name="_honey", value="", style="display:none")
 		input(type="hidden", name="_replyto", value="%email")
 		input(type="hidden" name="_after" value=homepage + "/contacted")

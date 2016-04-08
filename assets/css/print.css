@@ -1,0 +1,153 @@
+.screen {
+	display: none !important;
+}
+
+@page {
+	margin: 25mm;
+}
+
+.site,
+main {
+	position: relative;
+}
+
+main {
+	padding-right: 40mm;
+}
+
+.logo {
+	font-size: 133%;
+	color: inherit;
+}
+
+.logo,
+div.narrative,
+#engagement h3,
+figcaption,
+img {
+	position: absolute;
+	right: 0;
+	min-height: 32mm;
+	width: 32mm;
+	margin: 0;
+	padding-left: 4mm;
+	border-left: 1px solid #00bd59;
+}
+img {
+	padding-left: 0;
+	min-height: 0;
+}
+
+div.narrative {
+	top: 60mm;
+}
+#engagement h3 {
+	margin: 0 0 5mm;
+	font-size: inherit;
+}
+
+h1 {
+	margin-top: 0;
+	color: #00bd59;
+	font-size: 175%;
+}
+
+h2,
+h3 {
+	page-break-after: avoid;
+}
+
+h3 {
+	margin-top: 2em;
+	font-size: 125%;
+}
+
+dl {
+	margin-bottom: 3em;
+	border-top: 1px solid #f2f4f6;
+}
+dt {
+	position: absolute;
+	width: 33mm;
+	margin: 2mm 0 0;
+}
+dd {
+	margin: 0;
+	padding: 2mm 0 2mm 36mm;
+	border: 0 solid #f2f4f6;
+	border-bottom-width: 1px;
+}
+
+@media print and (orientation: portrait) {
+	textarea {
+		height: 120mm;
+	}
+}
+
+figure {
+	width: 160mm;
+}
+figcaption {
+	padding-top: 5mm;
+	color: #ccd2dc;
+}
+@media screen, print and (orientation: portrait) {
+	.packages figcaption {
+		position: relative;
+		margin: -15mm 0 .375em auto;
+	}
+}
+.options ol {
+	margin-right: 40mm;
+}
+.options ul {
+	margin: -.75em 0 0;
+}
+.notes {
+	margin: -.75em 0 3em;
+	color: #ccd2dc;
+	text-align: center;
+}
+
+th,
+td {
+	padding: 2mm 6mm 2mm 0;
+	border-bottom: 1px solid #f2f4f6;
+}
+th {
+	width: 33%;
+}
+th:last-child,
+td:last-child {
+	width: 32mm;
+	padding-right: 0;
+}
+
+#activation,
+#realization,
+#contact {
+	page-break-before: always;
+}
+@media (orientation: landscape) {
+	section.narrative + .narrative,
+	.options {
+		page-break-before: always;
+	}
+}
+
+.narrative {
+	padding-bottom: 7mm;
+}
+footer.site::after {
+	content: "";
+	box-sizing: content-box;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 0;
+	width: 0;
+	border: 0 solid transparent;
+	border-right-color: #00bd59;
+	border-width: 9.7148279em 6em 0 0;
+	font-size: 50%;
+}

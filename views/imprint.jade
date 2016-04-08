@@ -1,7 +1,7 @@
 extends ./layout.jade
 
 append styles
-	style main p{max-width:36em}
+	style @media screen{main p{max-width:36em}}h2:first-child{page-break-before:always}
 
 append scripts
 	if verbose
@@ -14,7 +14,7 @@ block main
 	main
 		section.narrative.invert
 			h1= document.heading
-			h2.print Medieninhaber
+			h2.print Angaben zum Unternehmen
 			dl.vcard
 				dt Firmenname
 				dd.fn.n.org FInno Consult #[abbr GmbH]
