@@ -2,9 +2,9 @@ extends ./layout.jade
 
 append styles
 	if verbose
-		link(rel="stylesheet", href="/css/interactive.css")
+		link(rel="stylesheet", media="screen", href="/css/interactive.css")
 	else
-		style
+		style(media="screen")
 			include ../build/css/interactive.css
 
 append scripts
@@ -53,12 +53,12 @@ block main
 				img.bubble-photo(src="/img/photo-martinschachinger.jpg", alt="Foto von Martin Schachinger")
 				br.screen
 				b Martin Schachinger
-				|  hat 15&nbsp;Jahre in Banken und Versicherungen gearbeitet, davor über ein Jahrzehnt als  #[abbr(title="Informationstechnologie") IT]-Entwickler und Berater. Vor der Gründung von #[strong Finnoconsult] war Martin als Prokurist bei BeeOne tätig. Martin ist begeisterter Kleinunternehmer, Naturfreund und betreibt einen Reitstall. Er wird als gefragter Querdenker mit wissenschaftlichem und praktischem Hintergrund geschätzt.
+				|  hat 15&nbsp;Jahre in Banken und Versicherungen gearbeitet, davor über ein Jahrzehnt als  #[abbr(title="Informationstechnologie") IT]-Entwickler und Berater. Vor der Gründung von #[strong Finnoconsult] war Martin als Prokurist bei BeeOne tätig. Martin ist begeisterter Kleinunternehmer, Naturfreund und betreibt einen Reitstall. Er wird als Querdenker mit wissenschaftlichem und praktischem Hintergrund geschätzt.
 		section.narrative#activation(data-rsg=".7")
 			h2 Unser Zugang
 			p
 				b Neue Techniken und Kanäle bieten neue Möglichkeiten und prägen Unternehmen. 
-				|	Wir verstehen Finanztechnologie als Ideengeschäft im globalen Markt. Als Experten mit außergewöhnlichem Erfahrungsschatz bieten wir Finanz-Innovationsberatung inklusive Umsetzung an:
+				|	Wir verstehen Finanztechnologie als Ideengeschäft im globalen Markt. Als Experten mit außergewöhnlichem Erfahrungs&shy;schatz bieten wir Finanz-Innovationsberatung inklusive Umsetzung an:
 			ul.bubbles
 				li.bubble #[b Wir helfen Vorständen,] die Auswirkungen der digitalen Transformation auf ihr Unternehmen besser zu verstehen.
 				li.bubble #[b Wir helfen Unternehmen,] sich so zu verändern, dass Innovationen schneller und besser als bisher möglich werden.
@@ -68,17 +68,17 @@ block main
 			section
 				h3(lang=finnoscore.language)!= " " + finnofy(finnoscore.name)
 				p #[a(href=finnoscore.url || finnoscore.path) #[b(lang=finnoscore.language)= finnoscore.name]] gibt Ihnen Aufschluss darüber, wie Ihr Unternehmen im digitalen und mobilen Wettbewerb abschneidet.
-				p Die #[b= finnoscore.name] Ergebnisse basieren auf öffentlich verfügbaren Informationen, bewertet wird auf Basis von 300&nbsp;Kriterien die erlebbare und objektivierbare digitale Innovationswirkung eines Finanzdienstleisters nach außen. Wir liefern eine objektive und unabhängige Standortbestimmung, kostenlos und aus der Sicht der Kunden.
+				p Die #[b= finnoscore.name] Ergebnisse basieren auf öffentlich verfügbaren Informationen, bewertet wird auf Basis von 300&nbsp;Kriterien die erlebbare und objektivierbare digitale Innovations&shy;wirkung eines Finanz&shy;dienst&shy;leisters nach außen. Wir liefern eine objektive und unabhängige Standort&shy;bestimmung, kostenlos und aus der Sicht der Kunden.
 			section
 				h3!= " " + finnofy("FinnoPretation")
-				p Wir erläutern in #[b FinnoPretation]-Workshops mit unseren Kunden die Ergebnisse, gleichen das Innovationspotential mit bestehenden Strategien ab und präsentieren Ihnen konkrete Projektvorschläge und Sofortmaßnahmen damit sich ihr Institut im digitalen Wettbewerb gezielt verbessern kann.
-				p Durch unsere umfassende Analyse von 160&nbsp;Instituten in Europa und Nordamerika können wir auf #[span(lang="en") Best Practices] von vielen Banken zugreifen und somit schnell mit unseren Kunden die Handlungsfelder für zukünftige Entwicklungen klar eingrenzen.
+				p In #[b FinnoPretation]-Workshops erläutern wir mit unseren Kunden die Ergebnisse, gleichen das Innovations&shy;potential mit bestehenden Strategien ab und präsentieren Ihnen konkrete Projekt&shy;vorschläge und Sofort&shy;maßnahmen damit sich ihr Institut im digitalen Wettbewerb gezielt verbessern kann.
+				p Durch unsere umfassende Analyse von 160&nbsp;Instituten in Europa und Nord&shy;amerika können wir auf #[span(lang="en") Best Practices] von vielen Banken zugreifen und somit schnell mit unseren Kunden die Handlungs&shy;felder für zukünftige Entwicklungen klar eingrenzen.
 			section
 				h3!= " " + finnofy("FinnoProjekt")
-				p Gemeinsam mit Ihnen setzen wir ein #[b FinnoProjekt] pilothaft von der Konzeption bis zur Markteinführung einer Innovation um. Aufgrund der Erfahrungen aus dem Pilotprojekt liefern wir Ihnen ein für Ihr Unternehmen maßgeschneidertes Modell für digitale Innovation und Transformation. Schnelle und gezielte Effizienzsteigerung durch Verwertung des Erlernten, sozusagen.
-		section.narrative#realization
+				p Gemeinsam mit Ihnen setzen wir ein #[b FinnoProjekt] pilothaft von der Konzeption bis zur Markt&shy;einführung einer Inno&shy;vation um. Aufgrund der Erfahrungen aus dem Pilot&shy;projekt liefern wir Ihnen ein für Ihr Unternehmen maß&shy;geschneidertes Modell für digitale Inno&shy;vation und Transformation. Schnelle und gezielte Effizienz&shy;steigerung durch Verwertung des Erlernten, sozusagen.
+		section.narrative#realization(data-rsg=".4")
 			h2(data-title="Leistungspakete") FinnoPretation - Leistungspakete
-			p Wir bieten vier Leistungspakete an um Ihnen die #[strong(lang=finnoscore.language)= finnoscore.name] Ergebnisse, Vergleichsdaten und #[span(lang="en") Best&nbsp;Practices] im Detail zu erläutern und mit Ihnen gezielte Handlungsempfehlungen abzuleiten.
+			p Wir bieten vier Leistungspakete an um Ihnen die #[strong(lang=finnoscore.language)= finnoscore.name] Ergebnisse, Vergleichs&shy;daten und #[span(lang="en") Best&nbsp;Practices] im Detail zu erläutern und mit Ihnen gezielte Handlungsempfehlungen abzuleiten.
 			figure.packages
 				figcaption.print Umfang & Preis je&nbsp;Leistungspaket
 				table
@@ -111,13 +111,13 @@ block main
 							td(class=thc[3], data-col=tht[3]) EUR #[data.price(value=12000) 12.000]
 						tr.package
 							th(scope="row", class=thc[0], lang=finnoscore.language)!= finnofy(finnoscore.name) + " GROUP"
-							td(class=thc[1], data-col="Information", colspan="2") Workshops sind individuell anpassbar entsprechend der Größe der Bankengruppe
+							td(class=thc[1], data-col="Information", colspan="2") Workshops sind individuell anpassbar entsprechend der Größe der Bankengruppe
 							td(class=thc[3], data-col="Sonderangebot")
 								small Ermässigung#[br]bei 3-10 Banken: #[span.discount 20%]#[br]bei > 10 Banken: #[span.discount 30%]
 				p.notes.print
 						small
 							a(id="note-1", href="#ref-note-1") 1)
-							|  für Vergleichsdaten und #[span(lang="en") Best&nbsp;Practices]
+							|  für Vergleichsdaten und #[span(lang="en") Best&nbsp;Practices]
 			figure.options
 				figcaption.print Erweiterungen zum jeweiligen Leistungspaket
 				ol
@@ -127,17 +127,17 @@ block main
 							br
 							span(lang="en") Trend- & Opportunity Exploration
 						ul
-							li Referenzierung von definierten Themenfeldern zu aktuellen Megatrends.
-							li Entwicklung von Opportunitäten und einem Modell für ein laufendes und strukturiertes Trend-Monitoring.
-						p #[b Preis:] individuell festzulegen&thinsp;&ndash;&thinsp;abhängig von der Anzahl der Themenfelder.
+							li Referenzierung von definierten Themen&shy;feldern zu aktuellen Mega&shy;trends.
+							li Entwicklung von Opportunitäten und einem Modell für ein laufendes und strukturiertes Trend-Monitoring.
+						p #[b Preis:] individuell festzulegen&thinsp;&ndash;&thinsp;abhängig von der Anzahl der Themen&shy;felder.
 					li.option
 						h4
 							strong Zusatzoption&nbsp;2
 							br
 							span(lang="en") Solution Scouting & Evaluation
 						ul
-							li #[span(lang="en") Screening] und Grobevaluierung von Lösungsmöglichkeiten und Anbietern für spezifische Themenfelder und Lösungswünsche.
-						p #[b Preis:] individuell festzulegen&thinsp;&ndash;&thinsp;abhängig von der Komplexität der Themenfelder.
+							li #[span(lang="en") Screening] und Grobevaluierung von Lösungs&shy;möglichkeiten und Anbietern für spezifische Themen&shy;felder und Lösungs&shy;wünsche.
+						p #[b Preis:] individuell festzulegen&thinsp;&ndash;&thinsp;abhängig von der Komplexität der Themen&shy;felder.
 		section.narrative#contact
 			h2(data-title="Kontakt") Was können wir für Sie tun?
 			include contact-form

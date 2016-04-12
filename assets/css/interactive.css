@@ -12,16 +12,15 @@
 		width: 400%;
 		opacity: 0;
 		background: linear-gradient(301.75deg, #fff 0, #fff 4em, rgb(0,189,89) 4em, rgb(0,189,89) 50%, #fff 50%);
-		transition: transform 2s linear, opacity .5s linear 1.75s;
+		transition: transform 1.5s linear, opacity .4s linear 1.25s;
 	}
 	.js #orientation[data-rsg] .bubble-breakout {
 		opacity: 0;
 	}
 	.js #orientation .bubble-breakout {
-		transition: opacity .5s ease-in-out 2.5s;
+		transition: opacity .4s ease-in-out 1.5s;
 	}
 	.js #experience[data-rsg] p {
-		opacity: .25;
 		transform: translateY(2em);
 	}
 	.js #experience[data-rsg] .bubble-photo {
@@ -30,23 +29,30 @@
 	}
 	.js #experience .bubble-photo,
 	.js #experience p {
-		transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+		transition: transform .4s ease-in-out, opacity .4s ease-in-out;
 	}
 	.js #activation[data-rsg] .bubble,
-	.js #engagement[data-rsg] section {
+	.js #engagement[data-rsg] section,
+	.js #realization[data-rsg] .package {
 		opacity: 0;
 	}
 	.js #activation .bubble,
-	.js #engagement section {
-		transition: opacity .5s ease-in-out;
+	.js #engagement section,
+	.js #realization .package {
+		transition: opacity .4s ease-in-out;
 	}
 	.js #activation .bubble:nth-child(2),
-	.js #engagement section:nth-of-type(2) {
-		transition-delay: .5s;
+	.js #engagement section:nth-of-type(2),
+	.js #realization .package:nth-child(2) {
+		transition-delay: .4s;
 	}
 	.js #activation .bubble:nth-child(3),
-	.js #engagement section:nth-of-type(3) {
-		transition-delay: 1s;
+	.js #engagement section:nth-of-type(3),
+	.js #realization .package:nth-child(3) {
+		transition-delay: .8s;
+	}
+	.js #realization .package:nth-child(4) {
+		transition-delay: 1.2s;
 	}
 }
 
@@ -55,6 +61,6 @@
 		transform: translateX(50%);
 	}
 	.js #orientation .bubble-xl {
-		transition: transform .75s ease-in-out 2s;
+		transition: transform .75s ease-in-out 1s;
 	}
 }

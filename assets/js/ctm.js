@@ -2,7 +2,7 @@
 var ctm = (function (document, window) {
 	"use strict";
 	var makesTheCut = false;
-	if ("querySelector" in document && typeof (document.body || document.documentElement).style.transition === "string" && document.querySelector("link[media=\"screen\"][href*=\"screen\"]")) {
+	if ("querySelector" in document && typeof (document.body || document.documentElement).style.transition === "string" && document.querySelector(".media[media=\"screen\"]")) {
 		makesTheCut = true;
 		var toggle = document.querySelector("html").classList;
 		toggle.remove("no-js");

@@ -1,0 +1,74 @@
+extends ./layout.jade
+
+append scripts
+	if verbose
+		script(async, src="/js/mailto.js")
+	else
+		script
+			include ../build/js/mailto.js	
+
+append styles
+	style(media="screen")
+		| .icon{display:inline-block;width:2rem;background:#fff;border-radius:50%;font-size:0;line-height:2rem;text-align:center}
+		| svg{width:1rem;height:1rem;vertical-align:middle}
+		| path{fill:#231f20}
+		| main dt{position:absolute}
+		| main dd{padding:.375em 0 .75em 3em;line-height:1.25;word-break:break-all}
+		| @media (min-width:48em){main dd{white-space:nowrap}}
+		| @media (min-width:64em){.photo{position:absolute;right:50%;margin-right:5em}main dl{margin:3.5em 0 0 calc(50% - 1em)}}
+	style(media="print") svg{display:none}
+
+block main
+	main.narrative.invert.vcard
+		h1.fn.n= document.heading
+		p
+			img.photo.bubble-photo(src=document.photo, alt="Foto von "+document.heading)
+		dl
+			dt.icon
+				include ../assets/img/icon-fa-user.svg
+				|  Business Card
+			dd
+				a.url.hide-link(href=homepage+path.slice(1))= homepage.split("/")[2] + path
+			dt.icon
+				include ../assets/img/icon-fa-envelope.svg
+				|  e-Mail
+			dd.email
+				- var mp = document.mail.replace("@", ".").split(".")
+				= " " + mp[0]
+				abbr(lang="en", title="at") &#64;
+				= mp[1]
+				abbr(title="Punkt") &#46;
+				abbr= mp[2]
+			dt.icon
+				include ../assets/img/icon-fa-phone.svg
+				|  Telefon
+			dd
+				- var pp = document.phone.split(" ")
+				a.tel(href="tel:"+pp.join(""))
+					|  #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
+		if document.social
+			dl
+				each other in document.social
+					dt.icon
+						if other.url.indexOf("linkedin") !== -1
+							include ../assets/img/icon-fa-linkedin.svg
+						else if other.url.indexOf("xing") !== -1
+							include ../assets/img/icon-fa-xing.svg
+						= " " + other.name
+					dd
+						a(rel="me", href=other.url)= other.url.slice(other.url.indexOf("/") + 2)
+
+		dl
+			dt.icon
+				include ../assets/img/icon-icomoon-office.svg
+				|  Firmenanschrift
+			dd
+				b.org FInno Consult #[abbr GmbH]
+				.adr
+					span.street-address Rasumofskygasse&nbsp;26
+					br
+					span.postal-code 1030
+					| &nbsp;
+					span.locality Wien
+					br.print
+					span.country-name.print &Ouml;sterreich

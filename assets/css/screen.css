@@ -56,6 +56,11 @@ a:hover {
 	box-shadow: 0 -2px #00bd59 inset;
 }
 
+main li:not(.bubble),
+main p {
+	text-align: justify;
+}
+
 .site {
 	padding: 0 2rem;
 }
@@ -129,12 +134,29 @@ div.narrative {
 #engagement section:nth-of-type(2) h3 { background-position: 100% -4em; }
 #engagement section:nth-of-type(3) h3 { background-position: 100% -8em; }
 #engagement h3 {
-	margin-bottom: -.5em;
-	padding: 1em 0;
+	max-width: none;
+	margin: .5em -.375em 0 0;
+	padding: 1.375em 0;
 	background: url(/img/strategy.svg) 100% 4em no-repeat;
-	background-size: 4em auto;
-	line-height: 2em;
+	background-size: 8em auto;
 }
+.narrative.invert {
+	position: relative;
+	z-index: 0;
+}
+.narrative.invert::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	height: 50%;
+	left: 0;
+	opacity: .3;
+	background: linear-gradient(180deg, rgba(0,189,89,0) 50%, #00bd59 100%), linear-gradient(210deg, rgba(0,189,89,0) 0, #00bd59 50%), url(/img/strategy.svg) 0 -2.5em repeat, url(/img/strategy.svg) 2em .5em repeat;
+	background-size: cover, cover, 4em auto, 4em auto;
+}
+
 .invert h1,
 .invert h2,
 .invert em,
@@ -295,8 +317,10 @@ div.narrative {
 	color: inherit;
 }
 .nn {
-	background: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yIC0yIDE2LjkgMTguOCIgd2lkdGg9IjEyLjkiIGhlaWdodD0iMTQuOCI+PHBhdGggZmlsbD0icmdiKDAsMTg5LDg5KSIgZD0iTTguOCAwTDQgNy43bC00IDYuNnYuNWgzLjVsNS43LTlMMTIuNyAwaC00ek0wIDB2MTMuNEwzLjMgOFYwSDB6TTEzIDFMOS41IDZWMTVIMTNWLjh6Ii8+PC9zdmc+") 0 .375em repeat-x;
-	background-size: 50% auto;
+	display: inline-block;
+	width: .5em;
+	background: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yIC0yIDE2LjkgMTguOCIgd2lkdGg9IjEyLjkiIGhlaWdodD0iMTQuOCI+PHBhdGggZmlsbD0icmdiKDAsMTg5LDg5KSIgZD0iTTguOCAwTDQgNy43bC00IDYuNnYuNWgzLjVsNS43LTlMMTIuNyAwaC00ek0wIDB2MTMuNEwzLjMgOFYwSDB6TTEzIDFMOS41IDZWMTVIMTNWLjh6Ii8+PC9zdmc+") center 56% no-repeat;
+	background-size: 100% auto;
 	color: transparent !important;
 }
 .invert .nn {
@@ -371,6 +395,9 @@ footer.site .screen::before {
 }
 
 @media (max-width: 37.47em) {
+	.narrative {
+		min-height: 150vw;
+	}
 	footer,
 	nav {
 		text-align: center;
@@ -443,13 +470,12 @@ footer.site .screen::before {
 		transform: rotate(45deg);
 	}
 }
-
 @media (min-width: 48em) {
 	#experience {
 		background-image: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(255,255,255,0) 4em), linear-gradient(#f2f4f6 0, #f2f4f6 20em, #fff 20em);
 	}
 	#experience h2 {
-		min-height: 15em;
+		min-height: 16.5em;
 	}
 	#experience p {
 		position: absolute;
@@ -465,7 +491,7 @@ footer.site .screen::before {
 		display: inline-block;
 		width: 16rem;
 		margin: 0 2em;
-		text-align: left;
+		text-align: justify;
 		vertical-align: top;
 	}
 	.options ol {
@@ -478,6 +504,28 @@ footer.site .screen::before {
 }
 
 @media (min-width: 48em) and (max-width: 63.97em) {
+	#engagement section {
+		width: 22em;
+		margin-right: 50%;
+		margin-left: auto;
+		padding-right: 3.75em;
+	}
+	#engagement h3 {
+		margin-right: -4.5em;
+	}
+	#engagement section:nth-of-type(2) {
+		position: absolute;
+		left: 50%;
+		margin-top: -13.25em;
+		padding-right: 0;
+		padding-left: 3.75em;
+	}
+	#engagement section:nth-of-type(2) h3 {
+		margin-right: 0;
+		margin-left: -4.5em;
+		padding-left: 4.5em;
+		background-position: -4em -4em;
+	}
 	.col-price {
 		width: 20%;
 		padding-left: 0;
@@ -542,19 +590,21 @@ footer.site .screen::before {
 		left: 50%;
 		margin-left: 8em;
 	}
+	#engagement {
+		text-align: center;
+	}
 	#engagement section + section {
-		margin-left: 4em;
+		margin-left: 3.75em;
 	}
 	#engagement section {
-		float: left;
-		width: 17.25em;
+		display: inline-block;
+		width: 17.5em;
+		text-align: left;
+		vertical-align: top;
 	}
 	#engagement::after {
 		content: "";
 		display: table;
-	}
-	#engagement h3 {
-		margin: 0 -.375em 1em 0;
 	}
 	thead .col-compare {
 		margin-top: 2.875em;
@@ -570,6 +620,19 @@ footer.site .screen::before {
 		content: "";
 		display: table;
 		clear: both;
+	}
+	th {
+		white-space: nowrap;
+	}
+	th,
+	td {
+		height: 2.875em;
+		overflow: hidden;
+	}
+	th:nth-child(2),
+	td:nth-child(2) {
+		height: 5.25em;
+		text-overflow: ellipsis;
 	}
 	th.col-price {
 		text-align: left;

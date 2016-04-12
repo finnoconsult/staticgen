@@ -154,3 +154,8 @@ li.bubble,
 .legal {
 	margin: 0;
 }
+
+.prefix {
+	display: inline-block;
+	margin: 0 .5ex;
+}

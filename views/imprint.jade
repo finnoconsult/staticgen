@@ -27,11 +27,9 @@ block main
 						| &nbsp;
 						span.locality Wien
 						br.print
-						span.country-name.print &Ouml;sterreich
+						span.country-name.print Österreich
 				dt Telefon
-				dd +43&nbsp;---&nbsp;-------
-				dt Fax
-				dd +43&nbsp;---&nbsp;-------
+				dd.tel +43#[span.prefix 669]13507690
 				dt e-Mail
 				dd.email.hide-link info
 					abbr(lang="en", title="at") &#64;
@@ -43,7 +41,7 @@ block main
 					a.url.hide-link(href=homepage)= homepage.split("/")[2]
 			dl
 				dt IBAN
-				dd AT--&nbsp;----&nbsp;----&nbsp;----&nbsp;----
+				dd AT35&nbsp;1515&nbsp;1042&nbsp;0107&nbsp;7650
 				dt BIC, SWIFT
 				dd OBKLAT2L (Oberbank Austria)
 			dl

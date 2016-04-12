@@ -9,6 +9,7 @@
 			"heading": "Über uns"
 		}
 	}, {
+		"url": "//finnoscore.finnoconsult.at/",
 		"path": "/coming-soon",
 		"template": "coming-soon.jade",
 		"name": "FinnoScore",
@@ -19,6 +20,7 @@
 			"heading": "Aktuelle Themen"
 		}
 	}, {
+		"url": "//blog.finnoconsult.at/",
 		"path": "/coming-soon",
 		"template": "coming-soon.jade",
 		"name": "Blog",
@@ -41,6 +43,32 @@
 		"document": {
 			"title": "Vielen Dank · Finnoconsult",
 			"heading": "Nachricht erhalten"
+		}
+	}, {
+		"path": "/chris",
+		"template": "person.jade",
+		"document": {
+			"title": "Christian Berger · Finnoconsult",
+			"heading": "Christian Berger",
+			"photo": "/img/photo-christianberger.jpg",
+			"mail": "chrisberger@finnoconsult.at",
+			"phone": "+43 664 8180166",
+			"social": [
+				{"name": "Linkedin", "url": "https://at.linkedin.com/in/christianberger701"}
+			]
+		}
+	}, {
+		"path": "/martin",
+		"template": "person.jade",
+		"document": {
+			"title": "Martin Schachinger · Finnoconsult",
+			"heading": "Martin Schachinger",
+			"photo": "/img/photo-martinschachinger.jpg",
+			"mail": "martin@finnoconsult.at",
+			"phone": "+43 669 13507690",
+			"social": [
+				{"name": "Linkedin", "url": "https://at.linkedin.com/pub/martin-schachinger/8/759/A3A"}
+			]
 		}
 	}, {
 		"path": "/imprint",

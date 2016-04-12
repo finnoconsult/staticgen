@@ -14,11 +14,8 @@ module.exports = function (pkg) {
 				verbose: pkg.config.verbose,
 				homepage: pkg.homepage,
 				path: path,
-				//anchorify: function (selector, heading, reference) {
-					//return "<a href=\"$1\" data-anchor=\"$3\">$2</a>".replace("$1", selector).replace("$2", heading).replace("$3", reference || heading);
-				//},
 				finnofy: function (text) {
-					var replacement = "Finno".replace("nn", "<span class=\"nn\">nn</span>");
+					var replacement = "Finno".replace(/n/g, "<span class=\"nn\">n</span>");
 					return text.replace("Finno", replacement);
 				},
 				sitemap: function (options) {
