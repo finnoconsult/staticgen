@@ -67,7 +67,7 @@ block main
 			h2 Ready, Set, Go!
 			section
 				h3(lang=finnoscore.language)!= " " + finnofy(finnoscore.name)
-				p #[a(href=finnoscore.url || finnoscore.path) #[b(lang=finnoscore.language)= finnoscore.name]] gibt Ihnen Aufschluss darüber, wie Ihr Unternehmen im digitalen und mobilen Wettbewerb abschneidet.
+				p #[a(href=finnoscore.path || finnoscore.url) #[b(lang=finnoscore.language)= finnoscore.name]] gibt Ihnen Aufschluss darüber, wie Ihr Unternehmen im digitalen und mobilen Wettbewerb abschneidet.
 				p Die #[b= finnoscore.name] Ergebnisse basieren auf öffentlich verfügbaren Informationen, bewertet wird auf Basis von 300&nbsp;Kriterien die erlebbare und objektivierbare digitale Innovations&shy;wirkung eines Finanz&shy;dienst&shy;leisters nach außen. Wir liefern eine objektive und unabhängige Standort&shy;bestimmung, kostenlos und aus der Sicht der Kunden.
 			section
 				h3!= " " + finnofy("FinnoPretation")
@@ -112,8 +112,7 @@ block main
 						tr.package
 							th(scope="row", class=thc[0], lang=finnoscore.language)!= finnofy(finnoscore.name) + " GROUP"
 							td(class=thc[1], data-col="Information", colspan="2") Workshops sind individuell anpassbar entsprechend der Größe der Bankengruppe
-							td(class=thc[3], data-col="Sonderangebot")
-								small Ermässigung#[br]bei 3-10 Banken: #[span.discount 20%]#[br]bei > 10 Banken: #[span.discount 30%]
+							td(class=thc[3], data-col="Discount") Ermässigung#[br]bei 3-10 Banken: #[span.discount 20%]#[br]bei > 10 Banken: #[span.discount 30%]
 				p.notes.print
 						small
 							a(id="note-1", href="#ref-note-1") 1)

@@ -15,7 +15,6 @@ ctm(function (document, window) {
 		[].forEach.call(document.querySelectorAll(selector), function (element) {
 			if (inViewport(element)) {
 				element.removeAttribute(selector.slice(1, -1));
-				console.log("fire", element);
 			}
 		});
 	};
@@ -27,13 +26,11 @@ ctm(function (document, window) {
 				ticking = false;
 				if (!document.querySelectorAll(selector).length) {
 					window.removeEventListener("scroll", handler);
-					console.log("no more listening to anything");
 				}
 			});
 		}
 		ticking = true;
 	};
 	window.addEventListener("scroll", handler);
-	console.log("appear.js loaded");
 	handler();
 });

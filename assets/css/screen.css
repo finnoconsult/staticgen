@@ -127,7 +127,7 @@ div.narrative {
 #activation {
 	background-image: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em), url(/img/bg-bank.jpg);
 }
-#contact {
+section#contact {
 	background-image: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(255,255,255,0) 4em), linear-gradient(#f2f4f6 0, #fff 0, #f2f4f6 100%);
 }
 #engagement section:nth-of-type(1) h3 { background-position: 100% 0; }
@@ -455,10 +455,12 @@ footer.site .screen::before {
 	main dd {
 		padding-left: 8em;
 	}
-	td {
+	td.col-compare,
+	td.col-reach {
 		padding-left: 1.75em;
 	}
-	td:not(:last-child)::before {
+	td.col-compare::before,
+	td.col-reach::before {
 		content: "";
 		display: inline-block;
 		position: absolute;
@@ -466,7 +468,7 @@ footer.site .screen::before {
 		height: .875em;
 		margin-left: -1em;
 		border: 0 solid #00bd59;
-		border-width: 0 .25em .25em 0;
+		border-width: 0 .125em .125em 0;
 		transform: rotate(45deg);
 	}
 }
@@ -528,7 +530,6 @@ footer.site .screen::before {
 	}
 	.col-price {
 		width: 20%;
-		padding-left: 0;
 	}
 }
 
@@ -614,7 +615,7 @@ footer.site .screen::before {
 		width: 12em;
 	}
 	.col-compare {
-		height: 5.25em;
+		height: 6.5em;
 	}
 	table::after {
 		content: "";
@@ -629,20 +630,16 @@ footer.site .screen::before {
 		height: 2.875em;
 		overflow: hidden;
 	}
-	th:nth-child(2),
-	td:nth-child(2) {
-		height: 5.25em;
+	.col-compare {
+		height: 6.5em;
 		text-overflow: ellipsis;
 	}
 	th.col-price {
 		text-align: left;
 	}
-	.package:last-child .col-compare {
-		height: 6.5em;
-	}
 	.package:last-child .col-price {
-		height: 4.5em;
-		padding: .25em 1em;
+		height: 5.75em;
+		padding-top: 1.125em;
 	}
 	form {
 		width: 42em;

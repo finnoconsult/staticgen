@@ -76,6 +76,7 @@ td {
 }
 th,
 td {
+	text-align: left;
 	vertical-align: top;
 }
 li {
@@ -85,7 +86,6 @@ table {
 	table-layout: fixed;
 	width: 100%;
 	border-spacing: 0;
-	text-align: left;
 }
 em,
 b,

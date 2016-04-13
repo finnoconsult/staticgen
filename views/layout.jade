@@ -15,17 +15,19 @@ html.no-js(lang="de")
 				link.media(rel="stylesheet", media="screen", href="/css/screen.css")
 				link(rel="stylesheet", media="print", href="/css/print.css")
 			else
+				<!--[if lt IE 9]><style>p,li{width:500px}th,td{padding:8px;border:1px solid #ccd2dc}</style><![endif]-->
 				<!--[if gt IE 8]><!-->
 				style
 					include ../build/css/all.css
 				<!--<![endif]-->
 				<!--[if lte IE 9]><link rel="stylesheet" media="screen" href="/css/oldie.css"><![endif]-->
-				<!--[if gt IE 8]><!-->
+				<!--[if IE 9]><link rel="stylesheet" href="/css/print.css"><![endif]-->
+				<!--[if gt IE 9]><!-->
 				style(media="print")
 					include ../build/css/print.css
-				style.media(media="screen")
+				style.ctm(media="screen")
 					include ../build/css/screen.css
-				<!--<![endif]-->
+		<!--<![endif]-->
 		include icon
 		if verbose
 			script(src="/js/ctm.js")
