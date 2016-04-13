@@ -56,11 +56,6 @@ a:hover {
 	box-shadow: 0 -2px #00bd59 inset;
 }
 
-main li:not(.bubble),
-main p {
-	text-align: justify;
-}
-
 .site {
 	padding: 0 2rem;
 }
@@ -493,7 +488,7 @@ footer.site .screen::before {
 		display: inline-block;
 		width: 16rem;
 		margin: 0 2em;
-		text-align: justify;
+		text-align: left;
 		vertical-align: top;
 	}
 	.options ol {
