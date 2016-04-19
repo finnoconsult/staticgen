@@ -2,5 +2,5 @@ nav.screen#navigation
 	hr
 	each link, separator in sitemap({list: "name"})
 		= separator ? " " : ""
-		- var cn = !link.url && link.path === path ? "active" : null
-		a(lang=link.language, class=cn, href=link.path || link.url, data-note=link.note)= link.name
+		- var cn = (domain === (link.path ? homepage + link.path.slice(1) : link.url)) ? "active" : null
+		a(lang=link.language, class=cn, data-note=link.note, href=linkTo(link))= link.name

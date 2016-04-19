@@ -71,6 +71,16 @@ module.exports = function (grunt) {
 
 		// jade compile
 		jade: {
+			compileTemplate: {
+				options: {
+					data: function (dest, src) {
+						var data = grunt.config("data");
+						grunt.log.writeln("Rendering \"%s\": %s", "/", dest);
+						return data.get("/");
+					}
+				},
+				files: data.templates(pkg.config.folders.views, pkg.config.folders.temp)
+			},
 			compile: {
 				options: {
 					data: function (dest, src) {
@@ -95,6 +105,11 @@ module.exports = function (grunt) {
 
 	// task definition
 	grunt.registerTask(
+		"render",
+		"Render templates (HTML snippets)",
+		["clean:temp", "jade:compileTemplate"]
+	);
+	grunt.registerTask(
 		"build",
 		"Prepare assets (minification)",
 		["clean:temp", "postcss", "uglify"]
@@ -102,7 +117,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"release",
 		"Generate static site",
-		["clean:live", "copy:assets", "copy:build", "jade", "build", "clean:unminified"]
+		["clean:live", "copy:assets", "copy:build", "jade:compile", "build", "clean:unminified"]
 	);
 	grunt.registerTask("default", ["build", "release"]);
 };

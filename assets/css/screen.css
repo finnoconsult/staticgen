@@ -1,3 +1,7 @@
+@-ms-viewport {
+  width: device-width;
+}
+
 @keyframes slide {
 	0%, 84%, 92%, 100% { transform: translate(-50%, 0); }
 	88%, 96% { transform: translate(-50%, -.125em); }

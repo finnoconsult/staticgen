@@ -9,7 +9,7 @@
 			"heading": "Über uns"
 		}
 	}, {
-		"url": "//finnoscore.finnoconsult.at/",
+		"url": "https://finnoscore.finnoconsult.at/",
 		"path": "/coming-soon",
 		"template": "coming-soon.jade",
 		"name": "FinnoScore",
@@ -20,7 +20,7 @@
 			"heading": "Aktuelle Themen"
 		}
 	}, {
-		"url": "//blog.finnoconsult.at/",
+		"url": "https://blog.finnoconsult.at/",
 		"path": "/coming-soon",
 		"template": "coming-soon.jade",
 		"name": "Blog",

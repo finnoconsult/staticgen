@@ -8,12 +8,25 @@ module.exports = function (pkg) {
 			mapping[item.path] = item;
 		}
 	});
+	var domain = process.env.DOMAIN || pkg.config.domain || pkg.homepage;
+	var linkTo = function (link) {
+		if (link.path) {
+			if (domain === pkg.homepage) {
+				return link.path;
+			} else {
+				return pkg.homepage + link.path.slice(1);
+			}
+		}
+		return link.url;
+	};
 	return {
 		get: function (path) {
 			var data = {
 				verbose: pkg.config.verbose,
+				domain: domain,
 				homepage: pkg.homepage,
 				path: path,
+				linkTo: linkTo,
 				finnofy: function (text) {
 					var replacement = "Finno".replace(/n/g, "<span class=\"nn\">n</span>");
 					return text.replace("Finno", replacement);
@@ -37,6 +50,15 @@ module.exports = function (pkg) {
 		toPath: function (dest, file) { // batch/grunt
 			var query = file.split("/").slice(1).join("/");
 			return mapData.filter(function (item) { return item.file === query; })[0].path;
+		},
+		templates: function (srcFolder, destFolder) { // batch/grunt
+			var fileMap = {};
+			["header", "navigation", "footer"].forEach(function (id) {
+				var dest = destFolder + "/snippet_" + id + ".html";
+				var src = srcFolder + "/" + id + ".jade";
+				fileMap[dest] = src;
+			});
+			return fileMap;
 		},
 		files: function (srcFolder, destFolder) { // batch/grunt
 			var fileMap = {};
