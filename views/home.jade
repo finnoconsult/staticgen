@@ -1,6 +1,8 @@
 extends ./layout.jade
 
 append styles
+	style(media="screen")
+		| .news{position:absolute;right:10%;top:3em;}.news a{display:block;height:6em;width:6em;padding:1.75em .5em 0;border-radius:50%;text-align:center;transform:rotate(9deg);transition:transform .5s ease}.news a:active{transform:rotate(9deg) scale(.7)}
 	if verbose
 		link(rel="stylesheet", media="screen", href="/css/interactive.css")
 	else
@@ -28,6 +30,11 @@ block main
 					del Man müsste
 						br
 					ins Wir machen!
+			p.news.screen
+				span.print 19.4.2016: 
+				a.invert(lang=finnoscore.language, href=linkTo(finnoscore))
+					b(lang=finnoscore.language)= finnoscore.name
+					b  ist online!
 		section.narrative#orientation(data-rsg=".3")
 			.bubble.bubble-xl
 				h2 Unsere Welt
@@ -67,7 +74,7 @@ block main
 			h2 Ready, Set, Go!
 			section
 				h3(lang=finnoscore.language)!= " " + finnofy(finnoscore.name)
-				p #[a(href=finnoscore.path || finnoscore.url) #[b(lang=finnoscore.language)= finnoscore.name]] gibt Ihnen Aufschluss darüber, wie Ihr Unternehmen im digitalen und mobilen Wettbewerb abschneidet.
+				p #[a(href=linkTo(finnoscore)) #[b(lang=finnoscore.language)= finnoscore.name]] gibt Ihnen Aufschluss darüber, wie Ihr Unternehmen im digitalen und mobilen Wettbewerb abschneidet.
 				p Die #[b= finnoscore.name] Ergebnisse basieren auf öffentlich verfügbaren Informationen, bewertet wird auf Basis von 300&nbsp;Kriterien die erlebbare und objektivierbare digitale Innovations&shy;wirkung eines Finanz&shy;dienst&shy;leisters nach außen. Wir liefern eine objektive und unabhängige Standort&shy;bestimmung, kostenlos und aus der Sicht der Kunden.
 			section
 				h3!= " " + finnofy("FinnoPretation")

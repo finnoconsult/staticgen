@@ -62,7 +62,9 @@ module.exports = function (pkg) {
 		},
 		files: function (srcFolder, destFolder) { // batch/grunt
 			var fileMap = {};
-			mapData.forEach(function (item) {
+			mapData.filter(function (item) {
+				return item.template;
+			}).forEach(function (item) {
 				var dest = destFolder + "/" + item.file;
 				var src = srcFolder + "/" + item.template;
 				fileMap[dest] = src;

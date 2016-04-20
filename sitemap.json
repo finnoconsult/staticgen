@@ -10,15 +10,9 @@
 		}
 	}, {
 		"url": "https://finnoscore.finnoconsult.at/",
-		"path": "/coming-soon",
-		"template": "coming-soon.jade",
 		"name": "FinnoScore",
-		"note": "in Kürze",
-		"language": "en",
-		"document": {
-			"title": "Coming Soon · Finnoconsult",
-			"heading": "Aktuelle Themen"
-		}
+		"note": "NEU!",
+		"language": "en"
 	}, {
 		"url": "https://blog.finnoconsult.at/",
 		"path": "/coming-soon",

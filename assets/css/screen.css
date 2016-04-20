@@ -115,9 +115,11 @@ div.narrative {
 	background-color: #fff;
 }
 
+.invert {
+	background-color: #00bd59;
+}
 #orientation,
 .narrative.invert {
-	background-color: #00bd59;
 	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, #00bd59 4em);
 }
 #orientation {
@@ -283,6 +285,7 @@ div.narrative {
 .motto {
 	width: 27.778em;
 	max-width: 100%;
+	margin: 5em auto; /*IE10/noFlexBox*/
 }
 .motto strong {
 	display: block;
