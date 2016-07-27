@@ -1,0 +1,40 @@
+doctype html
+html.no-js(lang="de")
+
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,initial-scale=1.0")
+		block title
+			title= title + " · Finnoconsult"
+		if description
+			meta(name="description", content=description)
+		block styles
+			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700|Alegreya")
+			<!--[if lt IE 9]><style>p,li{width:500px}th,td{padding:8px;border:1px solid #ccd2dc}</style><![endif]-->
+			<!--[if gt IE 8]><!-->
+			style
+				include ../build/css/all.css
+			<!--<![endif]-->
+			<!--[if lte IE 9]><link rel="stylesheet" media="screen" href="/css/oldie.css"><![endif]-->
+			<!--[if IE 9]><link rel="stylesheet" href="/css/print.css"><![endif]-->
+			<!--[if gt IE 9]><!-->
+			style(media="print")
+				include ../build/css/print.css
+			style.ctm(media="screen")
+				include ../build/css/screen.css
+		<!--<![endif]-->
+		include includes/icon
+		script(title="ctm")
+			include ../build/js/ctm.js
+		script(title="loadJS")
+			include ../build/js/loadJS.js
+		if noindex
+			meta(name="robots", content="noindex,follow")
+
+	body
+		include includes/header
+		block main
+			main!= contents
+		include includes/navigation
+		include includes/footer
+		block scripts

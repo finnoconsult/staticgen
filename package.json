@@ -1,34 +1,27 @@
 {
-	"name": "website",
-	"version": "0.2.0",
-	"homepage": "https://www.finnoconsult.at/",
-	"license": "CC-BY-4.0",
-	"repository": {
-	"type": "git",
-	"url": "https://github.com/finnoconsult/website.git"
-	},
-	"scripts": {
-		"start": "node app.js"
-	},
-	"config": {
-		"folders": {
-			"assets": "assets",
-			"rendered": "public",
-			"temp": "build",
-			"views": "views"
-		}
-	},
-	"devDependencies": {
-		"autoprefixer": "^6.1.2",
-		"cssnano": "^3.3.2",
-		"express": "^4.13.3",
-		"grunt": "^0.4.5",
-		"grunt-contrib-clean": "^0.7.0",
-		"grunt-contrib-copy": "^0.8.2",
-		"grunt-contrib-jade": "^0.15.0",
-		"grunt-contrib-uglify": "^0.11.0",
-		"grunt-postcss": "^0.7.1",
-		"jade": "^1.11.0",
-		"serve-static": "^1.10.0"
-	}
+  "name": "website",
+  "version": "0.3.0",
+  "homepage": "https://www.finnoconsult.at",
+  "license": "CC-BY-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finnoconsult/website.git"
+  },
+  "scripts": {
+    "prebuild": "grunt",
+    "build": "node render.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "cssnano": "^3.3.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-postcss": "^0.7.1",
+    "jade": "^1.11.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-jade": "^2.0.2",
+    "metalsmith-layouts": "^1.6.5"
+  }
 }

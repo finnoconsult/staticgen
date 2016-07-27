@@ -1,0 +1,21 @@
+extends ./extended.jade
+
+block title
+	title= title
+
+append styles
+	style(media="screen")
+		| main section p{max-width:24em}.news{position:absolute;right:10%;top:3em;}.news a{display:block;height:6em;width:6em;padding:1.75em .5em 0;border-radius:50%;text-align:center;transform:rotate(9deg);transition:transform .5s ease}.news a:active{transform:rotate(9deg) scale(.7)}
+		include ../build/css/interactive.css
+
+block main
+	main
+		h1.print= heading || title
+		!= contents
+		aside.narrative#contact
+			h2(data-title="Kontakt") Was können wir für Sie tun?
+			include includes/contact
+
+append scripts
+	script(title="appear")
+		include ../build/js/appear.js	

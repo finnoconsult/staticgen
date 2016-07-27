@@ -1,0 +1,10 @@
+extends ./base.jade
+
+block main
+	main
+		h1.print= heading || title
+		!= contents
+
+append scripts
+	script(title="slide")
+		include ../build/js/slide.js

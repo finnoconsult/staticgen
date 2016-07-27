@@ -125,7 +125,8 @@ td:last-child {
 
 #activation,
 #realization,
-#contact {
+aside#contact,
+#legalese {
 	page-break-before: always;
 }
 @media (orientation: landscape) {

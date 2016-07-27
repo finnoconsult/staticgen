@@ -1,0 +1,10 @@
+extends ./base.jade
+
+block main
+	main.narrative.invert
+		h1= heading || title
+		!= contents
+
+block scripts
+	script(title="mailto")
+		include ../build/js/mailto.js

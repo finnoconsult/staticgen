@@ -1,0 +1,9 @@
+- var links = []
+- links.push({"url": "https://www.finnoconsult.at", "name": "Über uns"})
+- links.push({"url": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": "NEU!"})
+- links.push({"url": "https://www.finnoconsult.at/coming-soon", "name": "Blog", "note": "in Kürze"})
+nav.screen#navigation
+	hr
+	each link, separator in links
+		= separator ? " " : ""
+		a(class=(link.url===homepage)&&"active", data-note=link.note, href=link.url)= link.name

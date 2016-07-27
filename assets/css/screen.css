@@ -128,7 +128,7 @@ div.narrative {
 #activation {
 	background-image: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em), url(/img/bg-bank.jpg);
 }
-section#contact {
+aside#contact {
 	background-image: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(255,255,255,0) 4em), linear-gradient(#f2f4f6 0, #fff 0, #f2f4f6 100%);
 }
 #engagement section:nth-of-type(1) h3 { background-position: 100% 0; }
@@ -270,6 +270,9 @@ main p {
 	max-width: 24em;
 	margin-right: auto;
 	margin-left: auto;
+}
+main p {
+	max-width: 36em;
 }
 
 main dt {

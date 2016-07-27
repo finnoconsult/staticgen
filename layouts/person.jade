@@ -1,11 +1,4 @@
-extends ./layout.jade
-
-append scripts
-	if verbose
-		script(async, src="/js/mailto.js")
-	else
-		script
-			include ../build/js/mailto.js	
+extends ./base.jade
 
 append styles
 	style(media="screen")
@@ -20,20 +13,22 @@ append styles
 
 block main
 	main.narrative.invert.vcard
-		h1.fn.n= document.heading
+		- var heading = heading || title
+		h1.fn.n= heading
 		p
-			img.photo.bubble-photo(src=document.photo, alt="Foto von "+document.heading)
+			img.photo.bubble-photo(src=photo, alt="Foto von "+heading)
 		dl
 			dt.icon
 				include ../assets/img/icon-fa-user.svg
 				|  Business Card
 			dd
-				a.url.hide-link(href=homepage+path.slice(1))= homepage.split("/")[2] + path
+				- var linkPath = file.slice(0, -".html".length)
+				a.url.hide-link(href=homepage+linkPath)= homepage.split("/")[2] + "/" + linkPath
 			dt.icon
 				include ../assets/img/icon-fa-envelope.svg
 				|  e-Mail
 			dd.email
-				- var mp = document.mail.replace("@", ".").split(".")
+				- var mp = email.replace("@", ".").split(".")
 				= " " + mp[0]
 				abbr(lang="en", title="at") &#64;
 				= mp[1]
@@ -43,20 +38,20 @@ block main
 				include ../assets/img/icon-fa-phone.svg
 				|  Telefon
 			dd
-				- var pp = document.phone.split(" ")
+				- var pp = phone.split(" ")
 				a.tel(href="tel:"+pp.join(""))
 					|  #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
-		if document.social
+		if social
 			dl
-				each other in document.social
+				each elsewhere in social
 					dt.icon
-						if other.url.indexOf("linkedin") !== -1
+						if elsewhere.url.indexOf("linkedin") !== -1
 							include ../assets/img/icon-fa-linkedin.svg
-						else if other.url.indexOf("xing") !== -1
+						else if elsewhere.url.indexOf("xing") !== -1
 							include ../assets/img/icon-fa-xing.svg
-						= " " + other.name
+						= " " + elsewhere.name
 					dd
-						a(rel="me", href=other.url)= other.url.slice(other.url.indexOf("/") + 2)
+						a(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
 
 		dl
 			dt.icon

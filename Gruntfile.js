@@ -4,26 +4,12 @@ module.exports = function (grunt) {
 	// project configuration
 	grunt.file.defaultEncoding = "utf8";
 
-	// project data
-	var pkg = require("./package.json");
-	var data = require("./data.js")(pkg);
-
 	// project initialization
 	grunt.config.init({
 
-		dir: pkg.config.folders,
-
-		data: data,
-
 		// clean staging directory
 		clean: {
-			temp: ["<%= dir.temp %>"],
-			live: ["<%= dir.rendered %>"],
-			unminified: {
-				expand: true,
-				cwd: "<%= dir.rendered %>/",
-				src: ["img/*.max.*"]
-			}
+			temp: ["build"],
 		},
 
 		// css autoprefix and minify
@@ -36,9 +22,9 @@ module.exports = function (grunt) {
 			},
 			styles: {
 				expand: true,
-				cwd: "<%= dir.assets %>/",
+				cwd: "assets/",
 				src: "css/*.css",
-				dest: "<%= dir.temp %>/"
+				dest: "build/"
 			}
 		},
 
@@ -47,52 +33,12 @@ module.exports = function (grunt) {
 			scripts: {
 				options: { screwIE8: true },
 				expand: true,
-				cwd: "<%= dir.assets %>/",
+				cwd: "assets/",
 				src: ["js/*.js", "!js/*.min.js"],
-				dest: "<%= dir.temp %>/"
+				dest: "build/"
 			}
 		},
 
-		// file copy
-		copy: {
-			assets: {
-				expand: true,
-				cwd: "<%= dir.assets %>",
-				src: "**",
-				dest: "<%= dir.rendered %>/"
-			},
-			build: {
-				expand: true,
-				cwd: "<%= dir.temp %>",
-				src: "**",
-				dest: "<%= dir.rendered %>/"
-			}
-		},
-
-		// jade compile
-		jade: {
-			compileTemplate: {
-				options: {
-					data: function (dest, src) {
-						var data = grunt.config("data");
-						grunt.log.writeln("Rendering \"%s\": %s", "/", dest);
-						return data.get("/");
-					}
-				},
-				files: data.templates(pkg.config.folders.views, pkg.config.folders.temp)
-			},
-			compile: {
-				options: {
-					data: function (dest, src) {
-						var data = grunt.config("data");
-						var path = data.toPath(pkg.config.folders.rendered, dest);
-						grunt.log.writeln("Rendering \"%s\": %s", path, dest);
-						return data.get(path);
-					}
-				},
-				files: data.files(pkg.config.folders.views, pkg.config.folders.rendered)
-			}
-		}
 
 	});
 
@@ -100,24 +46,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-copy");
-	grunt.loadNpmTasks("grunt-contrib-jade");
 
 	// task definition
 	grunt.registerTask(
-		"render",
-		"Render templates (HTML snippets)",
-		["clean:temp", "jade:compileTemplate"]
-	);
-	grunt.registerTask(
 		"build",
 		"Prepare assets (minification)",
-		["clean:temp", "postcss", "uglify"]
+		["clean", "postcss", "uglify"]
 	);
-	grunt.registerTask(
-		"release",
-		"Generate static site",
-		["clean:live", "copy:assets", "copy:build", "jade:compile", "build", "clean:unminified"]
-	);
-	grunt.registerTask("default", ["build", "release"]);
+	grunt.registerTask("default", ["build"]);
 };
