@@ -1,5 +1,5 @@
 doctype html
-html.no-js(lang="de")
+html.no-js(lang=locale)
 
 	head
 		meta(charset="utf-8")
@@ -11,23 +11,18 @@ html.no-js(lang="de")
 		block styles
 			link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700|Alegreya")
 			<!--[if lt IE 9]><style>p,li{width:500px}th,td{padding:8px;border:1px solid #ccd2dc}</style><![endif]-->
-			<!--[if gt IE 8]><!-->
-			style
-				include ../build/css/all.css
-			<!--<![endif]-->
+			<!--[if gt IE 8]><! -->
+			link(rel="stylesheet", data-inline, href="/css/all.css")
+			<!-- <![endif]-->
 			<!--[if lte IE 9]><link rel="stylesheet" media="screen" href="/css/oldie.css"><![endif]-->
 			<!--[if IE 9]><link rel="stylesheet" href="/css/print.css"><![endif]-->
-			<!--[if gt IE 9]><!-->
-			style(media="print")
-				include ../build/css/print.css
-			style.ctm(media="screen")
-				include ../build/css/screen.css
-		<!--<![endif]-->
+			<!--[if gt IE 9]><! -->
+			link(rel="stylesheet", media="print", data-inline, href="/css/print.css")
+			link.ctm(rel="stylesheet", media="screen", data-inline, href="/css/screen.css")
+		<!-- <![endif]-->
 		include includes/icon
-		script(title="ctm")
-			include ../build/js/ctm.js
-		script(title="loadJS")
-			include ../build/js/loadJS.js
+		script(data-inline, src="/js/ctm.js")
+		script(data-inline, src="/js/loadJS.js")
 		if noindex
 			meta(name="robots", content="noindex,follow")
 

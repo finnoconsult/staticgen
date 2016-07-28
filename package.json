@@ -8,20 +8,18 @@
     "url": "https://github.com/finnoconsult/website.git"
   },
   "scripts": {
-    "prebuild": "grunt",
+    "prebuild": "node minify.js",
     "build": "node render.js"
   },
   "devDependencies": {
-    "autoprefixer": "^6.1.2",
-    "cssnano": "^3.3.2",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.7.0",
-    "grunt-contrib-uglify": "^0.11.0",
-    "grunt-postcss": "^0.7.1",
+    "inline-source": "^4.2.6",
     "jade": "^1.11.0",
     "metalsmith": "^2.1.0",
-    "metalsmith-assets": "^0.1.0",
+    "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "^2.0.2",
-    "metalsmith-layouts": "^1.6.5"
+    "metalsmith-layouts": "^1.6.5",
+    "metalsmith-myth": "0.0.0",
+    "multimatch": "^2.1.0",
+    "uglify-js": "^2.7.0"
   }
 }

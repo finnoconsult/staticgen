@@ -1,16 +1,18 @@
 var metalsmith = require("metalsmith");
-var assets = require("metalsmith-assets");
 var contentParser = require("metalsmith-jade");
 var layouts = require("metalsmith-layouts");
+var inlineSource = require("./plugins/inline-source.js");
 var assign = require("./plugins/assign.js");
 var trueName = require("./plugins/truename.js");
 
 var pkg = require("./package.json");
 
 metalsmith(__dirname)
+	.clean(false)
 	.source("content")
 	.destination("public")
 	.use(assign({
+		locale: require("./assets/manifest.json").lang,
 		homepage: pkg.homepage
 	}))
 	.use(contentParser({
@@ -22,8 +24,10 @@ metalsmith(__dirname)
 		default: "compact.jade",
 		pattern: "**/*.html"
 	}))
-	.use(assets({
-		source: "assets"
+	.use(inlineSource({
+		source: "public",
+		attribute: "data-inline",
+		compress: false
 	}))
 	.build(function (err) {
 		console.log(err || "Build successful.");
