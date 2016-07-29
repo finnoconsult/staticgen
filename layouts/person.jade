@@ -7,7 +7,8 @@ append styles
 		| path{fill:#231f20}
 		| main dt{position:absolute}
 		| main dd{padding:.375em 0 .75em 3em;line-height:1.25;word-break:break-all}
-		| @media (min-width:48em){main dd{white-space:nowrap}}
+		| @media (min-width:24em){main dl{max-width:20em}}
+		| @media (min-width:31em){main dd{white-space:nowrap}}
 		| @media (min-width:64em){.photo{position:absolute;right:50%;margin-right:5em}main dl{margin:3.5em 0 0 calc(50% - 1em)}}
 	style(media="print") svg{display:none}
 
@@ -19,13 +20,13 @@ block main
 			img.photo.bubble-photo(src=photo, alt="Foto von "+heading)
 		dl
 			dt.icon
-				img(src="/img/icon-fa-user.svg")
+				img(data-inline, src="/img/icon-fa-user.svg")
 				|  Business Card
 			dd
 				- var linkPath = file.slice(0, -".html".length)
 				a.url.hide-link(href=homepage+linkPath)= homepage.split("/")[2] + "/" + linkPath
 			dt.icon
-				img(src="/img/icon-fa-envelope.svg")
+				img(data-inline, src="/img/icon-fa-envelope.svg")
 				|  e-Mail
 			dd.email
 				- var mp = email.replace("@", ".").split(".")
@@ -35,7 +36,7 @@ block main
 				abbr(title="Punkt") &#46;
 				abbr= mp[2]
 			dt.icon
-				img(src="/img/icon-fa-phone.svg")
+				img(data-inline, src="/img/icon-fa-phone.svg")
 				|  Telefon
 			dd
 				- var pp = phone.split(" ")
@@ -46,16 +47,16 @@ block main
 				each elsewhere in social
 					dt.icon
 						if elsewhere.url.indexOf("linkedin") !== -1
-							img(src="/img/icon-fa-linkedin.svg")
+							img(data-inline, src="/img/icon-fa-linkedin.svg")
 						else if elsewhere.url.indexOf("xing") !== -1
-							img(src="/img/icon-fa-xing.svg")
+							img(data-inline, src="/img/icon-fa-xing.svg")
 						= " " + elsewhere.name
 					dd
 						a(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
 
 		dl
 			dt.icon
-				img(src="/img/icon-icomoon-office.svg")
+				img(data-inline, src="/img/icon-icomoon-office.svg")
 				|  Firmenanschrift
 			dd
 				b.org FInno Consult #[abbr GmbH]

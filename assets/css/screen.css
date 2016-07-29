@@ -106,7 +106,7 @@ a[href="#navigation"]::after {
 	overflow: hidden;
 	position: relative;
 	min-height: 100vh;
-	padding: 4.5em 2rem;
+	padding: 5em 2rem;
 	background: #f2f4f6;
 	background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #f2f4f6;
 	background-size: cover;
@@ -267,14 +267,11 @@ li.bubble::after {
 main dl,
 main h3,
 main p {
-	max-width: 24em;
+	max-width: 36rem;
 	margin-right: auto;
 	margin-left: auto;
 }
-main p {
-	max-width: 36em;
-}
-
+F
 main dt {
 	margin: .625em 0 -.125em;
 }
@@ -402,6 +399,7 @@ footer.site .screen::before {
 @media (max-width: 37.47em) {
 	.narrative {
 		min-height: 150vw;
+		padding-top: 3em;
 	}
 	footer,
 	nav {
@@ -454,11 +452,11 @@ footer.site .screen::before {
 	}
  	main dt {
 		position: absolute;
-		width: 7.5em;
+		width: 9em;
 		margin: 0;
 	}
 	main dd {
-		padding-left: 8em;
+		padding-left: 10em;
 	}
 	td.col-compare,
 	td.col-reach {

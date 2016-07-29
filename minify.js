@@ -9,7 +9,6 @@ metalsmith(__dirname)
 	.source("assets")
 	.destination("public")
 	.use(ignore([
-		"img/icon-*.svg",
 		"img/*.max.*"
 	]))
 	.use(minifyJs())
