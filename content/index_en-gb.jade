@@ -1,0 +1,131 @@
+---
+title: FinTech Innovation Consulting from Finnoconsult
+heading: About us
+description: Innovation consulting for financial services companies (banking and insurance industry).
+layout: landing.jade
+--- 
+
+- var finnofy = function (text) { var replacement = "Finno".replace(/n/g, "<span class=\"nn\">n</span>"); return text.replace("Finno", replacement); }
+.narrative
+	p.motto
+		strong
+			del You could
+				br
+			del You should
+				br
+			del You need to
+				br
+			ins We do!
+	p.news.screen
+		span.print April 2016: 
+		a.invert(href="https://finnoscore.finnoconsult.at/")
+			b FinnoScore
+			b  is online!
+section.narrative#orientation(data-rsg=".3")
+	.bubble.bubble-xl
+		h2 Our world
+		p While banks and insurance companies are increasingly being confronted with the challenges of the digital transformation, #[b new players] are adopting innovative business models and establishing #[b new rules] in the process.
+		p #[b Finnoconsult is at home in this world of digital transformation.] We provide guidance to our customers, reveal hidden opportunities, find and discover solutions and implement them together.
+	.bubble.bubble-breakout
+		h2 Our advantage 
+		p.math
+			strong Vast experience 
+			strong #[abbr(title="combined with") +] a wealth of ideas 
+			strong #[abbr(title="equals") =] Finnoconsult
+				span.print .
+section.narrative#experience(data-rsg=".6")
+	h2 Our experience
+	h3.print Christian Berger
+	p
+		img.bubble-photo(src="/img/photo-christianberger.jpg", alt="Photo of Christian Berger")
+		br.screen
+		b Christian Berger
+		|  has worked in banks for 25&nbsp;years and brings many years of management experience in retail sales, product management, cooperation agreements and #[abbr(title="information technology") IT] with him. Before co-founding #[strong Finnoconsult], Chris was CEO at innovation lab BeeOne in the Erste&nbsp;Group until 2015. The keen yachtsman and pioneer in the fintech and insurtech scene is valued as a prudent strategist, constructive sparring partner and rigorous implementation expert.
+	h3.print Martin Schachinger
+	p 
+		img.bubble-photo(src="/img/photo-martinschachinger.jpg", alt="Photo of Martin Schachinger")
+		br.screen
+		b Martin Schachinger
+		|  worked in banks and insurance companies for 15&nbsp; years. Before that, he worked as an #[abbr(title="Informationstechnologie") IT] developer and consultant for over a decade. Martin worked as a company rep at BeeOne before co-founding #[strong Finnoconsult]. Martin is a keen entrepreneur and nature lover and runs a riding stable. He is valued as an unconventional thinker with a scientific and practical background.
+section.narrative#activation(data-rsg=".7")
+	h2 Our approach
+	p
+		b New technologies and channels provide new opportunities and can help shape companies. 
+		| We understand financial technology as a business of ideas in a global market. As experts with an extraordinary wealth of experience we offer innovative financial advice and assistance with implementation:
+	ul.bubbles
+		li.bubble #[b We help corporate boards] better understand the effects of the digital transformation on their companies.
+		li.bubble #[b We help companies] change in a way that enables innovation more rapidly and effectively than was previously possible.
+		li.bubble #[b We help with establishing] innovative digital services and flexible processes and structures.
+section.narrative.invert#engagement(data-rsg=".4")
+	h2 Ready, Set, Go!
+	section
+		h3!= " " + finnofy("FinnoScore")
+		p #[a(href="https://finnoscore.finnoconsult.at/") #[b FinnoScore]] provides you with information on how your company is performing in a world of digital and mobile competition.
+		p The #[b FinnoScore] results are based on information that is available publically. The tangible and objective digital innovative impact of a financial service provider is assessed externally based on 300 different criteria. We provide an objective and independent site assessment, free of charge and from the point of view of customers.
+	section
+		h3!= " " + finnofy("FinnoPretation")
+		p We explain the results to our customers in #[b FinnoPretation] workshops, reconcile the innovative potential with existing strategies and present concrete project proposals and immediate actions to you on how to improve your bank in relation to the digital competition in a targeted manner.
+		p Using our extensive analysis of 160 banks in Europe and North America we are able to access the best practices of many banks and thereby clearly and rapidly delineate those areas of activity for future development with our customers.	section
+		h3!= " " + finnofy("FinnoProject")
+		p We are able to implement a #[b FinnoProject] with you as a pilot from the design stage through to market launch of an innovation. Based on the experiences gathered from the pilot project, we provide you with a model for digital innovation and transformation customised for your company. Rapid and targeted efficiency improvements by utilising lessons already learned, so to speak.
+section.narrative#realization(data-rsg=".4")
+	h2(data-title="Service packages") FinnoPretation - service packages
+	p We provide four service packages aimed at explaining the #[strong FinnoScore] results, comparision data and best practices to you in detail and at deriving recommendations for action.
+	figure.packages
+		figcaption.print Scope & price per&nbsp;package
+		table
+			thead
+				- var thc = ["col-name", "col-compare", "col-reach", "col-price"] 
+				- var tht = ["Package", "Reference group", "Scope", "Price"] 
+				tr
+					th.print(scope="col", class=thc[0])= tht[0]
+					th(scope="col", class=thc[1])= tht[1]
+						sup.print#ref-note-1
+							a(href="#note-1") [1]
+					th(scope="col", class=thc[2])= tht[2]
+					th(scope="col", class=thc[3])
+						b= tht[3]
+			tbody
+				tr.package
+					th(scope="row", class=thc[0])!= finnofy("FinnoScore") + " DOMESTIC"
+					td(class=thc[1], data-col=tht[1]) exclusively banks
+					td(class=thc[2], data-col=tht[2]) restricted to a country
+					td(class=thc[3], data-col=tht[3]) EUR #[data.price(value=6000) 6,000]
+				tr.package
+					th(scope="row", class=thc[0])!= finnofy("FinnoScore") + " EUROPE"
+					td(class=thc[1], data-col=tht[1]) exclusively banks
+					td(class=thc[2], data-col=tht[2]) Europe-wide
+					td(class=thc[3], data-col=tht[3]) EUR #[data.price(value=8000) 8,000]
+				tr.package
+					th(scope="row", class=thc[0])!= finnofy("FinnoScore") + " GLOBAL"
+					td(class=thc[1], data-col=tht[1]) #[span(lang="en") Cross-industry]#[br](banks, telcos, retailers, eCommerce, media, etc.)
+					td(class=thc[2], data-col=tht[2]) global
+					td(class=thc[3], data-col=tht[3]) EUR #[data.price(value=12000) 12,000]
+				tr.package
+					th(scope="row", class=thc[0])!= finnofy("FinnoScore") + " GROUP"
+					td(class=thc[1], data-col="Information", colspan="2") Workshops can be individually adapted to the size of the banking group
+					td(class=thc[3], data-col="Discount") Discount#[br]for 3-10 banks: #[span.discount 20%]#[br]for > 10 banks: #[span.discount 30%]
+		p.notes.print
+				small
+					a(id="note-1", href="#ref-note-1") 1)
+					|  for comparision data and best practices
+	figure.options
+		figcaption.print Supplementary options per package
+		ol
+			li.option
+				h4
+					strong Supplementary option&nbsp;1
+					br
+					| Trend- & Opportunity Exploration
+				ul
+					li Referencing for defined topic areas on the latest megatrends.
+					li Development of opportunities and of a model for ongoing structured trend monitoring.
+				p #[b Price:] priced individually based on the number of topics involved.
+			li.option
+				h4
+					strong Supplementary option&nbsp;2
+					br
+					span(lang="en") Solution Scouting & Evaluation
+				ul
+					li Screening and rough evaluation of solution options and providers for specific topics and desired solutions.
+				p #[b Price:] priced individually based on the number of topics involved.

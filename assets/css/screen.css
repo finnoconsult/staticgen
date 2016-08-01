@@ -106,7 +106,7 @@ a[href="#navigation"]::after {
 	overflow: hidden;
 	position: relative;
 	min-height: 100vh;
-	padding: 5em 2rem;
+	padding: 4.5em 2rem 5.5em;
 	background: #f2f4f6;
 	background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #f2f4f6;
 	background-size: cover;
@@ -304,6 +304,7 @@ div.narrative {
 	margin: .25em 0;
 	padding-left: 1em;
 	font-size: 150%;
+	white-space: nowrap;
 }
 .math strong:last-child {
 	padding-top: .25em;
@@ -379,15 +380,19 @@ form .form-action {
 }
 
 footer.site {
-	padding-top: 1.25em;
-	padding-bottom: 1.25em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
-footer.site .screen::before {
-	content: "•";
+.footer-segment {
 	display: inline-block;
-	width: 2em;
-	margin-right: -.5ex;
-	text-align: center;
+	line-height: 2;
+}
+.footer-link::before {
+	content: "\a0";
+	display: inline-block;
+	margin: 0 1ex;
+	border-right: 1px solid #ccd2dc;
+	line-height: .5;
 }
 
 @media (max-width: 19.97em) {
@@ -399,14 +404,13 @@ footer.site .screen::before {
 @media (max-width: 37.47em) {
 	.narrative {
 		min-height: 150vw;
-		padding-top: 3em;
 	}
-	footer,
+	footer.site,
 	nav {
 		text-align: center;
 	}
 	nav {
-		min-height: 75vh;
+		min-height: calc(80vh - 13em);
 	}
 	nav a {
 		display: block;
@@ -428,8 +432,24 @@ footer.site .screen::before {
 		font-size: small;
 		font-weight: 700;
 	}
+	.copyright,
+	.language {
+		display: block;
+		margin: 1em 0;
+	}
+	.copyright + .footer-link::before {
+		content: none;
+	}
 }
 @media (min-width: 37.5em) {
+	.legal {
+		position: relative;
+	}
+	.language {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 	header.site,
 	nav {
 		position: fixed;
@@ -452,11 +472,11 @@ footer.site .screen::before {
 	}
  	main dt {
 		position: absolute;
-		width: 9em;
+		width: 11em;
 		margin: 0;
 	}
 	main dd {
-		padding-left: 10em;
+		padding-left: 12em;
 	}
 	td.col-compare,
 	td.col-reach {
@@ -693,3 +713,53 @@ footer.site .screen::before {
 	}
 
 }
+
+[data-info] {
+	text-align: center;
+}
+[data-info]::before {
+	content: attr(data-info);
+	display: block;
+	font-size: 6em;
+}
+
+#region {
+	max-width: 14em;
+	margin: 3em auto;
+}
+#region li {
+	list-style-type: none;
+	padding: .5em 0;
+	white-space: nowrap;
+}
+#region a {
+	padding-left: 2.5em;
+	line-height: 2em;
+}
+#region a::before {
+	font-size: 1.5em;
+}
+
+[data-flag] {
+	position: relative;
+	padding-left: 1.75em;
+	white-space: nowrap;
+}
+[data-flag]::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 1.25em;
+	width: 1.25em;
+	margin-top: -.625em;
+	background: center no-repeat;
+	background-size: cover;
+	border: 1px solid #f2f4f6;
+	border-radius: 50%;
+}
+[data-flag="de-at"]::before { background-image: url(https://finnoscore.finnoconsult.at/img/flaggen/AT.jpg); }
+[data-flag="de-de"]::before { background-image: url(https://finnoscore.finnoconsult.at/img/flaggen/DE.jpg); }
+[data-flag="en-gb"]::before { background-image: url(https://finnoscore.finnoconsult.at/img/flaggen/UK.jpg); }
+[data-flag="en-us"]::before { background-image: url(https://finnoscore.finnoconsult.at/img/flaggen/US.jpg); }

@@ -1,0 +1,9 @@
+---
+title: Land und Sprache
+heading: Wählen Sie Land und Sprache
+---
+
+ul#region
+	each country in countries
+		li
+			a(data-flag=country.id, href=(country.default?"":"/"+country.id)+"/")= country.name

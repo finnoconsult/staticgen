@@ -1,9 +1,9 @@
 - var links = []
-- links.push({"url": "https://www.finnoconsult.at", "name": "Über uns"})
-- links.push({"url": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": "NEU!"})
-- links.push({"url": "https://www.finnoconsult.at/coming-soon", "name": "Blog", "note": "in Kürze"})
+- links.push({"domain": homepage, "url": linkTo(locale, "/"), "name": __("About us")})
+- links.push({"domain": "https://finnoscore.finnoconsult.at", "url": "https://finnoscore.finnoconsult.at", "name": "FinnoScore"})
+- links.push({"domain": "https://blog.finnoconsult.at", "url": linkTo(locale, "/coming-soon"), "name": __("Blog"), "note": __("coming soon")})
 nav.screen#navigation
 	hr
 	each link, separator in links
 		= separator ? " " : ""
-		a(class=(link.url===homepage)&&"active", data-note=link.note, href=link.url)= link.name
+		a(class=(link.domain===domain)&&"active", data-note=link.note, href=link.url)= link.name

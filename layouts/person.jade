@@ -17,27 +17,27 @@ block main
 		- var heading = heading || title
 		h1.fn.n= heading
 		p
-			img.photo.bubble-photo(src=photo, alt="Foto von "+heading)
+			img.photo.bubble-photo(src=photo, alt=__("Photo of ")+heading)
 		dl
 			dt.icon
 				img(data-inline, src="/img/icon-fa-user.svg")
-				|  Business Card
+				|  #{__("Business card")}
 			dd
 				- var linkPath = file.slice(0, -".html".length)
 				a.url.hide-link(href=homepage+linkPath)= homepage.split("/")[2] + "/" + linkPath
 			dt.icon
 				img(data-inline, src="/img/icon-fa-envelope.svg")
-				|  e-Mail
+				|  #{__("E-mail")}
 			dd.email
 				- var mp = email.replace("@", ".").split(".")
 				= " " + mp[0]
 				abbr(lang="en", title="at") &#64;
 				= mp[1]
-				abbr(title="Punkt") &#46;
+				abbr(title=__("dot")) &#46;
 				abbr= mp[2]
 			dt.icon
 				img(data-inline, src="/img/icon-fa-phone.svg")
-				|  Telefon
+				|  #{__("Phone")}
 			dd
 				- var pp = phone.split(" ")
 				a.tel(href="tel:"+pp.join(""))
@@ -57,7 +57,7 @@ block main
 		dl
 			dt.icon
 				img(data-inline, src="/img/icon-icomoon-office.svg")
-				|  Firmenanschrift
+				|  #{__("Company address")}
 			dd
 				b.org FInno Consult #[abbr GmbH]
 				.adr
@@ -65,6 +65,6 @@ block main
 					br
 					span.postal-code 1030
 					| &nbsp;
-					span.locality Wien
+					span.locality= __("Vienna")
 					br.print
-					span.country-name.print &Ouml;sterreich
+					span.country-name.print= __("Austria")

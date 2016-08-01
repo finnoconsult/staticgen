@@ -1,0 +1,61 @@
+---
+title: Legal notice
+description: Details about the company and legal notice.
+layout: extended.jade
+---
+
+section.narrative.invert
+	h2 Company details
+	dl.vcard
+		dt Company name
+		dd.fn.n.org FInno Consult #[abbr GmbH]
+		dt Address
+		dd.adr
+			a.hide-link(href="https://www.google.com/maps/place/Rasumofskygasse+26,+1030+Wien", title="Show in Google Maps")
+				span.street-address Rasumofskygasse&nbsp;26
+				br
+				span.postal-code 1030
+				| &nbsp;
+				span.locality Vienna
+				br.print
+				span.country-name.print Austria
+		dt= __("Phone")
+		dd.tel +43#[span.prefix 669]13507690
+		dt E-Mail
+		dd.email.hide-link info
+			abbr(title="at") &#64;
+			= homepage.split("/")[2].split(".").slice(-2)[0]
+			abbr(title="dot") &#46;
+			abbr= homepage.split("/")[2].split(".").pop()
+		dt Website
+		dd
+			a.url.hide-link(href=homepage)= homepage.split("/")[2]
+	dl
+		dt IBAN
+		dd AT35&nbsp;1515&nbsp;1042&nbsp;0107&nbsp;7650
+		dt BIC, SWIFT
+		dd OBKLAT2L (Oberbank Austria)
+	dl
+		dt VAT ID&nbsp;no.
+		dd ATU69201838
+		dt Company registry&nbsp;no.
+		dd 426099t
+		dt Registered office
+		dd Vienna
+		dt Place of jurisdiction
+		dd Commercial Court of Vienna
+section.narrative#legalese
+	h2.print Legal information
+	h3 Responsibility for content
+	p The media owner has sole responsibility for all content. Unless otherwise stated, the images and text presented on the website are protected by copyright. Any further public use is only permitted with the express permission of the media owner. This does not apply to official free of charge information and communications. To contact the media owner please use the #[a(href=linkTo(locale, "/contact")) contact form].
+	h3 Terms and conditions of usage
+	p The content of this website is freely available for use and is exclusively for information purposes. No legal transactions of any kind whatsoever are formed between the owner and the users as a result of exercising the selection options on the website. Any further steps between the providers and users and potential subsequent formation of orders between the providers and users are at the exclusive discretion of the users.
+	h3 Liability disclaimer
+	p In view of the technical properties of the Internet, no warranty can be accepted for the authenticity, accuracy or completeness of the information provided via the Internet. No warranty is accepted either for the availability or operation of this website and its contents. Any liability for direct, indirect or other damage, irrespective of the cause of this, that arises from the use or unavailability of the data and information on this website is excluded where permissible by law. The content of this website is protected by copyright. The information is designed solely for personal use. Any usage beyond this, in particular saving in databases, reproduction or any form of commercial usage as well as forwarding to third parties&thinsp;&mdash;&thinsp;including in sections or in a revised format&thinsp;&mdash;&thinsp;is prohibited without the consent of the website owner. Links to this website are welcome.
+	h3 Data protection
+	p Personal data entered onto our website will be processed in accordance with the Austrian Data Protection Act. However, the information offered may be used without entering personal data.
+	p Any use of contact data contained within the legal notice by third parties for sending promotional and informational materials that have not been expressly requested is hereby expressly prohibited. The operators of the website expressly reserve the right to instigate legal steps in the event that unsolicited promotional information is sent, e.g. in spam mail.
+	h3 Concept and design
+	p Concept and design by #[a(href="http://ulfharr.com/") Ulf Harr].
+	p Typography (#[a(href="https://www.google.com/fonts/specimen/Alegreya") Alegreya] and #[a(href="https://www.google.com/fonts/specimen/Alegreya+Sans") Alegreya Sans]) from Juan Pablo del&nbsp;Peral.
+	p Implementation by #[a(href="http://trinn.consulting/") TRINN Consulting GmbH].

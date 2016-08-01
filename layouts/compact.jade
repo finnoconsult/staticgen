@@ -1,7 +1,7 @@
 extends ./base.jade
 
 block main
-	main.narrative.invert
+	main.narrative(class=noindex&&"invert")
 		h1= heading || title
 		!= contents
 
