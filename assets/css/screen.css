@@ -295,7 +295,7 @@ div.narrative {
 	width: 100%;
 	max-width: none;
 	padding-top: 60%;
-	background: url(/img/we-do.gif) bottom center no-repeat;
+	background: url(/img/we-do.gif) center no-repeat;
 	background-size: 100% auto;
 }
 
@@ -390,7 +390,7 @@ footer.site {
 .footer-link::before {
 	content: "\a0";
 	display: inline-block;
-	margin: 0 1ex;
+	margin: 0 .75em;
 	border-right: 1px solid #ccd2dc;
 	line-height: .5;
 }
@@ -410,7 +410,7 @@ footer.site {
 		text-align: center;
 	}
 	nav {
-		min-height: calc(80vh - 13em);
+		min-height: 70vh;
 	}
 	nav a {
 		display: block;
@@ -432,9 +432,15 @@ footer.site {
 		font-size: small;
 		font-weight: 700;
 	}
+	.legal {
+		display: flex;
+		flex-flow: row wrap-reverse;
+		align-items: center;
+		justify-content: center;
+	}
 	.copyright,
 	.language {
-		display: block;
+		width: 100%;
 		margin: 1em 0;
 	}
 	.copyright + .footer-link::before {

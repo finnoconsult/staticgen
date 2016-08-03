@@ -3,4 +3,7 @@ title: Country and Language
 heading: Choose country and language
 ---
 
-p TODO
+ul#region
+	each country in countries
+		li
+			a(data-flag=country.id, href=(country.default?"":"/"+country.id)+"/")= country.name
