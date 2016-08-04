@@ -92,6 +92,7 @@ b,
 ins {
 	color: #00bd59;
 }
+footer.site,
 small,
 sup,
 code {
@@ -150,8 +151,7 @@ textarea {
 	min-width: 3em;
 }
 
-li.bubble,
-.legal {
+li.bubble {
 	margin: 0;
 }
 

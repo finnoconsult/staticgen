@@ -4,7 +4,7 @@
 	"Blog": "Blog",
 	"Menu": "Menu",
 	"coming soon": "coming soon",
-	"Legal notice": "Legal notice",
+	"Imprint": "Imprint",
 	"Contact": "Contact",
 	"How can we help you?": "How can we help you?",
 	"Your name": "Your name",
@@ -21,5 +21,6 @@
 	"Company address": "Company address",
 	"Phone": "Telephone",
 	"E-mail": "E-mail",
-	"dot": "dot"
+	"dot": "dot",
+	"Change country/language": "Change country/language"
 }

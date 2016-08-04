@@ -298,6 +298,9 @@ div.narrative {
 	background: url(/img/we-do.gif) center no-repeat;
 	background-size: 100% auto;
 }
+[lang^="en"] .motto strong {
+	background-image: url(/img/we-do_en.gif);
+}
 
 .math strong {
 	display: block;
@@ -387,12 +390,58 @@ footer.site {
 	display: inline-block;
 	line-height: 2;
 }
-.footer-link::before {
-	content: "\a0";
-	display: inline-block;
-	margin: 0 .75em;
-	border-right: 1px solid #ccd2dc;
-	line-height: .5;
+.legal .footer-segment {
+	margin-left: 4ex;
+}
+.language {
+	position: relative;
+}
+.language-all {
+	display: block;
+	position: absolute;
+	z-index: 5;
+	right: 50%;
+	bottom: 100%;
+	width: 16em;
+	margin: 0 -8em .375em 0;
+	padding: 1.5em;
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0,0,0,.5);
+	font-size: inherit;
+	text-align: left;
+	transform: scale(0);
+	transform-origin: 50% 100%;
+	transition: transform .25s ease;
+}
+.language-all::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	height: 1em;
+	width: 1em;
+	margin: 0 0 -.5em -.5em;
+	background: #fff;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+	transform: rotate(45deg);
+	transform-origin: center;
+}
+.language:focus .language-all,
+.language:hover .language-all {
+	transform: scale(1);
+}
+.language-all b {
+	display: block;
+	margin-bottom: 1em;
+	color: inherit;
+	text-align: center;
+}
+.language-all .footer-segment {
+	margin-top: .5em;
+}
+.language-all .footer-segment::after {
+	content: "\0a";
+	white-space: pre;
 }
 
 @media (max-width: 19.97em) {
@@ -432,29 +481,23 @@ footer.site {
 		font-size: small;
 		font-weight: 700;
 	}
-	.legal {
-		display: flex;
-		flex-flow: row wrap-reverse;
-		align-items: center;
-		justify-content: center;
-	}
-	.copyright,
-	.language {
-		width: 100%;
+	div.footer-segment {
+		display: block;
 		margin: 1em 0;
 	}
-	.copyright + .footer-link::before {
-		content: none;
+	.legal .footer-segment:first-child {
+		margin-left: 0;
 	}
 }
 @media (min-width: 37.5em) {
-	.legal {
-		position: relative;
+	.copyright {
+		float: left;
 	}
 	.language {
-		position: absolute;
-		top: 0;
-		right: 0;
+		float: right;
+	}
+	.language-all {
+		right: 8em;
 	}
 	header.site,
 	nav {
@@ -757,7 +800,7 @@ footer.site {
 	position: absolute;
 	top: 50%;
 	left: 0;
-	height: 1.25em;
+	height: 1.1875em;
 	width: 1.25em;
 	margin-top: -.625em;
 	background: center no-repeat;
