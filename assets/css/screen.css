@@ -575,6 +575,9 @@ footer.site {
 	.options ul {
 		min-height: 7em;
 	}
+	.cookies th:nth-child(odd) {
+		width: 10em;
+	}
 }
 
 @media (min-width: 48em) and (max-width: 63.97em) {
@@ -614,6 +617,9 @@ footer.site {
 		margin: -1px;
 		padding: 0;
 		border: 0;
+	}
+	tr + tr {
+		margin-top: 1em;
 	}
 	td[data-col] {
 		position: relative;

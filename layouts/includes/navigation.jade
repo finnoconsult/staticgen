@@ -1,6 +1,6 @@
 - var links = []
 - links.push({"domain": homepage, "url": linkTo(locale, "/"), "name": __("About us")})
-- links.push({"domain": "https://finnoscore.finnoconsult.at", "url": "https://finnoscore.finnoconsult.at", "name": "FinnoScore"})
+- links.push({"domain": "https://finnoscore.finnoconsult.at", "url": locale.indexOf("de") === 0 ? "https://finnoscore.finnoconsult.at" : linkTo(locale, "/coming-soon"), "name": "FinnoScore"})
 - links.push({"domain": "https://blog.finnoconsult.at", "url": linkTo(locale, "/coming-soon"), "name": __("Blog"), "note": __("coming soon")})
 nav.screen#navigation
 	hr

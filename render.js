@@ -17,6 +17,7 @@ metalsmith(__dirname)
 	.destination("public")
 	.use(assign({
 		linkTo: function (locale, path) { return absoluteUrl + (locale === config.defaultLocale ? "" : "/" + locale) + path; },
+		domain: config.domain,
 		homepage: config.homepage,
 		countries: config.countries
 	}))

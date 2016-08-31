@@ -61,6 +61,14 @@ function getDefaultPath (file) {
 	basePath.name = basePath.name.split(DELIMITER)[0];
 	delete basePath.ext;
 	delete basePath.base;
+	if (basePath.name === "index") {
+		basePath.name = "";
+		if (basePath.dir) {
+			var cdParent = basePath.dir.split(path.sep);
+			basePath.name = cdParent.pop();
+			basePath.dir = cdParent.join(path.sep);
+		}
+	}
 	basePath = "/" + path.format(basePath).replace(/\\/g, "/");
 	return basePath;
 }
