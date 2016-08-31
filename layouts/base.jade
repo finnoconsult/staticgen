@@ -26,6 +26,7 @@ html.no-js(lang=locale)
 		script(data-inline, src="/js/loadJS.js")
 		if noindex
 			meta(name="robots", content="noindex,follow")
+		link(rel="canonical", href=homepage+"/"+path)
 
 	body
 		include includes/header

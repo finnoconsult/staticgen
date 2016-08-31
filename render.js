@@ -7,7 +7,7 @@ var permalinkLocale = require("./plugins/permalink-locale.js");
 var inlineSource = require("./plugins/inline-source.js");
 var assign = require("./plugins/assign.js");
 var trueName = require("./plugins/truename.js");
-
+var canonical = require("./plugins/canonical.js");
 var config = require("./config.js");
 var absoluteUrl = config.domain === config.homepage ? "" : config.homepage;
 
@@ -35,6 +35,7 @@ metalsmith(__dirname)
 		locales: config.locales,
 		directory: "locales"
 	}))
+	.use(canonical())
 	.use(contentParser({
 		useMetadata: true
 	}))

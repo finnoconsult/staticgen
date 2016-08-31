@@ -23,14 +23,13 @@ block main
 				img(data-inline, src="/img/icon-fa-user.svg")
 				|  #{__("Business card")}
 			dd
-				- var linkPath = file.slice(0, -".html".length)
-				a.url.hide-link(href=homepage+linkPath)= homepage.split("/")[2] + "/" + linkPath
+				a.url.hide-link(href=homepage+path)= homepage.split("/")[2] + "/" + path
 			dt.icon
 				img(data-inline, src="/img/icon-fa-envelope.svg")
 				|  #{__("E-mail")}
 			dd.email
 				- var mp = email.replace("@", ".").split(".")
-				= " " + mp[0]
+				= mp[0]
 				abbr(lang="en", title="at") &#64;
 				= mp[1]
 				abbr(title=__("dot")) &#46;
@@ -40,8 +39,7 @@ block main
 				|  #{__("Phone")}
 			dd
 				- var pp = phone.split(" ")
-				a.tel(href="tel:"+pp.join(""))
-					|  #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
+				a.tel(href="tel:"+pp.join("")) #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
 		if social
 			dl
 				each elsewhere in social
@@ -68,3 +66,6 @@ block main
 					span.locality= __("Vienna")
 					br.print
 					span.country-name.print= __("Austria")
+
+block scripts
+	script(data-inline, src="/js/mailto.js")
