@@ -1,11 +1,11 @@
 {
-  "name": "website",
-  "version": "0.3.0",
-  "homepage": "https://www.finnoconsult.at",
+  "name": "staticgen",
+  "version": "1.0.0",
+  "homepage": "https://blueprint.finnoconsult.at",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/finnoconsult/website.git"
+    "url": "https://github.com/finnoconsult/staticgen.git"
   },
   "scripts": {
     "prebuild": "node minify.js",

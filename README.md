@@ -1,5 +1,5 @@
-# Company website
+# Site generator
 
-Website of FInno Consult GmbH.
+Static site generator for the Finnoconsult website and the Finnoblog.
 
 Copyright 2016.

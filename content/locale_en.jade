@@ -1,9 +1,0 @@
----
-title: Country and Language
-heading: Choose country and language
----
-
-ul#region
-	each country in countries
-		li
-			a(data-flag=country.id, href=(country.default?"":"/"+country.id)+"/")= country.name

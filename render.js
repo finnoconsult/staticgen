@@ -4,17 +4,19 @@ var layouts = require("metalsmith-layouts");
 var i18n = require("metalsmith-i18n");
 var propagateLocale = require("./plugins/propagate-locale.js");
 var permalinkLocale = require("./plugins/permalink-locale.js");
+var modifyJson = require("./plugins/modify-json.js");
 var inlineSource = require("./plugins/inline-source.js");
 var assign = require("./plugins/assign.js");
 var trueName = require("./plugins/truename.js");
 var canonical = require("./plugins/canonical.js");
+
 var config = require("./config.js");
 var absoluteUrl = config.domain === config.homepage ? "" : config.homepage;
 
-metalsmith(__dirname)
+metalsmith(config.folder.root)
 	.clean(false)
-	.source("content")
-	.destination("public")
+	.source(config.folder.content)
+	.destination(config.folder.public)
 	.use(assign({
 		linkTo: function (locale, path) { return absoluteUrl + (locale === config.defaultLocale ? "" : "/" + locale) + path; },
 		domain: config.domain,
@@ -23,19 +25,24 @@ metalsmith(__dirname)
 	}))
 	.use(trueName())
 	.use(propagateLocale({
-		files: ["**/*.jade"],
+		files: ["**/*.jade", "manifest.json"],
 		locales: config.locales
 	}))
 	.use(permalinkLocale({
-		files: ["**/*.jade"],
+		files: ["**/*.jade", "manifest_*.json"],
+		default: config.defaultLocale
+	}))
+	.use(modifyJson({
 		default: config.defaultLocale
 	}))
 	.use(i18n({
 		default: config.defaultLocale,
 		locales: config.locales,
-		directory: "locales"
+		directory: config.folder.locales
 	}))
-	.use(canonical())
+	.use(canonical({
+		files: ["**/*.jade"]
+	}))
 	.use(contentParser({
 		useMetadata: true
 	}))
@@ -45,7 +52,7 @@ metalsmith(__dirname)
 		pattern: "**/*.html"
 	}))
 	.use(inlineSource({
-		source: "public",
+		source: config.folder.public,
 		attribute: "data-inline",
 		compress: false
 	}))
