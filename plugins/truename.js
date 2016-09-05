@@ -14,7 +14,7 @@ function plugin (opts) {
 	return function (files, metalsmith, done) {
 		for (var file in files) {
 			var replacement = files[file][opts.property];
-			if (replacement) {
+			if (replacement && replacement !== file) {
 				files[replacement] = files[file];
 				delete files[file];
 			}

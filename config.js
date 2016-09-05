@@ -10,10 +10,11 @@ process.argv.slice(2).forEach(function (arg) {
 	} else {
 		home = path.join(__dirname, arg);
 	}
-}); 
+});
 
 var pkg = require(path.join(home, "package.json"));
 var locales = require(path.join(home, "content/locales.json"));
+var defaultLocale = locales.filter(function (locale) { return locale.default; })[0].id;
 
 module.exports = {
 	folder: {
@@ -24,9 +25,12 @@ module.exports = {
 		locales: path.join(__dirname, "locales"),
 		public: path.join(__dirname, "public")
 	},
-	domain: process.env.DOMAIN || pkg.homepage,
+	homepageCentral: "https://www.finnoconsult.at",
 	homepage: pkg.homepage,
-	defaultLocale: locales.filter(function (locale) { return locale.default; })[0].id,
+	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
-	countries: locales
+	countries: locales,
+	linkTo: function (locale, path, crossdomain) {
+		return (crossdomain || "") + (locale === defaultLocale ? "" : "/" + locale) + path;
+	}
 };

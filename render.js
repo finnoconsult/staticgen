@@ -1,5 +1,6 @@
 var metalsmith = require("metalsmith");
-var contentParser = require("metalsmith-jade");
+var contentParserJade = require("metalsmith-jade");
+var contentParserMarkdown = require("metalsmith-markdown");
 var layouts = require("metalsmith-layouts");
 var i18n = require("metalsmith-i18n");
 var propagateLocale = require("./plugins/propagate-locale.js");
@@ -11,15 +12,14 @@ var trueName = require("./plugins/truename.js");
 var canonical = require("./plugins/canonical.js");
 
 var config = require("./config.js");
-var absoluteUrl = config.domain === config.homepage ? "" : config.homepage;
 
 metalsmith(config.folder.root)
 	.clean(false)
 	.source(config.folder.content)
 	.destination(config.folder.public)
 	.use(assign({
-		linkTo: function (locale, path) { return absoluteUrl + (locale === config.defaultLocale ? "" : "/" + locale) + path; },
-		domain: config.domain,
+		linkTo: config.linkTo,
+		homepageCentral: config.homepage === config.homepageCentral ? null : config.homepageCentral,
 		homepage: config.homepage,
 		countries: config.countries
 	}))
@@ -41,14 +41,17 @@ metalsmith(config.folder.root)
 		directory: config.folder.locales
 	}))
 	.use(canonical({
-		files: ["**/*.jade"]
+		files: ["**/*.jade", "**/*.md"]
 	}))
-	.use(contentParser({
+	.use(contentParserMarkdown({
+		useMetadata: true
+	}))
+	.use(contentParserJade({
 		useMetadata: true
 	}))
 	.use(layouts({
 		engine: "jade",
-		default: "compact.jade",
+		default: "blogpost.jade",
 		pattern: "**/*.html"
 	}))
 	.use(inlineSource({

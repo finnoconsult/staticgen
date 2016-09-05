@@ -37,8 +37,9 @@ button {
 }
 
 h1,
-h2 {
-	margin: .75em 0;
+main .narrative h2 {
+	max-width: none;
+	margin-bottom: 1.5em;
 	font-size: 200%;
 	text-align: center;
 }
@@ -106,7 +107,7 @@ a[href="#navigation"]::after {
 	overflow: hidden;
 	position: relative;
 	min-height: 100vh;
-	padding: 4.5em 2rem 5.5em;
+	padding: 4em 2rem 6em;
 	background: #f2f4f6;
 	background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #f2f4f6;
 	background-size: cover;
@@ -165,7 +166,7 @@ aside#contact {
 	color: #fff;
 }
 
-a.slide {
+.slide-link {
 	display: block;
 	position: absolute;
 	left: 50%;
@@ -179,8 +180,8 @@ a.slide {
 	text-align: center;
 	animation: slide 9s linear infinite;
 }
-.slide:focus,
-.slide:hover {
+.slide-link:focus,
+.slide-link:hover {
 	box-shadow: none;
 }
 
@@ -211,9 +212,6 @@ a.slide {
 	margin: 2em auto 0;
 	background: #fff;
 	border-radius: 50%;
-}
-.bubble h2 {
-	margin-top: 0;
 }
 .bubbles {
 	margin: 3em -1em 0;
@@ -248,30 +246,32 @@ li.bubble::after {
 	margin: 5em auto;
 }
 .bubble-xl h2 {
-	margin-top: -.75em;
+	margin: -1em 0 .75em;
 }
 
 .bubble-breakout {
 	margin-top: 14em;
-	padding-top: 1.75em;
+	padding-top: 1.5em;
 }
 .bubble-breakout h2 {
 	position: absolute;
 	right: 0;
 	bottom: 100%;
 	left: 0;
-	height: 2em;
 	color: #fff;
 }
 
-main dl,
+.post h1,
+main h2,
 main h3,
+main dl,
 main p {
 	max-width: 36rem;
 	margin-right: auto;
 	margin-left: auto;
+	text-align: inherit;
 }
-F
+
 main dt {
 	margin: .625em 0 -.125em;
 }
@@ -522,7 +522,7 @@ footer.site {
  	main dt {
 		position: absolute;
 		width: 11em;
-		margin: 0;
+		margin-top: .0625em;
 	}
 	main dd {
 		padding-left: 12em;

@@ -51,7 +51,13 @@ h1,
 h2,
 h3 {
 	font-size: 150%;
-	margin: 1em 0;
+	margin: 1.5em 0 .75em;
+}
+h1,
+h2,
+h3,
+figure {
+	line-height: 1.25;
 }
 .logo,
 h1,
@@ -62,13 +68,20 @@ table,
 dt,
 label,
 .button,
-a.slide,
+main a,
 em,
 strong,
 b {
 	font-family: "Alegreya Sans", sans-serif;
 	font-weight: 700;
-	line-height: 1.25;
+}
+.hide-link {
+	color: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+}
+.slide-link {
+	color: inherit;
 }
 figure,
 td {
@@ -88,6 +101,7 @@ table {
 	border-spacing: 0;
 }
 em,
+main a,
 b,
 ins {
 	color: #00bd59;

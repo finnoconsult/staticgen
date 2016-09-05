@@ -1,9 +1,9 @@
 - var links = []
-- links.push({"domain": homepage, "url": linkTo(locale, "/"), "name": __("About us")})
-- links.push({"domain": "https://finnoscore.finnoconsult.at", "url": locale.indexOf("de") === 0 ? "https://finnoscore.finnoconsult.at" : linkTo(locale, "/coming-soon"), "name": "FinnoScore"})
-- links.push({"domain": "https://blog.finnoconsult.at", "url": linkTo(locale, "/coming-soon"), "name": __("Blog"), "note": __("coming soon")})
+- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us")})
+- links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore"})
+- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("new")})
 nav.screen#navigation
 	hr
 	each link, separator in links
 		= separator ? " " : ""
-		a(class=(link.domain===domain)&&"active", data-note=link.note, href=link.url)= link.name
+		a(class=(link.homepage===homepage)&&"active", data-note=link.note, href=linkTo(locale, "/", link.homepage===homepage?null:link.homepage))= link.name

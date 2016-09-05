@@ -15,6 +15,10 @@ main {
 	padding-right: 40mm;
 }
 
+main a {
+	color: inherit;
+}
+
 .logo {
 	font-size: 133%;
 	color: inherit;
@@ -58,7 +62,6 @@ h3 {
 }
 
 h3 {
-	margin-top: 2em;
 	font-size: 125%;
 }
 
@@ -69,7 +72,7 @@ dl {
 dt {
 	position: absolute;
 	width: 33mm;
-	margin: 2mm 0 0;
+	margin: 2.5mm 0 0;
 }
 dd {
 	margin: 0;
@@ -135,8 +138,8 @@ aside#contact,
 	}
 }
 
-.narrative {
-	padding-bottom: 7mm;
+footer.site {
+	padding-top: 9mm;
 }
 footer.site::after {
 	content: "";

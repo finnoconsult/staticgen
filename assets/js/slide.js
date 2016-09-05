@@ -7,7 +7,7 @@ ctm(function (document) {
 				if (element.id) {
 					var anchor = document.createElement("a");
 					anchor.href = "#" + element.id;
-					anchor.className = "slide screen";
+					anchor.className = "slide-link screen";
 					anchor.setAttribute("data-scroll", "");
 					var heading = element.querySelector("h2");
 					anchor.textContent = heading.getAttribute("data-title") || heading.textContent;

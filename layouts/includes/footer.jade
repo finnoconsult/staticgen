@@ -1,18 +1,19 @@
 footer.site
 	hr
-	.footer-segment.language.screen
-		- var localeDetails = countries.filter(function (country) { return country.id === locale; })[0];
-		a.footer-segment.language-current(data-flag=localeDetails.id, href=linkTo(locale, "/locale"))= localeDetails.name
-		small.language-all
-			span.print= " - "
-			b= __("Change country/language")
-				span.print= ": "
-			each country, sep in countries
-				if sep
-					span.print= ", "
-				a.footer-segment(rel="alternate", data-flag=country.id, lang=country.id, hreflang=country.id, href=linkTo(country.id, basePath))= country.name
+	if countries.length > 1
+		.footer-segment.language.screen
+			- var localeDetails = countries.filter(function (country) { return country.id === locale; })[0];
+			a.footer-segment.language-current(data-flag=localeDetails.id, href=linkTo(locale, "/locale"))= localeDetails.name
+			small.language-all
+				span.print= " - "
+				b= __("Change country/language")
+					span.print= ": "
+				each country, sep in countries
+					if sep
+						span.print= ", "
+					a.footer-segment(rel="alternate", data-flag=country.id, lang=country.id, hreflang=country.id, href=linkTo(country.id, basePath))= country.name
 	.footer-segment.legal.screen
-		a.footer-segment.footer-link(href=linkTo(locale, "/imprint"))= __("Imprint")
+		a.footer-segment.footer-link(href=linkTo(locale, "/imprint", homepageCentral))= __("Imprint")
 		= " "
 	.footer-segment.copyright
 		| &copy; 2016 Finnoconsult
