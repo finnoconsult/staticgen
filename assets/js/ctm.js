@@ -1,4 +1,4 @@
-/*! functionCutTheMustard: execute callback in "Mustard Cutting" browsers. (c)2016 @cssence, TRINN Consulting. License */
+/*! function cutTheMustard: execute callback in "Mustard Cutting" browsers. (c)2016 @cssence, TRINN Consulting. CC BY 4.0 */
 var ctm = (function (document, window) {
 	"use strict";
 	var makesTheCut = false;

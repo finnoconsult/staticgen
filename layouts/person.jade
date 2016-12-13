@@ -2,22 +2,25 @@ extends ./base.jade
 
 append styles
 	style(media="screen")
-		| .icon{display:inline-block;width:2rem;background:#fff;border-radius:50%;font-size:0;line-height:2rem;text-align:center}
-		| svg{width:1rem;height:1rem;vertical-align:middle}
-		| path{fill:#231f20}
-		| main dt{position:absolute}
-		| main dd{padding:.375em 0 .75em 3em;line-height:1.25;word-break:break-all}
-		| @media (min-width:24em){main dl{max-width:20em}}
-		| @media (min-width:31em){main dd{white-space:nowrap}}
-		| @media (min-width:64em){.photo{position:absolute;right:50%;margin-right:5em}main dl{margin:3.5em 0 0 calc(50% - 1em)}}
-	style(media="print") svg{display:none}
+		| .icon{display:inline-block;width:2rem;background:#fff;border-radius:50%;font-size:0;line-height:2rem;text-align:center;}
+		| svg{width:1rem;height:1rem;vertical-align:middle;}
+		| path{fill:#231f20;}
+		| main dt{position:absolute;}
+		| main dd{padding:.375em 0 .75em 3em;line-height:1.25;word-break:break-all;}
+		| @media (min-width:24em){main dl{max-width:20em;}}
+		| @media (min-width:31em){main dd{white-space:nowrap;}}
+		| @media (min-width:64em){.bubble-photo{position:absolute;right:50%;margin-right:5em;}main dl{margin:3.5em 0 0 calc(50% - 1em);}}
+		| #qr{background-position:center;background-repeat:no-repeat;background-size:50%;}
+		| #qr .photo{transition:opacity .4s ease-in-out;}#qr.toggle .photo{opacity:0;}
+	style(media="print") svg{display:none;}
 
 block main
 	main.narrative.invert.vcard
 		- var heading = heading || title
 		h1.fn.n= heading
 		p
-			img.photo.bubble-photo(src=photo, alt=__("Photo of ")+heading)
+			a#qr.bubble-photo.hide-link(href=qrcode)
+				img.photo(src=photo, alt=__("Photo of ")+heading)
 		dl
 			dt.icon
 				img(data-inline, src="/img/icon-fa-user.svg")
@@ -27,7 +30,7 @@ block main
 			dt.icon
 				img(data-inline, src="/img/icon-fa-envelope.svg")
 				|  #{__("E-mail")}
-			dd.email
+			dd.email.hide-link
 				- var mp = email.replace("@", ".").split(".")
 				= mp[0]
 				abbr(lang="en", title="at") &#64;
@@ -39,7 +42,7 @@ block main
 				|  #{__("Phone")}
 			dd
 				- var pp = phone.split(" ")
-				a.tel(href="tel:"+pp.join("")) #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
+				a.tel.hide-link(href="tel:"+pp.join("")) #{pp[0]}#[span.prefix= pp[1]]#{pp[2]}
 		if social
 			dl
 				each elsewhere in social
@@ -50,7 +53,7 @@ block main
 							img(data-inline, src="/img/icon-fa-xing.svg")
 						= " " + elsewhere.name
 					dd
-						a(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
+						a.hide-link(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
 
 		dl
 			dt.icon
@@ -69,3 +72,4 @@ block main
 
 block scripts
 	script(data-inline, src="/js/mailto.js")
+	script(data-inline, src="/js/qrcode.js")

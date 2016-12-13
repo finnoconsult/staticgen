@@ -206,11 +206,14 @@ aside#contact {
 	border-width: 1px 0;
 }
 .bubble-photo {
-	display: block;
 	max-width: 67%;
 	width: 15em;
 	margin: 2em auto 0;
 	background: #fff;
+}
+.bubble-photo,
+.bubble-photo img {
+	display: block;
 	border-radius: 50%;
 }
 .bubbles {
@@ -245,7 +248,7 @@ li.bubble::after {
 	width: 18em;
 	margin: 5em auto;
 }
-.bubble-xl h2 {
+.bubble-xl.bubble-xl h2 {
 	margin: -1em 0 .75em;
 }
 
@@ -807,7 +810,7 @@ footer.site {
 	top: 50%;
 	left: 0;
 	height: 1.1875em;
-	width: 1.25em;
+	width: 1.3125em;
 	margin-top: -.625em;
 	background: center no-repeat;
 	background-size: cover;

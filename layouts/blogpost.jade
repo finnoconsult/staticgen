@@ -4,8 +4,13 @@ block main
 	main.narrative.post
 		h1= heading || title
 		p.post-meta
-			span.avatar By 
+			small.avatar= __("By ")
 				a(href="#TODO")= author
-			span.time  on 
-				time.entry-date.published(datetime=created.toISOString())= 
+			small.time= __(" on ")
+				time.entry-date.published(datetime=created.toISOString())= created
+		p.post-teaser
+			img(src=media.hero, alt="")
 		!= contents
+
+		aside.sharing
+	

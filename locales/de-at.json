@@ -4,6 +4,7 @@
 	"Blog": "Blog",
 	"Menu": "Menü",
 	"new": "neu",
+	"updated": "aktualisiert",
 	"coming soon": "in Kürze",
 	"Imprint": "Impressum",
 	"Contact": "Kontakt",
@@ -23,5 +24,7 @@
 	"Phone": "Telefon",
 	"E-mail": "E-Mail",
 	"dot": "Punkt",
+	"By ": "Von ",
+	" on ": " am ",
 	"Change country/language": "Land/Sprache wechseln"
 }

@@ -1,9 +1,11 @@
 - var links = []
 - links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us")})
-- links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore"})
-- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("new")})
+- links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": __("updated")})
+- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("coming soon")})
 nav.screen#navigation
 	hr
 	each link, separator in links
 		= separator ? " " : ""
-		a(class=(link.homepage===homepage)&&"active", data-note=link.note, href=linkTo(locale, "/", link.homepage===homepage?null:link.homepage))= link.name
+		- var subDomainLink = linkTo(locale, "/", link.homepage===homepage?null:link.homepage)
+		- if (locale.indexOf("de") !== 0 || link.homepage.indexOf("blog") !== -1) { subDomainLink = linkTo(locale, "/coming-soon") } /* TODO remove */
+		a(class=(link.homepage===homepage)&&"active", data-note=link.note, href=subDomainLink)= link.name

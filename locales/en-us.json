@@ -4,6 +4,7 @@
 	"Blog": "Blog",
 	"Menu": "Menu",
 	"new": "new",
+	"updated": "updated",
 	"coming soon": "coming soon",
 	"Imprint": "Imprint",
 	"Contact": "Contact",
@@ -23,5 +24,7 @@
 	"Phone": "Phone",
 	"E-mail": "E-mail",
 	"dot": "dot",
+	"By ": "By ",
+	" on ": " on ",
 	"Change country/language": "Change country/language"
 }
