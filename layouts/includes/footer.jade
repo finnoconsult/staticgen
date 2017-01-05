@@ -12,8 +12,12 @@ footer.site
 					if sep
 						span.print= ", "
 					a.footer-segment(rel="alternate", data-flag=country.id, lang=country.id, hreflang=country.id, href=linkTo(country.id, basePath))= country.name
+	.footer-segment.twitter.screen
+		a.footer-segment.footer-link(href="https://twitter.com/finnoconsult")
+			abbr(title=__("@finnoconsult")) @finnoconsult
+		= " "
 	.footer-segment.legal.screen
 		a.footer-segment.footer-link(href=linkTo(locale, "/imprint", homepageCentral))= __("Imprint")
 		= " "
 	.footer-segment.copyright
-		| &copy; 2016 Finnoconsult
+		| &copy; 2017 Finnoconsult

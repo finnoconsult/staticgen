@@ -6,6 +6,7 @@
 	"new": "new",
 	"updated": "updated",
 	"coming soon": "coming soon",
+	"@finnoconsult": "Finnoconsult on Twitter",
 	"Imprint": "Imprint",
 	"Contact": "Contact",
 	"How can we help you?": "How can we help you?",
@@ -23,8 +24,6 @@
 	"Company address": "Company address",
 	"Phone": "Telephone",
 	"E-mail": "E-mail",
-	"dot": "dot",
-	"By ": "By ",
-	" on ": " on ",
-	"Change country/language": "Change country/language"
+	"Change country/language": "Change country/language",
+	"dot": "dot"
 }

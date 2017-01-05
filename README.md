@@ -2,4 +2,12 @@
 
 Static site generator for the Finnoconsult website and the Finnoblog.
 
-Copyright 2016.
+## Instructions
+
+```
+./build.sh
+```
+
+## Copyright
+
+© 2016-2017.
