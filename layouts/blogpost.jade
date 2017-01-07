@@ -1,16 +1,47 @@
 extends ./blog.jade
 
 block main
-	main.narrative.post
+	main.narrative.article
 		h1= heading || title
-		p.post-meta
-			small.avatar= __("By ")
-				a(href="#TODO")= author
-			small.time= __(" on ")
-				time.entry-date.published(datetime=created.toISOString())= created
 		p.post-teaser
 			img(src=media.hero, alt="")
+		p.created
+			span.print= __("Written by ")
+			a.avatar(href=linkTo(locale, "/author/" + urlify(author)))
+				if knownAuthors[author]
+					img(src=knownAuthors[author].photo, alt="", height=16, width=16)
+				= author
+			span.print= __(" on ")
+			time.entry-date.published(datetime=created.toISOString().split("T")[0])= moment(created).format("LL")
+			span.print= "."
 		!= contents
-
-		aside.sharing
-	
+		aside.extension.share#share
+			h2.print= __("Spread the word")
+			p
+				b.prelude= __("Share this article: ")
+				each platform, sep in sharingLinks
+					if sep
+						span.print= ", "
+					a.button(class="share-"+platform.id, href=platform.dispatch.replace(/\{\{text\}\}/g, encodeURIComponent(heading || title)).replace(/\{\{url\}\}/g, encodeURIComponent(homepage + path)))= __(platform.name)
+				span.print= "."
+		section.extension.tagged#tags
+			h2.print= __("About this article")
+			p
+				b.prelude= __("Tagged as: ")
+				each tag, sep in tags
+					if sep
+						span.print= ", "
+					a.button(href=linkTo(locale, "/tag/" + urlify(tag)))= tag
+				span.print= "."
+	aside.narrative.dense.invert
+		section.related-content#related
+			h2= __("You might also like")
+			ul.semantic-list
+				each relatedArticle in blog.filter(function (item) { return item.locale === locale /*&& item.path !== path*/; }).slice(0, 3)
+					li.article-teaser.vertical
+						a(href=relatedArticle.path)
+							img(src=relatedArticle.media.thumbnail, alt="")
+							br
+							time(datetime=relatedArticle.created.toISOString().split("T")[0])= moment(relatedArticle.created).format("LL")
+							br
+							strong= relatedArticle.title

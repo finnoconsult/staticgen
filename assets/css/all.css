@@ -69,6 +69,7 @@ dt,
 label,
 .button,
 main a,
+time,
 em,
 strong,
 b {
@@ -83,6 +84,7 @@ b {
 .slide-link {
 	color: inherit;
 }
+time,
 figure,
 td {
 	font-weight: 400;
@@ -92,7 +94,7 @@ td {
 	text-align: left;
 	vertical-align: top;
 }
-li {
+ul {
 	list-style-type: square;
 }
 table {

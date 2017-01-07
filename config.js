@@ -32,5 +32,24 @@ module.exports = {
 	countries: locales,
 	linkTo: function (locale, path, crossdomain) {
 		return (crossdomain || "") + (locale === defaultLocale ? "" : "/" + locale) + path;
+	},
+	urlify: function (text) {
+		text = text.toLowerCase();
+		var unsafe = {" ": "-", "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"};
+		Object.keys(unsafe).forEach(function (unsafeChar) {
+			var r = new RegExp(unsafeChar, "g");
+			text = text.replace(r, unsafe[unsafeChar]);
+		});
+		return text;
+	},
+	timify: function (text) {
+		
+		text = text.toLowerCase();
+		var unsafe = {" ": "-", "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"};
+		Object.keys(unsafe).forEach(function (unsafeChar) {
+			var r = new RegExp(unsafeChar, "g");
+			text = text.replace(r, unsafe[unsafeChar]);
+		});
+		return text;
 	}
 };

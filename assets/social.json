@@ -1,0 +1,6 @@
+[
+	{"id": "twitter", "name": "Twitter", "dispatch": "https://twitter.com/intent/tweet/?text={{text}}%20%23finnoblog&via=finnoconsult&url={{url}}"},
+	{"id": "email", "name": "Email", "dispatch": "mailto:?subject={{text}}&body={{url}}"},
+	{"id": "linkedin", "name": "LinkedIn", "dispatch": "https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{text}}&summary={{text}}&source={{url}}"},
+	{"id": "xing", "name": "XING", "dispatch": "https://www.xing.com/spi/shares/new?url={{url}}&follow_url={{url}}"}
+]

@@ -2,3 +2,23 @@ extends ./base.jade
 
 block title
 	title= title + " · FinnoBlog"
+
+append styles
+	link(rel="stylesheet", media="screen", href="/css/screen-blog.css")
+
+block main
+	main.narrative
+		h1= heading || title
+		ul.semantic-list
+			each selectedArticle in blog.filter(function (item) { return item.locale === locale; })
+				li.article-teaser.horizontal
+					img(src=selectedArticle.media.thumbnail, alt="")
+					br
+					time(datetime=selectedArticle.created.toISOString().split("T")[0])= moment(selectedArticle.created).format("LL")
+					br
+					strong= selectedArticle.title
+					br
+					= selectedArticle.description
+					br
+					a.button(href=selectedArticle.path)= __("Read article")
+
