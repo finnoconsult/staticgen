@@ -28,7 +28,8 @@ main a {
 div.narrative,
 #engagement h3,
 figcaption,
-img {
+img.bubble-photo,
+.bubble-photo img {
 	position: absolute;
 	right: 0;
 	min-height: 32mm;
@@ -37,9 +38,10 @@ img {
 	padding-left: 4mm;
 	border-left: 1px solid #00bd59;
 }
-img {
+img.bubble-photo,
+.bubble-photo img {
 	padding-left: 0;
-	min-height: 0;
+	height: 32mm;
 }
 
 div.narrative {
@@ -91,8 +93,7 @@ figure {
 	width: 160mm;
 }
 figcaption {
-	padding-top: 5mm;
-	color: #ccd2dc;
+	color: #00bd59;
 }
 @media (orientation: portrait) {
 	.packages figcaption {

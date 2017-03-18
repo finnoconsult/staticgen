@@ -266,6 +266,7 @@ li.bubble::after {
 
 main h2,
 main h3,
+main ul,
 main dl,
 main p {
 	max-width: 36rem;
@@ -273,7 +274,9 @@ main p {
 	margin-left: auto;
 	text-align: inherit;
 }
-
+main li {
+	margin: .3125em 0;
+}
 main dt {
 	margin: .625em 0 -.125em;
 }

@@ -5,20 +5,39 @@ block title
 
 append styles
 	link(rel="stylesheet", media="screen", href="/css/screen-blog.css")
+	style(media="print")
+		| .avatar img{position:absolute;right:16mm;height:16mm;width:16mm;margin-top:-4mm;border-left:1px solid #00bd59;}
+		| .article-teaser{margin-top:1.5em;margin-bottom:1.5em;}
+		| .article-teaser img,.article-teaser img+br{display:none;}
+		| .article-teaser a{font-family:inherit;font-weight:inherit;}
+		| [data-pq]::before{position:absolute;content:attr(data-pq);right:0;width:32mm;padding-left:4mm;border-left:1px solid #00bd59;color:#00bd59;font-family:"Alegreya Sans",sans-serif;font-weight:700;}
 
 block main
-	main.narrative
-		h1= heading || title
-		ul.semantic-list
-			each selectedArticle in blog.filter(function (item) { return item.locale === locale; })
-				li.article-teaser.horizontal
-					img(src=selectedArticle.media.thumbnail, alt="")
-					br
-					time(datetime=selectedArticle.created.toISOString().split("T")[0])= moment(selectedArticle.created).format("LL")
-					br
-					strong= selectedArticle.title
-					br
-					= selectedArticle.description
-					br
-					a.button(href=selectedArticle.path)= __("Read article")
-
+	main
+		section.narrative
+			h1= heading || title
+			ul.article-teaser-list
+				each selectedArticle in blog.filter(function (item) { return item.locale === locale && (author ? author === item.author : true) && (tag ? item.tags.indexOf(tag) !== -1 : true); })
+					li.article-teaser
+						a(href=selectedArticle.path, data-vital=__("Read article"))
+							img(src=selectedArticle.media.thumbnail, alt="", width=80, height=60)
+							br
+							time(datetime=selectedArticle.created.toISOString().split("T")[0])= moment(selectedArticle.created).format("LL")
+							br
+							strong= selectedArticle.heading || selectedArticle.title
+							br
+							span= selectedArticle.description
+		if author
+			section.narrative.dense.invert#about
+				h2.prelude= __("About the author")
+				p.avatar
+					b
+						if knownAuthors[author]
+							img(src=knownAuthors[author].photo, alt="", height=40, width=40)
+						= " " + author
+				!= contents
+		else
+			if basePath === "/"
+				section.narrative.dense.invert#about
+					h2.prelude= __("About the blog")
+					!= contents
