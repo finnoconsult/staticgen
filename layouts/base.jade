@@ -9,10 +9,11 @@ html.no-js(lang=locale)
 			title= title + " · Finnoconsult"
 		if description
 			meta(name="description", content=description)
-			meta(property="og:type", content="article")
-			meta(property="og:title", content="title")
+			meta(property="og:type", content=basePath === "/" ? "website" : "article")
+			meta(property="og:site_name", content=homepage.split("/")[2])
+			meta(property="og:title", content=heading || title)
 			meta(property="og:description", content=description)
-			meta(property="og:image", content=media ? media.thumbnail : homepageCentral+"/img/we-do.png")
+			meta(property="og:image", content=media ? media.thumbnail : (homepageCentral||homepage)+"/img/we-do.png")
 			meta(property="og:url", content=homepage+path)
 			meta(name="twitter:card", content="summary")
 		include includes/hreflang
