@@ -1,0 +1,168 @@
+em,
+main a,
+b,
+ins {
+	color: #0965bc;
+}
+
+a.logo {
+	width: 24em;
+	padding: 1em 0;
+	background: url("/img/innovacios/logo2.svg") center no-repeat;
+	background-size: contain;
+}
+
+a:focus,
+a:hover {
+	box-shadow: 0 -2px #0965bc inset;
+}
+
+.narrative {
+	background: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(9,101,188,0) 4em) center no-repeat #f2f4f6;
+	background-size: cover;
+}
+div.narrative {
+	background-color: #fff;
+}
+
+.invert {
+	background-color: #0965bc;
+}
+#orientation,
+.narrative.invert {
+	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, #0965bc 4em);
+}
+.narrative.invert *{
+	color: #dceaf7;
+}
+#orientation {
+	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, rgba(255,255,255,0) 4em), url(/img/innovacios/bg-shibuya.jpg);
+}
+#activation {
+	background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(9,101,188,0) 4em), url(/img/bg-bank.jpg);
+}
+aside#contact {
+	background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(255,255,255,0) 4em), linear-gradient(#f2f4f6 0, #fff 0, #f2f4f6 100%);
+}
+.narrative.invert::before {
+	background: linear-gradient(180deg, rgba(9,101,188,0) 50%, #0965bc 100%), linear-gradient(210deg, rgba(9,101,188,0) 0, #0965bc 50%), url(/img/strategy.svg) 0 -2.5em repeat, url(/img/strategy.svg) 2em .5em repeat;
+}
+
+li.bubble::after {
+	color: #0965bc;
+}
+.math abbr {
+	color: #0965bc;
+}
+.math strong:last-child  {
+	border: none;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.math strong:nth-child(3)  {
+  padding-top: .25em;
+  border-top: .125em solid currentColor;
+  margin-bottom: 0px;
+}
+.button {
+	background-color: #0965bc;
+	border: .125em solid #0965bc;
+}
+.button:focus,
+.button:hover {
+	color: #0965bc;
+}
+.invert .button:focus,
+.invert .button:hover {
+	color: #0965bc;
+}
+
+#experience .colleagues {
+	/*position: absolute;*/
+	left:0px;
+	margin: 0 2em;
+	display: flex;
+	flex-wrap: nowrap;
+	top: 11em;
+}
+@media (max-width: 52em) {
+	#experience .colleagues {
+		flex-wrap: wrap;
+	}
+}
+#experience .colleagues p {
+	/*flex: 33%;*/
+	padding: 0.5em;
+	text-align: justify;
+}
+
+
+
+[data-flag] {
+	padding-right: 0.75em;
+}
+[data-flag="hu-hu"]::before { background-image: url(https://finnoscore.finnoconsult.at/img/flaggen/HU.jpg); }
+
+
+
+li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult strong, li.bubble.finnoconsult::after{
+	color: #00bd59;
+}
+.bubble-xl {
+	text-align: justify;
+	width: 19rem;
+	height: 19rem;
+}
+.bubble-breakout {
+	width: 13em;
+	height: 13em;
+}
+
+@media (min-width: 48em) {
+	li.bubble.finnoconsult {
+		position: absolute;
+		right: 10%;
+	}
+}
+
+
+
+@media (max-width: 37.47em) {
+	nav a.active {
+		box-shadow: 3px 0 #0965bc inset;
+	}
+	nav a[data-note]::after {
+		color: #0965bc;
+	}
+}
+
+@media (min-width: 37.5em) {
+	nav a.active {
+		box-shadow: 0 -.25em #0965bc inset;
+	}
+  td.col-reach::before {
+		border: 0 solid #0965bc;
+	}
+}
+
+@media (min-width: 48em) {
+	#experience {
+		background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(255,255,255,0) 4em), linear-gradient(#f2f4f6 0, #f2f4f6 20em, #fff 20em);
+	}
+	#experience h2 {
+		min-height: auto;
+	}
+	#experience p, #experience p:nth-of-type(even) {
+		right: auto;
+		left: auto;
+		position: relative;
+		margin: 0;
+		top: auto;
+	}
+}
+
+@media screen and (min-width: 48em) {
+	.js #orientation::before {
+		background: linear-gradient(301.75deg, #fff 0, #fff 4em, rgb(9,101,188) 4em, rgb(9,101,188) 50%, #fff 50%);
+	}
+}

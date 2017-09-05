@@ -1,0 +1,15 @@
+extends ../extended.jade
+
+append styles
+	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
+
+block main
+	main
+		h1.print= heading || title
+		!= contents
+
+block navigation
+	include ./navigation
+
+block footerlinks
+	include ./footerlinks

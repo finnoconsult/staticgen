@@ -40,6 +40,8 @@ html.no-js(lang=locale)
 		include includes/header
 		block main
 			!= contents
-		include includes/navigation
-		include includes/footer
+		block navigation
+			include includes/navigation
+		block footer
+			include includes/footer
 		block scripts

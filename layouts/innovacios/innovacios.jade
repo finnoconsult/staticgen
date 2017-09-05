@@ -1,0 +1,18 @@
+extends ../landing.jade
+
+append styles
+	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
+
+block main
+	main
+		h1.print= heading || title
+		!= contents
+		aside.narrative#contact
+			h2(data-title=__("Contact"))= __("How can we help you?")
+			include ../innovacios/contact
+
+block navigation
+	include ./navigation
+
+block footerlinks
+	include ./footerlinks

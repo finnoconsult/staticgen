@@ -9,7 +9,19 @@
   },
   "scripts": {
     "prebuild": "node minify.js",
-    "build": "node render.js"
+    "build": "node render.js",
+
+    "finno_build": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "prefinnotest": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "finnotest": "http-server ./public",
+    "_preinnodeploy": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "_innodeploy": "surge ./public finnoconsult-wip.surge.sh",
+
+    "inno_build": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
+    "preinnotest": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
+    "innotest": "http-server ./public",
+    "preinnodeploy": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
+    "innodeploy": "surge ./public innovaciostanacsado-wip.surge.sh"
   },
   "devDependencies": {
     "inline-source": "^4.2.6",

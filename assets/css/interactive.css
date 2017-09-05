@@ -51,6 +51,7 @@
 	.js #realization .package:nth-child(3) {
 		transition-delay: .8s;
 	}
+	.js #activation .bubble:nth-child(4),
 	.js #realization .package:nth-child(4) {
 		transition-delay: 1.2s;
 	}

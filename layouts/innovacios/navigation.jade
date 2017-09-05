@@ -1,0 +1,9 @@
+- var links = []
+- links.push({"homepage": "https://www.innovaciostanacsado.com", "name": __("About us")})
+- links.push({"homepage": "imprint", "name":  __("Imprint")})
+nav.screen#navigation
+	hr
+	each link, separator in links
+		= separator ? " " : ""
+		- var subDomainLink = linkTo(locale, "/", link.homepage===homepage?null:link.homepage)
+		a(class=(link.homepage===homepage)&&"active", data-note=link.homepage, href=subDomainLink)= link.name
