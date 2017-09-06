@@ -11,16 +11,16 @@
     "prebuild": "node minify.js",
     "build": "node render.js",
 
-    "finno_build": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "prefinnotest": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "finnotest": "http-server ./public",
-    "_preinnodeploy": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
-    "_innodeploy": "surge ./public finnoconsult-wip.surge.sh",
+    "_prefinnodeploy": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "_finnodeploy": "surge ./public finnoconsult-wip.surge.sh",
 
-    "inno_build": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
-    "preinnotest": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
+    "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
+    "preinnotest": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "innotest": "http-server ./public",
-    "preinnodeploy": "node minify.js; node minify.js -p ../../innovaciostanacsado/website/; node render.js ../../innovaciostanacsado/website/",
+    "preinnodeploy": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "innodeploy": "surge ./public innovaciostanacsado-wip.surge.sh"
   },
   "devDependencies": {
@@ -38,5 +38,8 @@
     "moment": "^2.17.1",
     "multimatch": "^2.1.0",
     "uglify-js": "^2.7.0"
+  },
+  "dependencies": {
+    "metalsmith-paths": "^3.0.1"
   }
 }

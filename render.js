@@ -6,6 +6,7 @@ var i18n = require("metalsmith-i18n");
 var collections = require("metalsmith-collections");
 var collectionsMetadata = require("metalsmith-collection-metadata");
 var contentParserMarkdown = require("metalsmith-markdown");
+var paths = require("metalsmith-paths");
 var propagateLocale = require("./plugins/propagate-locale.js");
 var permalinkLocale = require("./plugins/permalink-locale.js");
 //var json = require("./plugins/json.js");
@@ -31,6 +32,9 @@ metalsmith(config.folder.root)
 		homepage: config.homepage,
 		countries: config.countries
 	}))
+	.use(paths({
+		 property: "paths"
+	 }))
 	//.use(json({
 	//	files: ["**/*.json"],
 	//}))

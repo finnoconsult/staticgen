@@ -128,6 +128,9 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 
 
 @media (max-width: 37.47em) {
+	a.logo {
+		width: 60vw;
+	}
 	nav a.active {
 		box-shadow: 3px 0 #0965bc inset;
 	}

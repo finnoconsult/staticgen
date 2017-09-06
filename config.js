@@ -1,12 +1,23 @@
 var path = require("path");
 var home = __dirname;
-var switches = [];
-process.argv.slice(2).forEach(function (arg) {
+var switches = {};
+
+function argHelper(arg, index) {
+	var switchMap = {"-p": "preserveTargetDir", "--preserve-target-dir": "preserveTargetDir" ,"-u=": "url", "--url=":"url"};
+
+	for (var sourceTag in switchMap) {
+		var keyExp = new RegExp('^'+sourceTag, 'i');
+
+		if (arg.match(keyExp)) {
+			Object.assign(switches, { [switchMap[sourceTag]] : arg.replace(keyExp, '') || true });
+		}
+	}
+}
+process.argv.slice(2).forEach(function (arg, index) {
 	if (arg.indexOf("--") === 0) {
-		switches.push(arg);
+		argHelper(arg);
 	} else if (arg.indexOf("-") === 0) {
-		var switchMap = {"-p": "--preserve-target-dir"};
-		switches.push(switchMap[arg]);
+		argHelper(arg);
 	} else {
 		home = path.join(__dirname, arg);
 	}
@@ -19,13 +30,15 @@ var defaultLocale = locales.filter(function (locale) { return locale.default; })
 module.exports = {
 	folder: {
 		root: __dirname,
-		cleanup: switches.indexOf("--preserve-target-dir") === -1,
+		cleanup: !switches.preserveTargetDir,
 		assets: path.join(home, "assets"),
 		content: path.join(home, "content"),
 		locales: path.join(__dirname, "locales"),
 		public: path.join(__dirname, "public")
 	},
-	homepageCentral: "https://www.finnoconsult.at",
+	homepageCentral: switches.url ? switches.url : "https://www.finnoconsult.at",
+	// homepageCentral: "https://www.innovaciostanacsado.com",
+	// Todo: get this from config!
 	homepage: pkg.homepage,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
@@ -43,7 +56,7 @@ module.exports = {
 		return text;
 	},
 	timify: function (text) {
-		
+
 		text = text.toLowerCase();
 		var unsafe = {" ": "-", "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"};
 		Object.keys(unsafe).forEach(function (unsafeChar) {
