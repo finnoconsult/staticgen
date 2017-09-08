@@ -44,4 +44,7 @@ html.no-js(lang=locale)
 			include includes/navigation
 		block footer
 			include includes/footer
+		block cookie
+			include includes/cookie
 		block scripts
+			script(data-inline, src="/js/cookie.js")

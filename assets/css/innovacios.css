@@ -96,6 +96,16 @@ li.bubble::after {
 	text-align: justify;
 }
 
+cookie.disclaimer {
+	background: #0965bc;
+  background-color: rgb(9,101,188);
+  background-color: rgba(9,101,188,0.7);
+  background: linear-gradient(-237.75deg, rgba(9,101,188,0.7) 0, rgba(9,101,188,0.7) 80vw, transparent 77px) center no-repeat;
+}
+cookie.disclaimer button {
+  color: #0965bc;
+}
+
 
 
 [data-flag] {
