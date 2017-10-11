@@ -19,13 +19,16 @@ ctm(function (document, window) {
       cd.classList.toggle("accepted");
   	} else {
       setTimeout(function() { cd.classList.toggle("display")}, 500);
-      cd.addEventListener("click", function (event) {
-  			event.preventDefault();
-  			cd.classList.toggle("accepted");
-        var expires = new Date();
-        expires.setTime(expires.getTime() + (200 * 24 * 60 * 60 * 1000)); // expires in 200 days
-        document.cookie = cookieName + '=' + true + ';expires=' + expires.toUTCString();
-  		});
+      var b = cd.querySelector("button");
+      if (b) {
+        b.addEventListener("click", function (event) {
+    			event.preventDefault();
+    			cd.classList.toggle("accepted");
+          var expires = new Date();
+          expires.setTime(expires.getTime() + (200 * 24 * 60 * 60 * 1000)); // expires in 200 days
+          document.cookie = cookieName + '=' + true + ';expires=' + expires.toUTCString();
+    		});
+      }
     }
   }
 });
