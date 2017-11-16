@@ -237,6 +237,31 @@ li.bubble::after {
 	font-size: 400%;
 	text-align: center;
 }
+li.bubble.baningo::after {
+  content: ' ';
+  background-image: url('https://baningo.com/assets/804dea3a/images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  overflow: hidden;
+  width: 0.75em;
+  height: 0.754em;
+  left: 1.125em;
+  top: 0;
+}
+li.bubble.innovaciostanacsado::after {
+  content: ' ';
+  background-image: url('http://innovaciostanacsado.com/img/avatar-192.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 100%;
+  width: 0.75em;
+  height: 0.754em;
+  left: 1.125em;
+  top: 0;
+}
 .bubble-xl::before {
 	top: -5em;
 	right: -5em;

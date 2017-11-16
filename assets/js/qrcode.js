@@ -7,5 +7,13 @@ ctm(function (document) {
 			event.preventDefault();
 			qr.classList.toggle("toggle");
 		});
+		qr.addEventListener("mouseover", function (event) {
+			event.preventDefault();
+			qr.classList.toggle("toggle");
+		});
+		qr.addEventListener("mouseout", function (event) {
+			event.preventDefault();
+			qr.classList.remove("toggle");
+		});
 	}
 });

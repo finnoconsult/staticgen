@@ -13,13 +13,14 @@
 
     "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "prefinnotest": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
-    "finnotest": "http-server ./public",
-    "_prefinnodeploy": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
-    "_finnodeploy": "surge ./public finnoconsult-wip.surge.sh",
+    "finnodev": "http-server ./public",
+    "prefinnotest": "node minify.js; node minify.js -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
+    "finnotest": "surge ./public finnoconsult-wip.surge.sh",
+    "_prefinnodeply": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
 
     "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "preinnotest": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
-    "innotest": "http-server ./public",
+    "innodev": "http-server ./public",
     "preinnodeploy": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "innodeploy": "surge ./public innovaciostanacsado-wip.surge.sh"
   },
