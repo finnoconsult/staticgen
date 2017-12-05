@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+/* |Kalam */
+
 em,
 main a,
 b,
@@ -23,6 +26,79 @@ a:hover {
 }
 div.narrative {
 	background-color: #fff;
+}
+
+
+.motto {
+	width: 65vw;
+	overflow: hidden;
+}
+
+.motto dt{
+    font-size: 9vw;
+		line-height: 9vw;
+		height: 9vw;
+		font-weight: bold;
+		text-transform: uppercase;
+    width: auto;
+    position: relative;
+		white-space: nowrap;
+}
+.motto dt.help {
+	font-family: 'Permanent Marker';
+	color: #0965bc;
+	text-transform: capitalize;
+	animation: handwriting 4s;
+	-webkit-animation: handwriting 4s;
+	overflow: hidden;
+	margin: 0;
+	/*line-height: 12vh;*/
+	font-size: 8vw;
+}
+@keyframes handwriting {
+  0% { width: 0.001em; }
+  60% { width: 0.001em; }
+  100% { width: 65vw; }
+}
+.motto dd {
+	font: 0/0 a;
+	text-indent: -200%;
+	overflow: hidden;
+	background: url("/img/innovacios/strikethrough.sprite.png") left 2vw no-repeat;
+	background-size: 65vw;
+	width: 65vw;
+	margin-top: -9vw;
+	height: 9vw;
+	position: absolute;
+	transition: all 1s ease;
+
+	animation: strikethrough_pencil1 1s;
+	-webkit-animation: strikethrough_pencil1 1s;
+
+}
+.motto dd:nth-child(4) {
+	background-position: left -7vw;
+	animation: strikethrough_pencil1 1.5s;
+	-webkit-animation: strikethrough_pencil1 1.5s;
+}
+.motto dd:nth-child(6) {
+	animation: strikethrough_pencil1 2s;
+	-webkit-animation: strikethrough_pencil1 2s;
+}
+@keyframes strikethrough_pencil1 {
+  0% { width: 0.01rem; }
+  75% { width: 0.01rem; }
+  100% { width: 65vw; }
+}
+@keyframes strikethrough_pencil2 {
+  0% { width: 0.01rem; }
+  83% { width: 0.01rem; }
+  100% { width: 65vw; }
+}
+@keyframes strikethrough_pencil3 {
+  0% { width: 0.01rem; }
+  87% { width: 0.01rem; }
+  100% { width: 65vw; }
 }
 
 .invert {
