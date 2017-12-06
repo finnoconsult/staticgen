@@ -40,6 +40,7 @@ module.exports = {
 	// homepageCentral: "https://www.innovaciostanacsado.com",
 	// Todo: get this from config!
 	homepage: pkg.homepage,
+	version: pkg.version,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,

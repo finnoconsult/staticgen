@@ -29,6 +29,7 @@ metalsmith(config.folder.root)
 		sharingLinks: require("./assets/social.json"), /*TODO json.js*/
 		knownAuthors: require("./assets/knownAuthors.json"), /*TODO json.js*/
 		homepageCentral: config.homepage === config.homepageCentral ? null : config.homepageCentral,
+		version: config.version,
 		homepage: config.homepage,
 		countries: config.countries
 	}))
