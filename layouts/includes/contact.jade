@@ -1,4 +1,4 @@
-form(action="https://mailthis.to/finnoconsult", method="post")
+form(action="/contacting.php", method="post", encType="multipart/form-data")
 	p
 		label(for="name")= __("Your name")
 		br
@@ -13,6 +13,10 @@ form(action="https://mailthis.to/finnoconsult", method="post")
 		textarea(name="message", id="message", maxlength="7000", placeholder=__("I am interested in…\n\nPlease contact me at…"))
 	p.form-action.screen
 		input(type="text", name="_honey", value="", style="display:none")
+		input(type="hidden", name="_honeypot", value="", style="display:none")
 		input(type="hidden", name="_replyto", value="%email")
 		input(type="hidden", name="_after", value=homepage+linkTo(locale, "/contacted"))
+
+		block hiddenfields
+
 		button.button(type="submit")= __("Send")
