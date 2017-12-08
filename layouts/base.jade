@@ -38,7 +38,8 @@ html.no-js(lang=locale)
 		link(rel="canonical", href=homepage+path)
 
 	body
-		include includes/header
+		block header
+			include includes/header
 		block main
 			!= contents
 		block navigation

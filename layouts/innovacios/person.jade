@@ -3,8 +3,27 @@ extends ../person.jade
 append styles
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
+block header
+	include ./header
+
 block navigation
 	include ./navigation
 
 block footerlinks
 	include ./footerlinks
+
+block office
+	dl
+		dt.icon
+			img(data-inline, src="/img/icon-icomoon-office.svg")
+			|  #{__("Company address")}
+		dd
+			b.org Innovációs Tanácsadó #[abbr Kft]
+			.adr
+				span.street-address Buhegy&nbsp;d.&nbsp;40/a
+				br
+				span.postal-code 6041
+				| &nbsp;
+				span.locality= __("Kerekegyhaza")
+				br.print
+				span.country-name.print= __("Hungary")

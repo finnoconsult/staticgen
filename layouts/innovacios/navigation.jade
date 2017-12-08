@@ -1,10 +1,12 @@
 - var links = []
-- links.push({"homepage": "/", "name": __("About us")})
-- links.push({"homepage": "/imprint", "name":  __("Imprint")})
-nav.screen#navigation
+- links.push({ "homepage": "/", "name": __("About us"), "class": path.match(/\/$/) && "active"  })
+//- links.push({ "homepage": "/imprint", "name":  __("Imprint"), "class": path.match(/\/imprint/) && "active" })
+//- || path === "/imprint"
+unless path === "/contact"
+	- links.push({ "homepage": "/contact", "name":  __("Free consultation"), "class": "button" })
+nav(class="screen " + (path != "/contact" && "withButton"), id="navigation")
 	hr
 	each link, separator in links
 		= separator ? " " : ""
 		- var subDomainLink = linkTo(locale, link.homepage, false)
-		- var re = new RegExp(link.homepage);
-		a(class=path.match(re)&&"active", data-note=link.homepage, href=subDomainLink)= link.name
+		a(class=link.class, data-note=link.homepage, href=subDomainLink)= link.name

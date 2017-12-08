@@ -22,6 +22,12 @@ block main
 			a#qr.bubble-photo.hide-link(href=qrcode)
 				img.photo(src=photo, alt=__("Photo of ")+heading)
 		dl
+			if jobtitle
+				dt.icon
+					img(data-inline, src="/img/icon-fa-info.svg")
+					|  #{__("Title")}
+				dd
+					= jobtitle
 			dt.icon
 				img(data-inline, src="/img/icon-fa-user.svg")
 				|  #{__("Business card")}
@@ -55,20 +61,21 @@ block main
 					dd
 						a.hide-link(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
 
-		dl
-			dt.icon
-				img(data-inline, src="/img/icon-icomoon-office.svg")
-				|  #{__("Company address")}
-			dd
-				b.org FInno Consult #[abbr GmbH]
-				.adr
-					span.street-address Rasumofskygasse&nbsp;26
-					br
-					span.postal-code 1030
-					| &nbsp;
-					span.locality= __("Vienna")
-					br.print
-					span.country-name.print= __("Austria")
+		block office
+			dl
+				dt.icon
+					img(data-inline, src="/img/icon-icomoon-office.svg")
+					|  #{__("Company address")}
+				dd
+					b.org FInno Consult #[abbr GmbH]
+					.adr
+						span.street-address Rasumofskygasse&nbsp;26
+						br
+						span.postal-code 1030
+						| &nbsp;
+						span.locality= __("Vienna")
+						br.print
+						span.country-name.print= __("Austria")
 
 append scripts
 	script(data-inline, src="/js/mailto.js")

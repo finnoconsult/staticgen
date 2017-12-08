@@ -3,13 +3,18 @@ extends ../landing.jade
 append styles
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
+block header
+	include ./header
+
 block main
 	main
 		h1.print= heading || title
 		!= contents
 		aside.narrative#contact
-			h2(data-title=__("Contact"))= __("How can we help you?")
+			h2.main(data-title=__("Let's start a new project together"))= __("Get everything you need for your innovation today")
 			include ./contactForm
+		.withUs
+			h3.handwritten with I#[u.nn nn]ovációs Tanácsadó!
 
 block navigation
 	include ./navigation

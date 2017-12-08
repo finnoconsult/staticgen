@@ -1,6 +1,15 @@
-extends ./compact.jade
+extends ./extended.jade
+
+block header
+	include ./header
 
 block main
-	main.narrative#contact
-		h1= heading || title
-		include ./contactForm
+	main#contact
+		section.narrative
+			h1= heading || title
+			include ./contactForm
+		!= contents
+
+
+append scripts
+	script(data-inline, src="/js/appear.js")

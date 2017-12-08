@@ -3,6 +3,9 @@ extends ../extended.jade
 append styles
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
+block header
+	include ./header
+
 block main
 	main
 		h1.print= heading || title
