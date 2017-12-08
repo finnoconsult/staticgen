@@ -3,6 +3,7 @@ ctm(function (document, window) {
 
 	var lastKnownScrollPosition;
 	var ticking = false;
+	var scrolled = false;
 	var selector = "[data-rsg]";
 	var inViewport = function (element) {
 		var threshold = parseFloat(element.getAttribute(selector.slice(1, -1)));
@@ -20,6 +21,14 @@ ctm(function (document, window) {
 	};
 	var handler = function (event) {
 		lastKnownScrollPosition = window.scrollY;
+		if (window.scrollY>0 && !scrolled) {
+			document.body.classList.add('scrolled');
+			scrolled = true;
+		}
+		if (window.scrollY===0 && scrolled) {
+			document.body.classList.remove('scrolled');
+			scrolled = false;
+		}
 		if (!ticking) {
 			window.requestAnimationFrame(function () {
 				check(lastKnownScrollPosition);

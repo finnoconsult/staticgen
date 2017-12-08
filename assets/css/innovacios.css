@@ -31,7 +31,7 @@ a.logo {
 	background: none;
 	color: #0965bc;
 	color: inherit;
-	font-size: 2.1em;
+	font-size: 3.3vw;
 	text-align: left;
 
 }
@@ -42,6 +42,8 @@ a.logo {
 	background: url("/img/innovacios/nn.svg") center no-repeat;
 	background-position: center;
 	background-size: 90%;
+	text-indent: -100%;
+	overflow: hidden;
 	/*background-image: url('/img/innovacios/n.svg'),
                   url('/img/innovacios/n.svg');
 	background-repeat: no-repeat,
@@ -53,7 +55,7 @@ a.logo {
 
 a.logo .nn {
 	background-size: 89%;
-	background-position: 0.05em 0.43em;
+	background-position: 0.2vw 1.44vw;
 }
 
 
@@ -69,8 +71,17 @@ a:hover {
 	top: 0;
 }
 .withUs h3{
-	margin: 2.4em 6em;
-	font-size: 1.4em;
+	margin: 4.5vw 17vw;
+  font-size: 1.6vw;
+  transform: rotate(-3deg);
+  z-index: 3;
+  position: absolute;
+  white-space: nowrap;
+  font-weight: normal;
+	transition: all 0.2s ease;
+}
+.scrolled .withUs h3{
+	opacity: 0;
 }
 .withUs h3 .nn{
 }
@@ -133,7 +144,8 @@ div.narrative {
 }
 
 .motto dt.help {
-	font-family: 'Permanent Marker';
+	font-family: Kalam;
+	/*font-family: 'Permanent Marker';*/
 	color: #0965bc;
 	text-transform: capitalize;
 	animation: handwriting 4s;
@@ -142,6 +154,7 @@ div.narrative {
 	margin: 0;
 	/*line-height: 12vh;*/
 	font-size: 7vw;
+	text-align: center;
 }
 @keyframes handwriting {
   0% { width: 0.001em; }
