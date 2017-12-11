@@ -37,12 +37,13 @@ block main
 				img(data-inline, src="/img/icon-fa-envelope.svg")
 				|  #{__("E-mail")}
 			dd.email.hide-link
-				- var mp = email.replace("@", ".").split(".")
+				- var mp = email.split("@")
+				- var dom = mp[1].split(".")
 				= mp[0]
 				abbr(lang="en", title="at") &#64;
-				= mp[1]
+				= dom[0]
 				abbr(title=__("dot")) &#46;
-				abbr= mp[2]
+				abbr= dom[1]
 			dt.icon
 				img(data-inline, src="/img/icon-fa-phone.svg")
 				|  #{__("Phone")}
