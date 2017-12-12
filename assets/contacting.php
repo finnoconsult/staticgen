@@ -1,7 +1,7 @@
 <?php
 /* simple php mail() sender */
 function sendMail($config, $data, $headers = array()) {
-  $message = messageTemplate($config["message"], $data);
+  $message = easyStringTemplate($config["message"], $data);
 
   $headers[] = 'MIME-Version: 1.0';
   $headers[] = 'Content-type: text/html; charset=utf-8';
@@ -12,7 +12,7 @@ function sendMail($config, $data, $headers = array()) {
   $headers[] = "Reply-To: $data[email]";
   $headers[] = 'X-Mailer: PHP/' . phpversion();
 
-  return mail($data[to], $data[subject], $message, implode("\r\n", $headers));
+  return mail($data["to"], $data["subject"], $message, implode("\r\n", $headers));
 }
 
 
@@ -31,7 +31,7 @@ function typeSafeIniArrayConverter($array) {
 }
 
 
-function messageTemplate($template, $variables) {
+function easyStringTemplate($template, $variables) {
 
   extract($variables);
   $session = @session_id(); // TODO: start session?
@@ -42,7 +42,7 @@ function messageTemplate($template, $variables) {
 
       if ($varname==="date")$date=date(preg_replace("/[\\(\\)]/", "", $matches[2][$i]));
 
-      $template = str_replace($matches[0][$i], sprintf('%s', $$varname), $template);
+      $template = str_replace($matches[0][$i], sprintf('%s', @$$varname), $template);
 
     }
   }
@@ -98,7 +98,7 @@ function sendSlackMessage($config, $settings, $data) {
 
   try {
     $client = new Maknz\Slack\Client($config['url'], $settings);
-    $Message = $client->send(messageTemplate($config["message"], $data));
+    $Message = $client->send(easyStringTemplate($config["message"], $data));
 
     return true;
   } catch(RuntimeException $e) {
@@ -109,46 +109,88 @@ function sendSlackMessage($config, $settings, $data) {
 }
 
 
+/* write CSV log to server */
+function writeCsv($config, $data) {
+  $filename = easyStringTemplate($config["filename"], $data);
+
+  if (is_writable($filename)) {
+      if (!$handle = fopen($filename, 'a')) {
+        // echo "<h2>Cannot open file ($filename)</h2>";
+        return false;
+      }
+
+      if (fwrite($handle, easyStringTemplate($config["message"], $data) . "\r\n") === FALSE) {
+        // echo "<h2>Cannot write to file ($filename)</h2>";
+        return false;
+      }
+
+      fclose($handle);
+
+  } else {
+    // echo "<h2>The file $filename is not writable</h2>";
+    return false;
+  }
+  return true;
+}
+
 
 
 /* Message "factory" */
-function sendMessage($data, $configFile="inc/_config.ini") {
-
-  /*config */
-  if (!defined('INI_SCANNER_TYPED')) {
-    // PHP 5.x
-    $configuration = typeSafeIniArrayConverter(parse_ini_file($configFile, true));
-  } else {
-    // PHP >= 5.6.1
-    $configuration = parse_ini_file($configFile, true, INI_SCANNER_TYPED);
-  }
+function sendMessage($data, $configuration) {
 
   $return = true;
   // shall send email always?
-  if (preg_match("/email/i", $configuration["messaging"])) $return = $return && sendMail($configuration['email.config'], $data);
-  if (preg_match("/slack/i", $configuration["messaging"])) $return = $return && sendSlackMessage($configuration['slack.config'], $configuration['slack.settings'], $data);
+  /* control logic */
+  if ($_REQUEST["_honeypot"] || $_REQUEST["_honey"] || $_REQUEST["phone"] || $_REQUEST["username"] || $_REQUEST["subject"] || $_REQUEST["country"] || $_REQUEST["city"] || $_REQUEST["address"]) {
+    // it must be a robot, if the hidden variable is being filled, which were used obfuscating
+    // echo "<h2>Found hidden variable!</h2>";
+    $return = false;
+  } else {
+    if (preg_match("/slack/i", $configuration["messaging"])) $return = $return && sendSlackMessage($configuration['slack.config'], $configuration['slack.settings'], $data);
+    if (preg_match("/email/i", $configuration["messaging"])) $return = $return && sendMail($configuration['email.config'], $data);
+  }
+  if (preg_match("/csv/i", $configuration["messaging"])) $return = $return && writeCsv($configuration['csv.config'], $data);
   return $return;
 }
 
 
-/* control logic */
-if ($_REQUEST["_honeypot"] || $_REQUEST["_honey"]) {
-  // it must be a robot, if the hidden variable is being filled, which were used obfuscating
-  header("Location: 500");
+
+
+
+/*config */
+$configFile="inc/_config.ini";
+
+if (!defined('INI_SCANNER_TYPED')) {
+  // PHP 5.x
+  $configuration = typeSafeIniArrayConverter(parse_ini_file($configFile, true));
+} else {
+  // PHP >= 5.6.1
+  $configuration = parse_ini_file($configFile, true, INI_SCANNER_TYPED);
 }
 
-
-
 /* send mail via php mail() and smtp */
-if (sendMessage(array(
-  "to" => $_REQUEST["_to"] ? $_REQUEST["_to"] : 'admin@finnoconsult.at',
-  "subject" => $_REQUEST["_subject"] ? $_REQUEST["_subject"] : 'Contact form submission',
-  "email" => $_REQUEST["email"] ? $_REQUEST["email"] : $_REQUEST["_replyto"],
-  "name" => $_REQUEST["name"],
-  "message" => $_REQUEST["message"],
-  "referer" => $_SERVER["HTTP_REFERER"],
-))) {
-  header("Location: $_REQUEST[_after]");
+if (sendMessage(
+  array(
+    "to" => $_REQUEST["_to"] ? $_REQUEST["_to"] : 'admin@finnoconsult.at',
+    "subject" => $_REQUEST["_subject"] ? $_REQUEST["_subject"] : 'Contact form submission',
+    "email" => $_REQUEST["email"] ? $_REQUEST["email"] : $_REQUEST["_replyto"],
+    "name" => $_REQUEST["name"],
+    "referer" => $_SERVER["HTTP_REFERER"],
+    "message" => $_REQUEST["message"],
+    // just for storing into CSV:
+    "subject" => $_REQUEST["subject"],
+    "phone" => $_REQUEST["phone"],
+    "country" => $_REQUEST["country"],
+    "city" => $_REQUEST["city"],
+    "address" => $_REQUEST["address"],
+    "_honeypot" => $_REQUEST["_honeypot"],
+    "_honey" => $_REQUEST["_honey"],
+    "_replyto" => $_REQUEST["_replyto"],
+    "_after" => $_REQUEST["_after"],
+  ),
+  $configuration
+)) {
+  header("Location: " . (@$configuration["after"] ? @$configuration["after"] : $_REQUEST["_after"]));
 } else {
   header("Location: 500");
 }

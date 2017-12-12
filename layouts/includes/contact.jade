@@ -12,6 +12,12 @@ form(action="/contacting.php", method="post", encType="multipart/form-data")
 		br
 		textarea(name="message", id="message", maxlength="7000", placeholder=__("I am interested in…\n\nPlease contact me at…"))
 	p.form-action.screen
+		input(type="text", name="phone", value="", id="phone")
+		input(type="text", name="username", value="", id="username")
+		input(type="text", name="subject", value="", id="subject")
+		input(type="text", name="city", value="", id="city")
+		input(type="text", name="address", value="", id="address")
+		input(type="text", name="country", value="", id="address")
 		input(type="text", name="_honey", value="", style="display:none")
 		input(type="text", name="_honeypot", value="", style="display:none")
 		input(type="hidden", name="_replyto", value="%email")

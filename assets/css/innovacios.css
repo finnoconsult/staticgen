@@ -144,6 +144,7 @@ div.narrative {
 }
 
 .motto dt.help {
+	font-size: 7vw;
 	font-family: Kalam;
 	/*font-family: 'Permanent Marker';*/
 	color: #0965bc;
@@ -153,7 +154,6 @@ div.narrative {
 	overflow: hidden;
 	margin: 0;
 	/*line-height: 12vh;*/
-	font-size: 7vw;
 	text-align: center;
 }
 @keyframes handwriting {
@@ -369,9 +369,9 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 	}
 }
 @media (max-width: 37.47em) {
-	a.logo {
+	/*a.logo {
 		width: 60vw;
-	}
+	}*/
 	nav a.active {
 		box-shadow: 3px 0 #0965bc inset;
 	}
@@ -404,6 +404,58 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 		top: auto;
 	}
 }
+
+
+
+@media (orientation: landscape) {
+
+	.motto dt{
+    font-size: 8.5vh;
+		line-height: 10vh;
+		height: 10vh;
+	}
+	.motto dt.help {
+		font-size: 8vh;
+	}
+
+}
+
+@media (max-width: 52em) {
+	a.logo {
+		font-size: 4.3vw;
+	}
+	a.logo .nn {
+		background-position: 0.2vw 1.94vw;
+	}
+	.withUs h3{
+		margin: 6vw 20vw;
+		font-size: 2.1vw;
+	}
+}
+
+
+@media (max-width: 37.5em) {
+	a.logo {
+		font-size: 5.3vw;
+	}
+	a.logo .nn {
+		background-position: 0.2vw 2.44vw;
+	}
+	.withUs h3{
+		margin: 8vw 28vw;
+		font-size: 3vw;
+	}
+}
+
+@media (max-width: 23.5em) {
+	a.logo {
+		padding: 0.5em 0 0 0;
+	}
+	.withUs h3{
+		margin: 9vw 28vw;
+	}
+}
+
 
 /* interactive css*/
 

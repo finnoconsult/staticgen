@@ -383,6 +383,9 @@ table {
 form .form-action {
 	margin-top: 1.5em;
 }
+.form-action #phone, .form-action #username, .form-action #subject, .form-action #city, .form-action #country, .form-action #address {
+  display: none;
+}
 
 .button {
 	display: inline-block;
@@ -486,10 +489,12 @@ footer.site {
 	}
 }
 
+@media (max-width: 37.47em) and (orientation: portrait) {
+  .narrative {
+    min-height: 150vw;
+  }
+}
 @media (max-width: 37.47em) {
-	.narrative {
-		min-height: 150vw;
-	}
 	footer.site,
 	nav {
 		text-align: center;
