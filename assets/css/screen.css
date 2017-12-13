@@ -220,6 +220,9 @@ aside#contact {
 	margin: 3em -1em 0;
 	text-align: center;
 }
+.fullwidth {
+  max-width: 100%;
+}
 li.bubble {
 	display: inline-block;
 	margin: 2em 3em;
@@ -262,6 +265,50 @@ li.bubble.innovaciostanacsado::after {
   left: 1.125em;
   top: 0;
 }
+.bubble-xs::before {
+	top: -0.5em;
+	right: -0.5em;
+	bottom: -0.5em;
+	left: -0.5em;
+}
+.bubble-xs {
+	height: 6em;
+	width: 6em;
+	margin: 0.5em auto;
+}
+.bubble-s::before {
+	top: -1em;
+	right: -1em;
+	bottom: -1em;
+	left: -1em;
+}
+.bubble-s {
+	height: 8em;
+	width: 8em;
+	margin: 1em auto;
+}
+.bubble-m::before {
+	top: -1.5em;
+	right: -1.5em;
+	bottom: -1.5em;
+	left: -1.5em;
+}
+.bubble-m {
+	height: 10em;
+	width: 10em;
+	margin: 1.5em auto;
+}
+.bubble-l::before {
+	top: -2.5em;
+	right: -2.5em;
+	bottom: -2.5em;
+	left: -2.5em;
+}
+.bubble-l {
+	height: 15em;
+	width: 15em;
+	margin: 2.5em auto;
+}
 .bubble-xl::before {
 	top: -5em;
 	right: -5em;
@@ -287,6 +334,34 @@ li.bubble.innovaciostanacsado::after {
 	bottom: 100%;
 	left: 0;
 	color: #fff;
+}
+li.bubble-listing {
+  padding: 0;
+}
+li.bubble-listing::after {
+  content: '';
+  display: none;
+}
+li.bubble-listing h2,
+li.bubble-listing ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+li.bubble-listing li {
+  /*text-align: left;*/
+  list-style-type: none;
+}
+li.bubble-listing li::before {
+    content: '+';
+    position: absolute;
+    /* margin-top: -0.0em; */
+    margin-left: -0.8em;
+    font-size: 1em;
+    color: #00bd59;
+}
+li.bubble-listing li:first-child::before {
+  content: '';
 }
 
 main h2,
@@ -481,6 +556,12 @@ footer.site {
 	width: 1em;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23231f20' d='M32 7c-1.2.6-2.4 1-3.8 1 1.4-.7 2.4-2 3-3.5-1.4.7-2.8 1.3-4.3 1.6C25.6 5 24 4 22 4c-3.7 0-6.6 3-6.6 6.6 0 .5 0 1 .2 1.5C10.3 12 5.5 9.3 2.2 5.3c-.5 1-1 2-1 3.3 0 2.3 1.3 4.3 3 5.5-1 0-2-.4-3-1v.2c0 3.2 2.4 6 5.4 6.5l-1.8.2-1.2-.2c.8 2.6 3.3 4.5 6 4.5-2 1.8-5 2.8-8 2.8H0c3 2 6.4 3 10 3 12 0 18.7-10 18.7-18.7v-.8C30 9.5 31 8.5 32 7z'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
 	background-size: contain;
+}
+
+
+.hidden {
+  display:none;
+  opacity: 0;
 }
 
 @media (max-width: 19.97em) {

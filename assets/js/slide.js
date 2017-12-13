@@ -11,8 +11,11 @@ ctm(function (document) {
 					anchor.className = "slide-link screen";
 					anchor.setAttribute("data-scroll", "");
 					var heading = element.querySelector("h2");
-					anchor.textContent = heading.getAttribute("data-title") || heading.textContent;
-					element.previousSibling.appendChild(anchor);
+					// if (!heading) console.warn('no h2 in ', element.id);
+					if (heading) {
+						anchor.textContent = heading.getAttribute("data-title") || heading.textContent;
+						element.previousSibling.appendChild(anchor);
+					}
 				}
 			});
 			smoothScroll.init();

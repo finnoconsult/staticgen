@@ -87,7 +87,8 @@ metalsmith(config.folder.root)
 	}))
 	.use(layouts({
 		engine: "jade",
-		default: "blogpost.jade",
+		// default: "blogpost.jade",
+		default: "base.jade",
 		pattern: "**/*.html"
 	}))
 	.use(inlineSource({

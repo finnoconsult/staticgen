@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Kalam');
+/*@import url('https://fonts.googleapis.com/css?family=Kalam');*/
 /*  */
 
 h1, h2.main {
@@ -101,6 +101,10 @@ div.narrative {
 	overflow: hidden;
 }
 
+#needs .motto {
+	width: 75vw;
+}
+
 .motto dt{
     font-size: 7.5vw;
 		line-height: 9vw;
@@ -114,7 +118,12 @@ div.narrative {
 		overflow: hidden;
 		transition: all 1s ease;
 }
-
+.motto dt small{
+	text-transform: lowercase;
+	font-family: "Alegreya Sans", sans-serif;
+	color: #0965bc;
+	font-size: 8vh;
+}
 .motto dt:nth-child(1) {
 	animation: liftingUp 1s;
 	-webkit-animation: liftingUp 1s;
@@ -232,8 +241,13 @@ div.narrative {
 	/*background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, #0965bc 4em);*/
 	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, #538ABD 4em);
 }
-.narrative.invert *{
+.narrative.invert p,
+.narrative.invert > ul > li,
+.narrative.invert > h2{
 	color: #dceaf7;
+}
+.narrative.invert .bubble > ul > li {
+	color: black;
 }
 #orientation {
 	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, rgba(255,255,255,0) 4em), url(/img/innovacios/bg-shibuya.jpg);
@@ -347,6 +361,13 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 	width: 13em;
 	height: 13em;
 }
+li.bubble-listing h2 {
+	color: #0965bc;
+}
+li.bubble-listing li::before {
+    color: #0965bc;
+}
+
 
 
 #contact .colleagues p {
@@ -425,6 +446,7 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 		font-size: 4.3vw;
 	}
 	a.logo .nn {
+		text-transform: uppercase;
 		background-position: 0.2vw 1.94vw;
 	}
 	.withUs h3{

@@ -1,8 +1,10 @@
 extends ../landing.jade
-
 append styles
+	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kalam")
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
+block title
+	title= title + " · Innovácios Tanácsadó Kft"
 block header
 	include ./header
 
@@ -14,7 +16,10 @@ block main
 			h2.main(data-title=__("Let's start a new project together"))= __("Get everything you need for your innovation today")
 			include ./contactForm
 		.withUs
-			h3.handwritten with I#[u.nn nn]ovációs Tanácsadó!
+			h3.handwritten
+				= __("InnovaciosLogoSubtitle")
+				| #[u.nn nn]
+				= __("InnovaciosLogoSubtitle2")
 
 block navigation
 	include ./navigation

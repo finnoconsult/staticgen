@@ -1,4 +1,8 @@
 {
+	"InnovaciosLogoText": "Éld meg az I",
+	"InnovaciosLogoText2": "ovációt",
+	"InnovaciosLogoSubtitle": "az I",
+	"InnovaciosLogoSubtitle2": "ovációs Tanácsadóval!",
 	"Home page": "Nyitólap",
 	"About us": "Kik vagyunk?",
 	"Blog": "Blog",
@@ -19,7 +23,7 @@
 	"Send": "Elküld",
 	"Contact us for free": "Contact us for free",
 	"Free consultation": "Díjmentes konzultáció",
-	"Continue for free consultation": "Tovább a díjmentes konzultációhoz »",
+	"Continue for free consultation": "Kezdjük a díjmentes konzultációt »",
 	"Vienna": "Bécs",
 	"Austria": "Ausztria",
 	"Photo of ": "Fotó: ",
@@ -46,11 +50,13 @@
 	"This website uses cookies to ensure you get the best experience on our website.": "A weboldal sütiket használ, hogy a használata során a legjobb élményt biztosítsa.",
 	"Learn more": "Bővebben",
 	"Got it!": "Értem!",
-	"Get everything you need for your innovation today": "Get everything you need for your innovation today",
-	"Get everything you need for your i#[u n]novation today": "Get everything you need for your i#[u n]novation today",
-	"Let's start a new project together": "Let's start a new project together",
+	"Get everything you need for your innovation today": "Tudjon meg mindent, amire szüksége lehet az Innovációhoz",
+	"Get everything you need for your i#[u n]novation today": "Tudjon meg mindent, amire szüksége lehet az Innovációhoz",
+	"Let's start a new project together": "További informáciért keressen bennünket",
 	"Innovációs Tanácsadó": "Innovációs Tanácsadó",
 	"Title": "Title",
 	"Kerekegyhaza": "Kerekegyhaza",
-	"Hungary": "Hungary"
+	"Hungary": "Hungary",
+	"Links": "Links",
+	"Promo!": "Promo!"
 }
