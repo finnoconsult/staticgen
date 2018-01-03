@@ -141,7 +141,11 @@ function sendMessage($data, $configuration) {
   $return = true;
   // shall send email always?
   /* control logic */
-  if ($_REQUEST["_honeypot"] || $_REQUEST["_honey"] || $_REQUEST["phone"] || $_REQUEST["username"] || $_REQUEST["subject"] || $_REQUEST["country"] || $_REQUEST["city"] || $_REQUEST["address"]) {
+  if (
+    /*!$_REQUEST["name"] || -- name should not be required */
+    !$_REQUEST["message"] ||
+    $_REQUEST["_honeypot"] || $_REQUEST["_honey"] || $_REQUEST["phone"] || $_REQUEST["username"] || $_REQUEST["subject"] || $_REQUEST["country"] || $_REQUEST["city"] || $_REQUEST["address"]
+  ) {
     // it must be a robot, if the hidden variable is being filled, which were used obfuscating
     // echo "<h2>Found hidden variable!</h2>";
     $return = false;
