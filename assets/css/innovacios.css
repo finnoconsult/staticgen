@@ -267,6 +267,46 @@ aside#contact {
 	background: linear-gradient(180deg, rgba(9,101,188,0) 50%, #538ABD 100%), linear-gradient(210deg, rgba(9,101,188,0) 0, #538ABD 50%), url(/img/strategy.svg) 0 -2.5em repeat, url(/img/strategy.svg) 2em .5em repeat;
 	background-size: cover, cover, 4em auto, 4em auto
 }
+.narrative.invert-solid {
+	background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(0,189,89,0) 4em);
+	/* background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, #A5C3DF 4em); */
+	position: relative;
+	z-index: 0;
+}
+
+.narrative.invert-solid::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	background: linear-gradient(180deg, rgba(0,189,89,0) 50%, #A5C3DF 100%), linear-gradient(210deg, rgba(0,189,89,0) 0, #A5C3DF 50%), url(/img/strategy.svg) 0 -2.5em repeat, url(/img/strategy.svg) 2em .5em repeat;
+	background-size: cover, cover, 4em auto, 4em auto;
+}
+.narrative.white {
+	position: relative;
+	z-index: 0;
+	/* background: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(9,101,188,0) 4em) center no-repeat #ffffff; */
+}
+.narrative.white::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	height: 100%;
+	left: 0;
+	opacity: .15;
+	/* background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(192,214,237,1) 56%,rgba(192,214,237,1) 100%), url(/img/innovacios/strategy.blue.svg) 0em -2.5em repeat, url(/img/innovacios/strategy.blue.svg) 2em .5em repeat; */
+	background: linear-gradient(220deg, rgba(229,229,229,0) 0%,rgba(229,229,229,0.01) 1%,rgba(242,244,246,1) 40%), url(/img/innovacios/strategy.blue.svg) 0em -2.5em repeat, url(/img/innovacios/strategy.blue.svg) 2em .5em repeat;
+	/* background: linear-gradient(135deg, rgba(125,185,232,0) 100%, rgba(125,185,232,0.01) 99%, #0965bc 0%), url(/img/innovacios/strategy.blue.svg) 0em -2.5em repeat, url(/img/innovacios/strategy.blue.svg) 2em .5em repeat; */
+	/* linear-gradient(180deg, rgba(0,189,89,0) 50%, #A5C3DF 100%), linear-gradient(210deg, rgba(0,189,89,0) 0, #A5C3DF 50%), url(/img/strategy.svg) 0 -2.5em repeat, url(/img/strategy.svg) 2em .5em repeat; */
+	background-size: cover, 4em auto, 4em auto;
+}
+
 
 li.bubble::after {
 	color: #0965bc;

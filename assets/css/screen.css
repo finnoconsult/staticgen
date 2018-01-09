@@ -265,6 +265,16 @@ li.bubble.innovaciostanacsado::after {
   left: 1.125em;
   top: 0;
 }
+.bubbles.vertical li.bubble {
+  display: block;
+  margin: 2em 12em;
+}
+
+.narrative.invert li.bubble,
+li.bubble > ul > li,
+li.bubble b{
+  color: black;
+}
 .bubble-xs::before {
 	top: -0.5em;
 	right: -0.5em;
@@ -320,8 +330,8 @@ li.bubble.innovaciostanacsado::after {
 	width: 18em;
 	margin: 5em auto;
 }
-.bubble-xl.bubble-xl h2 {
-	margin: -1em 0 .75em;
+.bubble-xl h2 {
+	margin: 0em 0 .75em;
 }
 
 .bubble-breakout {
@@ -363,6 +373,72 @@ li.bubble-listing li::before {
 li.bubble-listing li:first-child::before {
   content: '';
 }
+ul.nolist > li {
+  list-style-type: none;
+}
+
+
+.triangle-down::before {
+	content: "";
+  width: 0;
+  height: 0;
+  border-left: 12em solid transparent;
+  border-right: 12em solid transparent;
+  border-top: 11em solid #fff;
+  position: absolute;
+  z-index: -1;
+  top: -0.5em;
+  right: -3.5em;
+  bottom: -0.5em;
+  left: -3.5em;
+  background: none;
+}
+.triangle-down {
+	position: relative;
+	z-index: 0;
+	width: 17em;
+	height: 11em;
+	margin: auto;
+}
+main .narrative .triangle-down h2{
+  position: relative;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  margin: 1.5em auto -0.5em;
+  top: -1.5em;
+  height: 0;
+}
+.triangle-down p{
+  text-align: center;
+}
+
+.rectagle {
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.grid-column {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+.grid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em;
+
+}
+
 
 main h2,
 main h3,
