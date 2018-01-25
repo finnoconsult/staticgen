@@ -377,6 +377,47 @@ li.bubble::after {
 	font-family: 'Montserrat', "Alegreya Sans", sans-serif;
 	font-size: 14px;
 }
+@media (max-width: 19.97em) {
+	.narrative p b,
+	.narrative p label,
+	.bubbles .bubble b,
+	.narrative .headline,
+	.footer-segment,
+	.button {
+		font-size: 4.35vw;
+	}
+}
+@media screen and (min-width: 85em) {
+	.narrative p b,
+	.narrative p label,
+	.bubbles .bubble b,
+	.narrative .headline,
+	.footer-segment,
+	.button {
+		font-size: 17.5px;
+	}
+}
+@media screen and (min-width: 120em) {
+	.narrative p b,
+	.narrative p label,
+	.bubbles .bubble b,
+	.narrative .headline,
+	.footer-segment,
+	.button {
+		font-size: 21px;
+	}
+}
+@media screen and (min-width: 160em) {
+	.narrative p b,
+	.narrative p label,
+	.bubbles .bubble b,
+	.narrative .headline,
+	.footer-segment,
+	.button {
+		font-size: 24.5px;
+	}
+}
+
 h1, h2, h3 {
 	font-family: 'Montserrat', "Alegreya Sans", sans-serif;
 }
