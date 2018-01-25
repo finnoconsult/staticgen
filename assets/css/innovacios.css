@@ -24,26 +24,35 @@ header.site {
 a.logo {
 	width: auto;
 	padding: 0.2em 0 0 0;
-	/*width: 24em;
+	margin-left: 2vh;
+
+	width: 18em;
 	padding: 1em 0;
-	background: url("/img/innovacios/logo2.svg") center no-repeat;
-	background-size: contain;*/
-	background: none;
-	color: #0965bc;
-	color: inherit;
-	font-size: 3.3vw;
+	background: url("/img/innovacios/logo.svg") center no-repeat;
+	background-size: contain;
+	color: transparent;
+	text-indent: -100%;
+	overflow: hidden;
+	text-decoration: none;
+
+	/* color: #0965bc; */
+	/* background: none;
 	text-align: left;
+	color: inherit;
+	font-family: 'Montserrat', "Alegreya Sans", sans-serif;
+	font-size: 3vw; */
+	/* font-size: 3.3vw; */
 
 }
 
 .nn {
 	color: transparent;
+	text-indent: -100%;
+	overflow: hidden;
 	text-decoration: none;
 	background: url("/img/innovacios/nn.svg") center no-repeat;
 	background-position: center;
 	background-size: 90%;
-	text-indent: -100%;
-	overflow: hidden;
 	/*background-image: url('/img/innovacios/n.svg'),
                   url('/img/innovacios/n.svg');
 	background-repeat: no-repeat,
@@ -97,20 +106,30 @@ div.narrative {
 
 
 .motto {
-	width: 65vw;
+	width: 70vw;
 	overflow: hidden;
 }
 
 #needs .motto {
-	width: 75vw;
+	width: 90vw;
+}
+
+.motto .nn{
+	font-family: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	background: none;
+	text-indent: inherit;
+	overflow: inherit;
 }
 
 .motto dt{
     font-size: 7.5vw;
 		line-height: 9vw;
 		height: 9vw;
+		font-family: 'Montserrat', "Alegreya Sans", sans-serif;
 		font-weight: bold;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
     width: auto;
     position: relative;
 		white-space: nowrap;
@@ -118,11 +137,12 @@ div.narrative {
 		overflow: hidden;
 		transition: all 1s ease;
 }
-.motto dt small{
+.motto small{
 	text-transform: lowercase;
-	font-family: "Alegreya Sans", sans-serif;
+	/* font-family: "Alegreya Sans", sans-serif; */
 	color: #0965bc;
-	font-size: 8vh;
+	/* font-size: 8vh; */
+	font-size: 100%;
 }
 .motto dt:nth-child(1) {
 	animation: liftingUp 1s;
@@ -232,7 +252,7 @@ div.narrative {
   100% { width: 32vw; }
 }
 
-.invert {
+.narrative.invert {
 	/*background-color: #0965bc;*/
 	background-color: #538ABD;
 }
@@ -333,23 +353,41 @@ li.bubble::after {
 .button:hover {
 	color: #0965bc;
 }
+.invert .button {
+	border: solid 6px #fff;
+}
 .invert .button:focus,
 .invert .button:hover {
 	color: #0965bc;
 }
 
+#navigation {
+	margin-right: 2vh;
+}
 #navigation .button {
 	padding: 0.5em 1em;
 	margin-left: 1.5em;
 }
-
+.narrative p b,
+.narrative p label,
+.bubbles .bubble b,
+.narrative .headline,
+.footer-segment,
+.button {
+	font-family: 'Montserrat', "Alegreya Sans", sans-serif;
+	font-size: 14px;
+}
+h1, h2, h3 {
+	font-family: 'Montserrat', "Alegreya Sans", sans-serif;
+}
 
 
 /*#experience */
 .colleagues {
 	/*position: absolute;*/
 	left:0px;
-	margin: 0 2em;
+	margin: 0;
+	/* margin: 0 1em; */
 	display: flex;
 	flex-wrap: nowrap;
 	top: 11em;
@@ -366,9 +404,79 @@ li.bubble::after {
 /*#experience */
 .colleagues p {
 	/*flex: 33%;*/
-	padding: 0.5em;
-	text-align: justify;
+	padding: 0.5em 0.8em;
+	/* text-align: justify; */
 }
+
+
+
+
+#speedcreation {
+	background-image: linear-gradient(301.75deg, #dceaf7 0, #dceaf7 4em, rgba(255,255,255,0) 4em), url(/img/prezi/speedcreation.png);
+	/* background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(9,101,188,0) 4em), url(/img/prezi/iteration.cycle.jpg); */
+	background-position: top center;
+	background-size: cover, cover;
+}
+#speedcreation .bubbles .bubble{
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+}
+#speedcreation .bubbles .bubble-l{
+	margin-left: 2.5em;
+	margin-right: 2.5em;
+}
+#speedcreation .bubbles .bubble::before{
+	border: 0.5em dashed black;
+	transition: all 1s ease;
+}
+#speedcreation .bubbles .bubble::before{
+	border: 0.5em dashed black;
+	/* animation: bordermove 1s linear infinite;
+	-webkit-animation: bordermove 1s linear infinite; */
+}
+/* @keyframes bordermove {
+  0% { border-style: dashed; }
+  50% { border-style: dotted; }
+  100% { border-style: dashed; }
+} */
+#speedcreation .bubbles .bubble:first-child::before {
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+#speedcreation .bubbles .bubble:last-child::before{
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+#speedcreation2 {
+	display: block;
+	position: relative;
+	/* background: none; */
+}
+/* #speedcreation2 h1,
+#speedcreation2 p,
+#speedcreation2 ul li,
+#speedcreation2 h2,
+#speedcreation2 em,
+#speedcreation2 b {
+	color: #000;
+} */
+#speedcreation2::before {
+  /* content: "";
+	min-height: 100vh; */
+	/* background-position: top center;
+	background-size: cover, cover;
+	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, rgba(255,255,255,0) 4em), url(/img/prezi/speed.jpg); */
+  /* opacity: 0.2; */
+  /* top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; */
+}
+
 
 cookie.disclaimer {
 	background: #0965bc;
@@ -393,7 +501,7 @@ li.bubble.finnoconsult a, li.bubble.finnoconsult b, li.bubble.finnoconsult stron
 	color: #00bd59;
 }
 .bubble-xl {
-	text-align: justify;
+	/* text-align: justify; */
 	width: 19rem;
 	height: 19rem;
 }
@@ -407,10 +515,17 @@ li.bubble-listing h2 {
 li.bubble-listing li::before {
     color: #0965bc;
 }
+.ourscope ul li:before {
+	color: #0965bc;
+}
 
 
 
 #contact .colleagues p {
+	text-align: center;
+}
+#contact p.invert {
+	margin-top: 2em;
 	text-align: center;
 }
 
@@ -418,8 +533,9 @@ li.bubble-listing li::before {
 
 @media (min-width: 48em) {
 	li.bubble.finnoconsult {
-		position: absolute;
-		right: 10%;
+		/* position: absolute; */
+		/* right: 10%; */
+		margin-left: 15%;
 	}
 }
 
@@ -473,17 +589,28 @@ li.bubble-listing li::before {
 	.motto dt{
     font-size: 8.5vh;
 		line-height: 10vh;
-		height: 10vh;
+		height: 11vh;
 	}
 	.motto dt.help {
+		padding-top: 2vh;
 		font-size: 8vh;
+	}
+
+	#needs .motto {
+		width: 80vw;
 	}
 
 }
 
 @media (max-width: 52em) {
 	a.logo {
-		font-size: 4.3vw;
+		/* font-size: 4.3vw; */
+		/* width: 9.5em; */
+		width: 25vw;
+		margin-left: 0;
+	}
+	#navigation {
+		margin-right: 0;
 	}
 	a.logo .nn {
 		text-transform: uppercase;
@@ -493,12 +620,32 @@ li.bubble-listing li::before {
 		margin: 6vw 20vw;
 		font-size: 2.1vw;
 	}
+	main p {
+		max-width: inherit;
+	}
+}
+@media (max-width: 48em) {
+	a.logo {
+		width: 9.5em;
+	}
+	nav a {
+		margin-left: 0.5em;
+	}
+	#navigation .button {
+		margin-left: 0.5em;
+	}
 }
 
-
 @media (max-width: 37.5em) {
+
 	a.logo {
-		font-size: 5.3vw;
+		/* font-size: 5.3vw; */
+		width: 50vw;
+		margin-left: 0;
+	}
+
+	#navigation {
+		margin-right: 0;
 	}
 	a.logo .nn {
 		background-position: 0.2vw 2.44vw;
@@ -511,7 +658,7 @@ li.bubble-listing li::before {
 
 @media (max-width: 23.5em) {
 	a.logo {
-		padding: 0.5em 0 0 0;
+		/* padding: 0.5em 0 0 0; */
 	}
 	.withUs h3{
 		margin: 9vw 28vw;
@@ -568,6 +715,9 @@ li.bubble-listing li::before {
 	}
 	.js #activation .bubble:nth-child(4) {
 		transition-delay: 3.2s;
+	}
+	.js #activation .bubble:nth-child(5) {
+		transition-delay: 3.6s;
 	}
 }
 

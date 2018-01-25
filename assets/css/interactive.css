@@ -55,6 +55,10 @@
 	.js #realization .package:nth-child(4) {
 		transition-delay: 1.2s;
 	}
+	.js #activation .bubble:nth-child(5),
+	.js #realization .package:nth-child(5) {
+		transition-delay: 1.6s;
+	}
 }
 
 @media screen and (min-width: 64em) {

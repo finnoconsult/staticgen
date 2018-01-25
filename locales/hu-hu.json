@@ -1,6 +1,8 @@
 {
-	"InnovaciosLogoText": "Éld meg az I",
-	"InnovaciosLogoText2": "ovációt",
+	"InnovaciosLogoText": "Innovációs",
+	"InnovaciosLogoText2": "Tanácsadó",
+	"#InnovaciosLogoText": "Éld meg az I",
+	"#InnovaciosLogoText2": "ovációt",
 	"InnovaciosLogoSubtitle": "az I",
 	"InnovaciosLogoSubtitle2": "ovációs Tanácsadóval!",
 	"Home page": "Nyitólap",
@@ -58,5 +60,10 @@
 	"Kerekegyhaza": "Kerekegyhaza",
 	"Hungary": "Hungary",
 	"Links": "Links",
-	"Promo!": "Promo!"
+	"Promo!": "Promo!",
+	"Finnoscore": "Finnoscore",
+	"SpeedCreation": "SpeedCreation",
+	"FinnoScore": "FinnoScore",
+	"#FinnoScore": "#FinnoScore",
+	"#SpeedCreation": "#SpeedCreation"
 }

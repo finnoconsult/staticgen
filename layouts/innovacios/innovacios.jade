@@ -1,5 +1,6 @@
 extends ../landing.jade
 append styles
+	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:500,700")
 	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kalam")
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
@@ -13,14 +14,22 @@ block main
 	main
 		h1.print= heading || title
 		!= contents
+
 		aside.narrative#contact
 			h2.main(data-title=__("Let's start a new project together"))= __("Get everything you need for your innovation today")
+			if contactDesc
+				p= contactDesc
+			else
+				p Claim your information about our special services #[a(href="/finnoscore") Finnoscore] and #[a(href="/speedcreation") Speedcreation],
+					br
+					| or simply get more documentation about our overall portfolio.
+
 			include ./contactForm
-		.withUs
-			h3.handwritten
-				= __("InnovaciosLogoSubtitle")
-				| #[u.nn nn]
-				= __("InnovaciosLogoSubtitle2")
+		//- .withUs
+		//- 	h3.handwritten
+		//- 		= __("InnovaciosLogoSubtitle")
+		//- 		| #[u.nn nn]
+		//- 		= __("InnovaciosLogoSubtitle2")
 
 block navigation
 	include ./navigation
