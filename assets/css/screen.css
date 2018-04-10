@@ -142,9 +142,15 @@ aside#contact {
 	background: url(/img/strategy.svg) 100% 4em no-repeat;
 	background-size: 8em auto;
 }
+#clients {
+}
 #clients .bubbles .bubble-xs {
   margin: 1em 0 auto;
-  padding-top: 1em;
+  padding-top: 0;
+}
+#clients .bubbles .bubble-xs .logo{
+  margin-left: -5px;
+  border-radius: 100%;
 }
 #clients .bubbles .bubble::after {
   content: '';
@@ -152,6 +158,9 @@ aside#contact {
 #clients .bubbles .bubble-xs::before {
   border: solid 3px #00bd59;
 }
+/* #clients.invert .bubbles .bubble-xs::before {
+  border: solid 3px #00bd59;
+} */
 .narrative.invert {
 	position: relative;
 	z-index: 0;
@@ -344,6 +353,10 @@ p.bubble-xl {
 	margin-top: 0;
 	margin-bottom: 0;
   height: auto;
+}
+p.right {
+  margin: 1em;
+	text-align: right;
 }
 main .narrative .bubble-xl h2 {
 	margin: 0em 0 .75em;
