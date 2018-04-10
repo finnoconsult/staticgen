@@ -142,6 +142,16 @@ aside#contact {
 	background: url(/img/strategy.svg) 100% 4em no-repeat;
 	background-size: 8em auto;
 }
+#clients .bubbles .bubble-xs {
+  margin: 1em 0 auto;
+  padding-top: 1em;
+}
+#clients .bubbles .bubble::after {
+  content: '';
+}
+#clients .bubbles .bubble-xs::before {
+  border: solid 3px #00bd59;
+}
 .narrative.invert {
 	position: relative;
 	z-index: 0;
@@ -281,7 +291,7 @@ li.bubble b{
 	bottom: -0.5em;
 	left: -0.5em;
 }
-.bubble-xs {
+.bubble.bubble-xs {
 	height: 6em;
 	width: 6em;
 	margin: 0.5em auto;
@@ -292,7 +302,7 @@ li.bubble b{
 	bottom: -1em;
 	left: -1em;
 }
-.bubble-s {
+.bubble.bubble-s {
 	height: 8em;
 	width: 8em;
 	margin: 1em auto;
@@ -303,7 +313,7 @@ li.bubble b{
 	bottom: -1.5em;
 	left: -1.5em;
 }
-.bubble-m {
+.bubble.bubble-m {
 	height: 10em;
 	width: 10em;
 	margin: 1.5em auto;
@@ -314,7 +324,7 @@ li.bubble b{
 	bottom: -2.5em;
 	left: -2.5em;
 }
-.bubble-l {
+.bubble.bubble-l {
 	height: 15em;
 	width: 15em;
 	margin: 2.5em auto;
@@ -325,7 +335,7 @@ li.bubble b{
 	bottom: -5em;
 	left: -5em;
 }
-.bubble-xl {
+.bubble.bubble-xl {
 	height: 18em;
 	width: 18em;
 	margin: 5em auto;
@@ -787,6 +797,10 @@ footer.site {
 		right: auto;
 		left: 50%;
 	}
+  #clients .bubbles.fullwidth {
+    width: 70vw;
+    margin: 0 auto;
+  }
 	.option {
 		display: inline-block;
 		width: 16rem;
