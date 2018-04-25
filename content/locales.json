@@ -1,6 +1,4 @@
 [
-	{"id": "de-at", "name": "Österreich (Deutsch)", "default": true},
-	{"id": "de-de", "name": "Deutschland (Deutsch)"},
-	{"id": "en-gb", "name": "United Kingdom (English)"},
-	{"id": "en-us", "name": "United States (English)"}
+	{"id": "de-at", "name": "Deutsch", "default": true},
+	{"id": "en-gb", "name": "English"}
 ]

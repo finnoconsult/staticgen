@@ -344,7 +344,7 @@ li.bubble b{
 	bottom: -5em;
 	left: -5em;
 }
-.bubble.bubble-xl {
+.bubble-xl {
 	height: 18em;
 	width: 18em;
 	margin: 5em auto;
