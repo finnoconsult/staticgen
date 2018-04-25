@@ -43,6 +43,9 @@ html.no-js(lang=locale)
 			meta(name="robots", content="noindex,follow")
 		link(rel="canonical", href=homepage+path)
 
+		block analytics
+			include includes/analytics
+
 	body
 		block header
 			include includes/header

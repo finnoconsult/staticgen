@@ -105,6 +105,27 @@
 	.js #clients .bubble:nth-child(13) {
 		transition-delay: 1.3s;
 	}
+	.js #clients .bubble:nth-child(14) {
+		transition-delay: 1.4s;
+	}
+	.js #clients .bubble:nth-child(15) {
+		transition-delay: 1.5s;
+	}
+	.js #clients .bubble:nth-child(16) {
+		transition-delay: 1.6s;
+	}
+	.js #clients .bubble:nth-child(17) {
+		transition-delay: 1.7s;
+	}
+	.js #clients .bubble:nth-child(18) {
+		transition-delay: 1.8s;
+	}
+	.js #clients .bubble:nth-child(19) {
+		transition-delay: 1.9s;
+	}
+	.js #clients .bubble:nth-child(20) {
+		transition-delay: 2.0s;
+	}
 }
 
 @media screen and (min-width: 64em) {
