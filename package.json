@@ -10,16 +10,21 @@
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
-    "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "finnodev": "http-server ./public",
     "prefinnotest": "node minify.js; node minify.js -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
     "finnotest": "surge ./public finnoconsult-wip.surge.sh",
-    "_prefinnodeply": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
-    "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
-    "preinnotest": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
+    "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
+    "prefinnodeploy": "yarn finnobuild",
+    "finnodeploy": "scp -r ./build/* finnoconsult@www.finnoconsult.at:/home/finnoconsult/public_html/",
+
+    "preinnodev": "node minify.js; node minify.js -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
     "innodev": "http-server ./public",
-    "preinnodeploy": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
-    "innodeploy": "surge ./public innovaciostanacsado-wip.surge.sh"
+    "preinnotest": "node minify.js; node minify.js -p -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/; node render.js -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/",
+    "innotest": "surge ./public innovaciostanacsado-wip.surge.sh",
+    "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
+    "preinnodeploy": "yarn innobuild",
+    "innodeploy": "scp -r ./build/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
+
   },
   "devDependencies": {
     "inline-source": "^4.2.6",
