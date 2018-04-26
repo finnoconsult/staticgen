@@ -43,13 +43,8 @@ html.no-js(lang=locale)
 			meta(name="robots", content="noindex,follow")
 		link(rel="canonical", href=homepage+path)
 
-		// Global site tag (gtag.js) - Google Analytics 
-		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-117865341-1")
-		script.
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-117865341-1');
+		block analytics
+			include includes/analytics
 
 	body
 		block header
