@@ -453,43 +453,94 @@ h1, h2, h3 {
 
 
 #speedcreation {
-	background-image: linear-gradient(301.75deg, #dceaf7 0, #dceaf7 4em, rgba(255,255,255,0) 4em), url(/img/prezi/speedcreation.png);
+	background-image: linear-gradient(301.75deg, #fff 0, #fff 4em, rgba(255,255,255,0) 4em), url(/img/innovacios/bg-shibuya.jpg);
+	/* background-image: linear-gradient(301.75deg, #dceaf7 0, #dceaf7 4em, rgba(255,255,255,0) 4em), url(/img/prezi/speedcreation.png); */
 	/* background-image: linear-gradient(301.75deg, #0965bc 0, #0965bc 4em, rgba(9,101,188,0) 4em), url(/img/prezi/iteration.cycle.jpg); */
 	background-position: top center;
 	background-size: cover, cover;
 }
+#speedcreation > h2 {
+	color: white;
+}
+#speedcreation > p {
+	color: white;
+	/* font-weight: bold; */
+	text-shadow: 2px 2px #0965bc;
+}
+
 #speedcreation .bubbles .bubble{
 	margin-left: 1.5em;
+	/* margin-right: 1.5em; */
 	margin-right: 1.5em;
+	padding-top: 1em;
 }
 #speedcreation .bubbles .bubble-l{
-	margin-left: 2.5em;
+	margin-left: 3.5em;
+	/* margin-left: 2.5em; */
 	margin-right: 2.5em;
 }
 #speedcreation .bubbles .bubble::before{
-	border: 0.5em dashed black;
-	transition: all 1s ease;
+	border: solid 10px black;
+	/* border: 0.5em dashed black;
+	transition: all 1s ease; */
 }
 #speedcreation .bubbles .bubble::before{
-	border: 0.5em dashed black;
+	/* border: 0.5em dashed black; */
 	/* animation: bordermove 1s linear infinite;
 	-webkit-animation: bordermove 1s linear infinite; */
 }
+
 /* @keyframes bordermove {
   0% { border-style: dashed; }
   50% { border-style: dotted; }
   100% { border-style: dashed; }
 } */
 #speedcreation .bubbles .bubble:first-child::before {
-	border-left: 0;
+	/* border-left: 0;
 	border-right: 0;
-	border-bottom: 0;
+	border-bottom: 0; */
 }
 #speedcreation .bubbles .bubble:last-child::before{
-	border-left: 0;
+	/* border-left: 0;
 	border-right: 0;
-	border-top: 0;
+	border-top: 0; */
 }
+
+
+.js #speedcreation[data-rsg] .bubbles .bubble svg {
+	animation: none;
+}
+#speedcreation .bubbles .bubble svg,
+#speedcreation .bubbles .bubble-l svg {
+	width: 16.9em;
+  height:auto;
+  position: absolute;
+	top: -2.5em;
+	left: -2.5em;
+  animation: turn-circle 4s ease;
+  /* animation: turn-circle 20s linear infinite; */
+  fill: transparent;
+  stroke-width: 15.5;
+  stroke-dasharray: 31.5;
+  stroke: black;
+}
+#speedcreation .bubbles .bubble-l svg {
+	width: 22em;
+	top: -3.5em;
+	left: -3.5em;
+}
+#speedcreation .bubbles .bubble:nth-child(2) svg {
+	animation: turn-circle2 4s ease;
+}
+@keyframes turn-circle {
+  to { -weblit-transform: rotate3d(0,0,1,360deg);
+               transform: rotate3d(0,0,1,360deg);}
+}
+@keyframes turn-circle2 {
+  to { -weblit-transform: rotate3d(0,0,1,-360deg);
+               transform: rotate3d(0,0,1,-360deg);}
+}
+
 #speedcreation2 {
 	display: block;
 	position: relative;
@@ -762,6 +813,21 @@ li.bubble-listing li::before {
 	}
 }
 
+.js #speedcreation[data-rsg]::before {
+	transform: translateX(50%);
+	opacity: 1;
+}
+.js #speedcreation::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -300%;
+	bottom: 0;
+	width: 400%;
+	opacity: 0;
+	background: linear-gradient(301.75deg, #fff 0, #fff 4em, rgba(9,101,188,0.5) 4em, rgba(9,101,188,0.5) 50.5%, #fff 50%);
+	transition: transform 1.5s linear, opacity .4s linear 1.25s;
+}
 /* all css*/
 
 ::selection {
