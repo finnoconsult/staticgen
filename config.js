@@ -41,6 +41,7 @@ module.exports = {
 	// Todo: get this from config!
 	homepage: pkg.homepage,
 	version: pkg.version,
+	dates: pkg.dates,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,

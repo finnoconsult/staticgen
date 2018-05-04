@@ -31,6 +31,7 @@ metalsmith(config.folder.root)
 		homepageCentral: config.homepage === config.homepageCentral ? null : config.homepageCentral,
 		version: config.version,
 		homepage: config.homepage,
+		dates: config.dates,
 		countries: config.countries
 	}))
 	.use(paths({
