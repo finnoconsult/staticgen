@@ -17,7 +17,7 @@
     "finnotest": "surge ./public finnoconsult-wip.surge.sh",
     "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "prodbackup": "ssh finnoconsult@finnoconsult.at sh /home/finnoconsult/backup.sh",
-    "_prefinnodeploy": "yarn finnobuild; yarn prodbackup",
+    "prefinnodeploy": "yarn finnobuild; yarn prodbackup",
     "finnodeploy": "scp -r ./public/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
 
     "preinnodev": "node minify.js; node minify.js -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
