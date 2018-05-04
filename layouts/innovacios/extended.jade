@@ -3,6 +3,7 @@ extends ../extended.jade
 append styles
 	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:500,700")
 	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kalam")
+	link(rel="stylesheet", media="screen", data-inline, href="/css/interactive.css")
 	link(rel="stylesheet", media="screen", data-inline, href="/css/innovacios.css")
 
 block header
@@ -21,3 +22,7 @@ block footerlinks
 
 block analytics
 	include ./analytics
+
+
+append scripts
+	script(data-inline, src="/js/appear.js")

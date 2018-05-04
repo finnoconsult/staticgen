@@ -41,6 +41,7 @@ module.exports = {
 	homepage: pkg.homepage,
 	version: pkg.version,
 	dates: pkg.dates,
+	constants: pkg.constants,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,

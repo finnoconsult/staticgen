@@ -629,6 +629,10 @@ li.bubble-listing li::before {
 		/* right: 10%; */
 		margin-left: 15%;
 	}
+	[lang^="hu"] li.bubble.finnoconsult,
+	[lang^="hu-hu"] li.bubble.finnoconsult {
+		margin-left: 0;
+	}
 }
 
 

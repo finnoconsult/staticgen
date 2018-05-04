@@ -12,4 +12,7 @@ nav(class="screen " + (path != "/contact" && "withButton"), id="navigation")
 	each link, separator in links
 		= separator ? " " : ""
 		- var subDomainLink = linkTo(locale, link.homepage, false)
+		//- NOTE: only Hungarian content available, others should show the landing 
+		- var landingPageRegex = new RegExp(locale + "/$");
+		- if (locale.indexOf("hu") !== 0 && !subDomainLink.match(landingPageRegex)) { subDomainLink = linkTo(locale, "/#activation") }
 		a(class=link.class, data-note=link.homepage, href=subDomainLink)= link.name
