@@ -20,9 +20,14 @@ block main
 			if contactDesc
 				p= contactDesc
 			else
-				p Claim your information about our special services #[a(href="/finnoscore") Finnoscore] and #[a(href="/speedcreation") Speedcreation],
-					br
-					| or simply get more documentation about our overall portfolio.
+				if (langParam === 'hu')
+					p Igenyelje meg speciális #[a(href="/finnoscore") Finnoscore] vagy #[a(href="/speedcreation") Speedcreation] szolgáltatásunk tájékoztatóját,
+						br
+						| vagy akár csak kérjen bővebb információt szolgáltatásinkról.
+				else
+					p Claim your information about our special services #[a(href="/finnoscore") Finnoscore] and #[a(href="/speedcreation") Speedcreation],
+						br
+						| or simply get more documentation about our overall portfolio.
 
 			include ./contactForm
 		//- .withUs
