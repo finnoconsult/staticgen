@@ -26,7 +26,6 @@ process.argv.slice(2).forEach(function (arg, index) {
 var pkg = require(path.join(home, "package.json"));
 var locales = require(path.join(home, "content/locales.json"));
 var defaultLocale = locales.filter(function (locale) { return locale.default; })[0].id;
-
 module.exports = {
 	folder: {
 		root: __dirname,
@@ -41,6 +40,7 @@ module.exports = {
 	// Todo: get this from config!
 	homepage: pkg.homepage,
 	version: pkg.version,
+	dates: pkg.dates,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,

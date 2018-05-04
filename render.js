@@ -30,6 +30,7 @@ metalsmith(config.folder.root)
 		knownAuthors: require("./assets/knownAuthors.json"), /*TODO json.js*/
 		homepageCentral: config.homepage === config.homepageCentral ? null : config.homepageCentral,
 		version: config.version,
+		dates: config.dates,
 		homepage: config.homepage,
 		countries: config.countries
 	}))

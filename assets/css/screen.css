@@ -116,7 +116,7 @@ div.narrative {
 	background-color: #fff;
 }
 
-section.invert {
+section.invert, a.invert {
 	background-color: #00bd59;
 }
 #orientation,
