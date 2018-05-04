@@ -11,13 +11,14 @@
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
+    "prefinnodev": "yarn build",
     "finnodev": "http-server ./public",
     "prefinnotest": "node minify.js; node minify.js -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
     "finnotest": "surge ./public finnoconsult-wip.surge.sh",
     "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "prodbackup": "ssh finnoconsult@finnoconsult.at sh /home/finnoconsult/backup.sh",
-    "prefinnodeploy": "yarn finnobuild; yarn prodbackup",
-    "finnodeploy": "scp -r ./build/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
+    "_prefinnodeploy": "yarn finnobuild; yarn prodbackup",
+    "finnodeploy": "scp -r ./public/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
 
     "preinnodev": "node minify.js; node minify.js -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
     "innodev": "http-server ./public",
@@ -25,7 +26,7 @@
     "innotest": "surge ./public innovaciostanacsado-wip.surge.sh",
     "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "preinnodeploy": "yarn innobuild",
-    "innodeploy": "scp -r ./build/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
+    "innodeploy": "scp -r ./public/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
 
   },
   "devDependencies": {
