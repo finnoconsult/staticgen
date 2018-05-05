@@ -1,4 +1,5 @@
 var path = require("path");
+var colors = require("colors");
 var home = __dirname;
 var switches = {};
 
@@ -24,6 +25,15 @@ process.argv.slice(2).forEach(function (arg, index) {
 });
 
 var pkg = require(path.join(home, "package.json"));
+var mainPkg = require("./package.json");
+
+if (mainPkg.version !== pkg.version) {
+	const isLower = (pkg.version >= mainPkg.version);
+	const color = isLower ? colors.yellow : colors.red;
+	const textLower = isLower ? "is lower**" : "is greater**";
+	console.log(color('WARNING: Static Generator version'), mainPkg.version, color(textLower).bold, color('than the Content version'), pkg.version);
+	console.log('(** HINT: You can still generate the public folder content, however need to test all pages and CSS)'.italic.grey);
+}
 var locales = require(path.join(home, "content/locales.json"));
 var defaultLocale = locales.filter(function (locale) { return locale.default; })[0].id;
 module.exports = {
@@ -46,7 +56,10 @@ module.exports = {
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,
 	linkTo: function (locale, path, crossdomain) {
-		return (crossdomain || "") + (locale === defaultLocale ? "" : "/" + locale) + path;
+		const onlyHome = pkg.constants && pkg.constants.link && pkg.constants.link[locale] && pkg.constants.link[locale].onlyHome;
+		const subPath = (!onlyHome && path || "");
+		// console.log('subPath', locale, path, '?', onlyHome, '=>', subPath);
+		return (crossdomain || "") + (locale === defaultLocale ? "" : "/" + locale) + subPath;
 	},
 	urlify: function (text) {
 		text = text.toLowerCase();
