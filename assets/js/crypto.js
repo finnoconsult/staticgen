@@ -1,10 +1,11 @@
 console.log('string to be decrypted', window.location.hash);
 //, definition, crypto
-// var crypto = require('crypto');
+var crypto = require('crypto');
 
 ctm(function (document, window) {
 	"use strict";
 
+	// https://stackoverflow.com/questions/48441285/cant-encrypt-decrypt-on-php-equivalent-nodejs-crypto
 	var key = '0a8f1b576cf98841fd1202090230a398';
 	var iv = '1234567890abcdef';
 	var text = "pereira";
@@ -24,4 +25,5 @@ ctm(function (document, window) {
 	}
 	console.log(window.location);
 	console.log(encrypt(iv, text, key));
+	console.log(decrypt(iv, 'b28e08f3fc15b2', key));
 });

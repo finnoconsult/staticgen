@@ -25,7 +25,6 @@ metalsmith(config.folder.root)
 	.source(config.folder.content)
 	.destination(config.folder.public)
 	.use(assign({
-		definition: 222,
 		linkTo: config.linkTo,
 		urlify: config.urlify,
 		moment: require("moment"),
