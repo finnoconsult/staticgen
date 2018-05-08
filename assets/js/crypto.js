@@ -8,7 +8,7 @@ ctm(function (document, window) {
 	// https://stackoverflow.com/questions/48441285/cant-encrypt-decrypt-on-php-equivalent-nodejs-crypto
 	var key = '0a8f1b576cf98841fd1202090230a398';
 	var iv = '1234567890abcdef';
-	var text = "pereira";
+	var text = "árvíztűrő@tükörfórógép.hu!";
 
 	var encrypt = function(iv, text, key){
 		  var cipher = crypto.createCipheriv('aes-256-ctr', key, iv)
@@ -23,7 +23,6 @@ ctm(function (document, window) {
 	  dec += decipher.final('utf8');
 	  return dec;
 	}
-	console.log(window.location);
 	console.log(encrypt(iv, text, key));
-	console.log(decrypt(iv, 'b28e08f3fc15b2', key));
+	console.log(decrypt(iv, '014a08e056caa961d518963ab744ba860111b88920c38408e8a9a739860c3608da89d9', key));
 });
