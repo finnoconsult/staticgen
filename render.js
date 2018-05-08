@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 var metalsmith = require("metalsmith");
 var contentParserJade = require("metalsmith-jade");
 var contentParserMarkdown = require("metalsmith-markdown");
@@ -16,6 +17,7 @@ var assign = require("./plugins/assign.js");
 var trueName = require("./plugins/truename.js");
 var canonical = require("./plugins/canonical.js");
 
+
 var config = require("./config.js");
 
 metalsmith(config.folder.root)
@@ -23,6 +25,7 @@ metalsmith(config.folder.root)
 	.source(config.folder.content)
 	.destination(config.folder.public)
 	.use(assign({
+		definition: 222,
 		linkTo: config.linkTo,
 		urlify: config.urlify,
 		moment: require("moment"),

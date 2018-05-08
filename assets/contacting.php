@@ -1,4 +1,5 @@
 <?php
+
 /* simple php mail() sender */
 function sendMail($config, $data, $headers = array()) {
   $message = easyStringTemplate($config["message"], $data);
@@ -95,7 +96,7 @@ function sendSlackMessage($config, $settings, $data) {
   require_once "./api/vendor/maknz/slack/src/Client.php";
 
   // echo "sendSlackMessage(".serialize($config).", ".serialize($settings).", ".serialize($data).")";
-
+  // echo "\r\n".easyStringTemplate($config["message"], $data);
   try {
     $client = new Maknz\Slack\Client($config['url'], $settings);
     $Message = $client->send(easyStringTemplate($config["message"], $data));
@@ -172,21 +173,29 @@ if (!defined('INI_SCANNER_TYPED')) {
   $configuration = parse_ini_file($configFile, true, INI_SCANNER_TYPED);
 }
 
+require_once "./inc/Crypto.php";
+$crypto = new Crypto($configuration["crypto"]);
+
+$email = $_REQUEST["email"] ? $_REQUEST["email"] : $_REQUEST["_replyto"];
+$name = $_REQUEST["name"];
+
 /* send mail via php mail() and smtp */
 if (sendMessage(
   array(
+    "_decrypt_url" => $configuration["crypto"]["decrypt_url"],
     "to" => $_REQUEST["_to"] ? $_REQUEST["_to"] : 'admin@finnoconsult.at',
     "subject" => $_REQUEST["_subject"] ? $_REQUEST["_subject"] : 'Contact form submission',
-    "email" => $_REQUEST["email"] ? $_REQUEST["email"] : $_REQUEST["_replyto"],
-    "name" => $_REQUEST["name"],
+    "email" => $crypto->encrypt($email),
+    "name" => $crypto->encrypt($name),
+    "phone" => $crypto->encrypt($_REQUEST["phone"]),
+    "sender" => $crypto->encrypt("{name: \"$name\", email: \"$email\"}"),
     "referer" => $_SERVER["HTTP_REFERER"],
     "message" => $_REQUEST["message"],
     // just for storing into CSV:
     "subject" => $_REQUEST["subject"],
-    "phone" => $_REQUEST["phone"],
     "country" => $_REQUEST["country"],
     "city" => $_REQUEST["city"],
-    "address" => $_REQUEST["address"],
+    "address" => $crypto->encrypt($_REQUEST["address"]),
     "_honeypot" => $_REQUEST["_honeypot"],
     "_honey" => $_REQUEST["_honey"],
     "_replyto" => $_REQUEST["_replyto"],
