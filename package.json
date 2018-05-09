@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "colors": "^1.2.4",
-    "crypto": "^1.0.1",
     "metalsmith-paths": "^3.0.1",
     "surge": "^0.20.1"
   }

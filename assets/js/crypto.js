@@ -1,5 +1,6 @@
 if (typeof require !== "undefined") {
-	console.log('string to be decrypted', window.location.hash);
+	const cypheredText = window.location.hash.substring(1);
+	console.log('string to be decrypted', cypheredText);
 	var crypto = require('crypto');
 
 	ctm(function (document, window) {
@@ -25,7 +26,8 @@ if (typeof require !== "undefined") {
 		}
 
 		const key2=window.prompt('Decrpyt key', '');
-		console.log(encrypt(iv, text, key), key2);
-		console.log(decrypt(iv, '014a08e056caa961d518963ab744ba860111b88920c38408e8a9a739860c3608da89d9', key));
+		console.log(decrypt(iv, cypheredText, key));
+		console.log(crypto.createHash("md5").update("Man oh man do I love node!").digest("hex"));
+		console.log('cypheredText', encrypt(iv, text, key), key2);
 	});
 }
