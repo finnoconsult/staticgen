@@ -52,6 +52,7 @@ module.exports = {
 	version: pkg.version,
 	dates: pkg.dates,
 	constants: pkg.constants,
+	toBrowserify: pkg.toBrowserify,
 	defaultLocale: defaultLocale,
 	locales: locales.map(function (locale) { return locale.id; }),
 	countries: locales,

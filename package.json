@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/finnoconsult/staticgen.git"
   },
+  "toBrowserify": [
+  	"js/crypto.js"
+  ],
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
