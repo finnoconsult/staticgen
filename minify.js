@@ -1,32 +1,36 @@
-var crypto = require('crypto');
-var metalsmith = require("metalsmith");
-var ignore = require("metalsmith-ignore");
-var minifyCss = require("metalsmith-myth");
+const crypto = require('crypto');
+const metalsmith = require("metalsmith");
+const ignore = require("metalsmith-ignore");
+const minifyCss = require("metalsmith-myth");
 // https://www.npmjs.com/package/metalsmith-browserify
-var browserify = require("metalsmith-browserify");
-var minifyJs = require("./plugins/uglify.js");
-var assign = require("./plugins/assign.js");
+const browserify = require("metalsmith-browserify");
+const minifyJs = require("./plugins/uglify.js");
+const assign = require("./plugins/assign.js");
 
-var config = require("./config.js");
+const config = require("./config.js");
 
-var fileExistsService = require("./helper/file/fileExistsService");
+const fileExistsService = require("./helper/file/fileExistsService");
 
 const filesToBrowserify = (config.toBrowserify || []);
 
 function metalsmithBuild(entries) {
   // TODO: make optional, at least for the second minification on the content
-  const browserifiedFilesPlugin = entries.length >0 ?
-  	browserify({
+  const browserifiedFilesPlugin = entries.length >0
+    ? browserify({
   		"entries": entries,
   		"browserifyOptions": {
   			"ignoreMissing": true,
   		},
-  	}) :
-  	assign({
+  	})
+    : assign({
   		"browserifiedFiles": 0
   	});
 
-  // console.log('browserifying entries:', entries, browserifiedFilesPlugin);
+    // console.log('browserifying entries:', entries, browserifiedFilesPlugin);
+
+    const minifyJSPlugin = config.isProduction ? minifyJs() : assign({isDevelopment: true, isProduction: false});
+    // console.log('minifyJSPlugin:', config.isDevelopment, minifyJSPlugin);
+
 
   metalsmith(config.folder.root)
   	.clean(config.folder.cleanup)
@@ -36,7 +40,7 @@ function metalsmithBuild(entries) {
   	.use(ignore([
   		"img/*.max.*"
   	]))
-  	.use(minifyJs())
+  	.use(minifyJSPlugin)
   	.use(minifyCss({
   		files: "**/*.css",
   		compress: true

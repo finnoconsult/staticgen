@@ -1,24 +1,23 @@
-var crypto = require('crypto');
-var metalsmith = require("metalsmith");
-var contentParserJade = require("metalsmith-jade");
-var contentParserMarkdown = require("metalsmith-markdown");
-var layouts = require("metalsmith-layouts");
-var i18n = require("metalsmith-i18n");
-var collections = require("metalsmith-collections");
-var collectionsMetadata = require("metalsmith-collection-metadata");
-var contentParserMarkdown = require("metalsmith-markdown");
-var paths = require("metalsmith-paths");
-var propagateLocale = require("./plugins/propagate-locale.js");
-var permalinkLocale = require("./plugins/permalink-locale.js");
-//var json = require("./plugins/json.js");
-var modify = require("./plugins/modify.js");
-var inlineSource = require("./plugins/inline-source.js");
-var assign = require("./plugins/assign.js");
-var trueName = require("./plugins/truename.js");
-var canonical = require("./plugins/canonical.js");
+const crypto = require('crypto');
+const metalsmith = require("metalsmith");
+const contentParserJade = require("metalsmith-jade");
+const contentParserMarkdown = require("metalsmith-markdown");
+const layouts = require("metalsmith-layouts");
+const i18n = require("metalsmith-i18n");
+const collections = require("metalsmith-collections");
+const collectionsMetadata = require("metalsmith-collection-metadata");
+const paths = require("metalsmith-paths");
+const propagateLocale = require("./plugins/propagate-locale.js");
+const permalinkLocale = require("./plugins/permalink-locale.js");
+//const json = require("./plugins/json.js");
+const modify = require("./plugins/modify.js");
+const inlineSource = require("./plugins/inline-source.js");
+const assign = require("./plugins/assign.js");
+const trueName = require("./plugins/truename.js");
+const canonical = require("./plugins/canonical.js");
 
 
-var config = require("./config.js");
+const config = require("./config.js");
 
 metalsmith(config.folder.root)
 	.clean(false)

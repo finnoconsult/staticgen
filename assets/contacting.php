@@ -182,7 +182,7 @@ $name = $_REQUEST["name"];
 /* send mail via php mail() and smtp */
 if (sendMessage(
   array(
-    "_decrypt_url" => $configuration["crypto"]["decrypt_url"],
+    "_decrypt_api" => $configuration["crypto"]["decrypt_api"],
     "to" => $_REQUEST["_to"] ? $_REQUEST["_to"] : 'admin@finnoconsult.at',
     "subject" => $_REQUEST["_subject"] ? $_REQUEST["_subject"] : 'Contact form submission',
     "email" => $crypto->encrypt($email),

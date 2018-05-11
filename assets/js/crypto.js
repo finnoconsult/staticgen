@@ -1,18 +1,18 @@
 if (typeof require !== "undefined") {
-	const cypheredText = window.location.hash.substring(1);
-	console.log('string to be decrypted', cypheredText);
 	var crypto = require('crypto');
 
 	ctm(function (document, window) {
 		"use strict";
 
 		// https://stackoverflow.com/questions/48441285/cant-encrypt-decrypt-on-php-equivalent-nodejs-crypto
-		var key = '0a8f1b576cf98841fd1202090230a398';
-		var iv = '1234567890abcdef';
-		var text = "árvíztűrő@tükörfórógép.hu!";
+		const iv = '1234567890abcdef';
+		const text = '{"name": "Nevem senki.", "email": "árvíztűrő@tükörfórógép.hu!"}';
+		const cypheredText = window.location.hash.substring(1); // TODO: remove prefix correctly
 
+
+		// Not in use yet for prod
 		var encrypt = function(iv, text, key){
-			  var cipher = crypto.createCipheriv('aes-256-ctr', key, iv)
+		  var cipher = crypto.createCipheriv('aes-256-ctr', key, iv)
 		  var crypted = cipher.update(text,'utf8','hex')
 		  crypted += cipher.final('hex');
 		  return crypted;
@@ -25,9 +25,40 @@ if (typeof require !== "undefined") {
 		  return dec;
 		}
 
-		const key2=window.prompt('Decrpyt key', '');
-		console.log(decrypt(iv, cypheredText, key));
-		console.log(crypto.createHash("md5").update("Man oh man do I love node!").digest("hex"));
-		console.log('cypheredText', encrypt(iv, text, key), key2);
+		var makeObject = function(string) {
+			try {
+				console.log('parse string', string);
+				return JSON.parse(string) || {};
+			} catch(e) {
+				console.error('JSON parse error', e);
+				return {};
+			}
+		}
+
+		var md5 = function(string) {
+			return crypto.createHash("md5").update(string).digest("hex");
+		}
+
+
+		window.promptForKey = function() {
+			const key=window.prompt('Enter your decrpyting key to display details', '');
+
+			if (key) {
+				console.log('--encrypting default text', encrypt(iv, text, md5(key)));
+				const sender = makeObject(decrypt(iv, cypheredText, md5(key)));
+				console.log('decrypted from url ', sender);
+				document.getElementById('crypto-sender-name').value = sender.name;
+				document.getElementById('crypto-sender-email').value = sender.email;
+
+				// switch layouts by removing data-* tag
+				[].forEach.call(document.querySelectorAll("main#crypto"), function (element) {
+					element.removeAttribute("data-prompt");
+				});
+			}
+		}
+
+
+		window.promptForKey();
+
 	});
 }

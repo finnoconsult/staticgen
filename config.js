@@ -4,7 +4,7 @@ var home = __dirname;
 var switches = {};
 
 function argHelper(arg, index) {
-	var switchMap = {"-p": "preserveTargetDir", "--preserve-target-dir": "preserveTargetDir" ,"-u=": "url", "--url=":"url"};
+	var switchMap = {"-p": "preserveTargetDir", "-d": "developmentMode", "--preserve-target-dir": "preserveTargetDir" ,"-u=": "url", "--url=":"url"};
 
 	for (var sourceTag in switchMap) {
 		var keyExp = new RegExp('^'+sourceTag, 'i');
@@ -45,6 +45,8 @@ module.exports = {
 		locales: path.join(__dirname, "locales"),
 		public: path.join(__dirname, "public")
 	},
+	isDevelopment: switches.developmentMode,
+	isProduction: !switches.developmentMode,
 	homepageCentral: switches.url ? switches.url : "https://www.finnoconsult.at",
 	// homepageCentral: "https://www.innovaciostanacsado.com",
 	// Todo: get this from config!
