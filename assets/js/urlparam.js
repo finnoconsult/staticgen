@@ -13,9 +13,13 @@ ctm(function (document, window) {
     return (foundParam && foundParam.value) || defaultValue || "";
   }
 
-  window.projectUrlParameterToDom = function(params) {
+  var defaultFormatterFunc = function(v) {return v;}
+
+  window.projectUrlParameterToDom = function(params, formatterFunc) {
+    const formatter = formatterFunc || defaultFormatterFunc;
+    // console.log('formatterFunc', formatterFunc, formatter);
     Object.keys(params).map(function(param) {
-      document.getElementById(params[param]).innerText=decodeURIComponent(getUrlParameter(param));
+      document.getElementById(params[param]).innerText=formatter(decodeURIComponent(getUrlParameter(param)));
     })
   }
 
