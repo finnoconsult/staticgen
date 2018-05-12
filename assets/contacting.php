@@ -191,6 +191,7 @@ if (sendMessage(
     "sender" => $crypto->encrypt("{name: \"$name\", email: \"$email\"}"),
     "referer" => $_SERVER["HTTP_REFERER"],
     "message" => $_REQUEST["message"],
+    "_message" => base64_encode($_REQUEST["message"]),
     // just for storing into CSV:
     "subject" => $_REQUEST["subject"],
     "country" => $_REQUEST["country"],
@@ -203,7 +204,9 @@ if (sendMessage(
   ),
   $configuration
 )) {
-  header("Location: " . (@$configuration["after"] ? @$configuration["after"] : $_REQUEST["_after"]));
+  echo $crypto->encrypt("{name: \"$name\", email: \"$email\"}");
+  echo $crypto->decrypt($crypto->encrypt("{name: \"$name\", email: \"$email\"}"));
+  // header("Location: " . (@$configuration["after"] ? @$configuration["after"] : $_REQUEST["_after"]));
 } else {
   header("Location: 500");
 }

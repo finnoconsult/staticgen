@@ -45,7 +45,7 @@ module.exports = {
 		locales: path.join(__dirname, "locales"),
 		public: path.join(__dirname, "public")
 	},
-	isDevelopment: switches.developmentMode,
+	isDevelopment: switches.developmentMode === true,
 	isProduction: !switches.developmentMode,
 	homepageCentral: switches.url ? switches.url : "https://www.finnoconsult.at",
 	// homepageCentral: "https://www.innovaciostanacsado.com",

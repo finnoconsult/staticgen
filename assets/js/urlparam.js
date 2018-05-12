@@ -1,7 +1,7 @@
 ctm(function (document, window) {
   "use strict";
 
-  var getUrlParameter = function (name, defaultValue="") {
+  var getUrlParameter = function (name, defaultValue) {
     const foundParam = window.location.search
       .replace(/^\?/,'')
       .split('&')
@@ -10,7 +10,7 @@ ctm(function (document, window) {
         return { name: param[0], value: param[1] };
       })
       .find(function(param){return name===param.name});
-    return (foundParam && foundParam.value) || defaultValue;
+    return (foundParam && foundParam.value) || defaultValue || "";
   }
 
   window.projectUrlParameterToDom = function(params) {

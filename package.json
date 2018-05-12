@@ -9,7 +9,7 @@
     "url": "https://github.com/finnoconsult/staticgen.git"
   },
   "toBrowserify": [
-  	"js/crypto.js"
+    "js/crypto.js"
   ],
   "scripts": {
     "prebuild": "node minify.js",
@@ -33,8 +33,8 @@
     "innodeploy": "scp -r ./public/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
   },
   "devDependencies": {
-    "inline-source": "^4.2.6",
     "file-exists": "^5.0.1",
+    "inline-source": "^4.2.6",
     "jade": "^1.11.0",
     "metalsmith": "^2.1.0",
     "metalsmith-browserify": "^1.0.0",

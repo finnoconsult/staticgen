@@ -12,6 +12,9 @@ class Crypto {
   function encrypt($text) {
     return $this->prefix.bin2hex(openssl_encrypt($text, $this->algorithm, $this->password, OPENSSL_RAW_DATA, $this->iv));
   }
+  function decrypt($text) {
+    return $this->prefix.hex2bin(openssl_decyrpt($text, $this->algorithm, $this->password, OPENSSL_RAW_DATA, $this->iv));
+  }
 }
 
 ?>

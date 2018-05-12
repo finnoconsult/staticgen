@@ -25,11 +25,10 @@ function metalsmithBuild(entries) {
     : assign({
   		"browserifiedFiles": 0
   	});
-
     // console.log('browserifying entries:', entries, browserifiedFilesPlugin);
 
     const minifyJSPlugin = config.isProduction ? minifyJs() : assign({isDevelopment: true, isProduction: false});
-    // console.log('minifyJSPlugin:', config.isDevelopment, minifyJSPlugin);
+    // console.log('minifyJSPlugin:', config.isProduction, config.isDevelopment, minifyJSPlugin);
 
 
   metalsmith(config.folder.root)

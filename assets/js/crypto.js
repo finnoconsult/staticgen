@@ -45,6 +45,7 @@ if (typeof require !== "undefined") {
 
 			if (key) {
 				console.log('--encrypting default text', encrypt(iv, text, md5(key)));
+				console.log('to decrypt text', cypheredText, 'with key', md5(key));
 				const sender = makeObject(decrypt(iv, cypheredText, md5(key)));
 				console.log('decrypted from url ', sender);
 				document.getElementById('crypto-sender-name').value = sender.name;
