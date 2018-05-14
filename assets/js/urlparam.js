@@ -19,6 +19,7 @@ ctm(function (document, window) {
     const formatter = formatterFunc || defaultFormatterFunc;
     // console.log('formatterFunc', formatterFunc, formatter);
     Object.keys(params).map(function(param) {
+      // console.log('urlparam:',param, decodeURIComponent(getUrlParameter(param)));
       document.getElementById(params[param]).innerText=formatter(decodeURIComponent(getUrlParameter(param)));
     })
   }

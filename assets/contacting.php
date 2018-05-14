@@ -188,7 +188,7 @@ if (sendMessage(
     "email" => $crypto->encrypt($email),
     "name" => $crypto->encrypt($name),
     "phone" => $crypto->encrypt($_REQUEST["phone"]),
-    "sender" => $crypto->encrypt("{name: \"$name\", email: \"$email\"}"),
+    "sender" => $crypto->encrypt("{\"name\": \"$name\", \"email\": \"$email\"}"),
     "referer" => $_SERVER["HTTP_REFERER"],
     "message" => $_REQUEST["message"],
     "_message" => base64_encode($_REQUEST["message"]),
@@ -204,9 +204,7 @@ if (sendMessage(
   ),
   $configuration
 )) {
-  echo $crypto->encrypt("{name: \"$name\", email: \"$email\"}");
-  echo $crypto->decrypt($crypto->encrypt("{name: \"$name\", email: \"$email\"}"));
-  // header("Location: " . (@$configuration["after"] ? @$configuration["after"] : $_REQUEST["_after"]));
+  header("Location: " . (@$configuration["after"] ? @$configuration["after"] : $_REQUEST["_after"]));
 } else {
   header("Location: 500");
 }
