@@ -28,7 +28,7 @@
     "innotest": "surge ./public innovaciostanacsado-wip.surge.sh",
     "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "innobackup": "ssh innovacios@innovaciostanacsado.com sh /home/innovacios/backup.sh",
-    "preinnodeploy": "yarn innobuild",
+    "preinnodeploy": "yarn innobuild; yarn innobackup",
     "innodeploy": "scp -r ./public/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
   },
   "devDependencies": {
