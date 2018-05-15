@@ -14,7 +14,7 @@
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
-    "prefinnodev": "yarn build",
+    "prefinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../website/; node render.js -u=http://localhost:8080 ../website/",
     "finnodev": "http-server ./public",
     "prefinnotest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
     "finnotest": "surge ./public finnoconsult-wip.surge.sh",
