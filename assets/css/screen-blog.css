@@ -61,9 +61,12 @@ main .prelude {
 .post-teaser {
 	overflow: hidden;
 	position: relative;
-	max-width: 50em;
+	/* max-width: 50em; */
 	margin-top: -2em;
 	margin-bottom: 1.5em;
+}
+.post-teaser .white-border{
+	border: solid 2em white;
 }
 @media (max-width: 50em) {
 	.post-teaser {
@@ -75,6 +78,9 @@ main .prelude {
 	.post-teaser {
 		margin-right: -1rem;
 		margin-left: -1rem;
+	}
+	.post-teaser .white-border{
+		border: solid 1em white;
 	}
 }
 .post-teaser img {
@@ -167,7 +173,7 @@ main .prelude {
 		margin: .75em -7rem .75em 1.5em;
 		padding: .5em 0;
 		border: 0 solid #00bd59;
-		border-width: .25rem 0; 
+		border-width: .25rem 0;
 		color: #00bd59;
 		font-family: "Alegreya Sans", sans-serif;
 		font-weight: 700;
@@ -285,4 +291,3 @@ main .prelude {
 		font-weight: 400;
 	}
 }
-
