@@ -395,9 +395,10 @@ li.bubble-listing li {
 }
 li.bubble-listing li::before {
     content: '+';
-    position: absolute;
+    /* position: absolute; */
     /* margin-top: -0.0em; */
-    margin-left: -0.8em;
+    /* margin-left: -0.8em; */
+    padding-right: 0.8em;
     font-size: 1em;
     color: #00bd59;
 }

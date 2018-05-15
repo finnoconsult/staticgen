@@ -513,12 +513,12 @@ h1, h2, h3 {
 #speedcreation .bubbles .bubble svg,
 #speedcreation .bubbles .bubble-l svg {
 	width: 16.9em;
-  height:auto;
+  height:16.9em;
   position: absolute;
 	top: -2.5em;
 	left: -2.5em;
   animation: turn-circle 4s ease;
-  /* animation: turn-circle 20s linear infinite; */
+  -webkit-animation: turn-circle 4s ease;
   fill: transparent;
   stroke-width: 15.5;
   stroke-dasharray: 31.5;
@@ -526,19 +526,34 @@ h1, h2, h3 {
 }
 #speedcreation .bubbles .bubble-l svg {
 	width: 22em;
+	height: 22em;
 	top: -3.5em;
 	left: -3.5em;
 }
+#speedcreation .bubbles .bubble:nth-child(1) svg circle {
+	transform: rotateZ(-13deg);
+	transform-origin: center;
+}
 #speedcreation .bubbles .bubble:nth-child(2) svg {
 	animation: turn-circle2 4s ease;
+	-webkit-animation: turn-circle2 4s ease;
 }
 @keyframes turn-circle {
-  to { -weblit-transform: rotate3d(0,0,1,360deg);
-               transform: rotate3d(0,0,1,360deg);}
+  to { -webkit-transform: rotateZ(360deg);
+               transform: rotateZ(360deg);}
+}
+@-webkit-keyframes turn-circle {
+  to { -webkit-transform: rotateZ(360deg);
+               transform: rotateZ(360deg);}
+
 }
 @keyframes turn-circle2 {
-  to { -weblit-transform: rotate3d(0,0,1,-360deg);
-               transform: rotate3d(0,0,1,-360deg);}
+  to { -webkit-transform: rotateZ(-360deg);
+               transform: rotateZ(-360deg);}
+}
+@-webkit-keyframes turn-circle2 {
+  to { -webkit-transform: rotateZ(-360deg);
+               transform: rotateZ(-360deg);}
 }
 
 #speedcreation2 {
