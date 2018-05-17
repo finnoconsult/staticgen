@@ -14,6 +14,7 @@
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
+
     "prefinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../website/; node render.js -u=http://localhost:8080 ../website/",
     "finnodev": "http-server ./public",
     "prefinnotest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
@@ -22,6 +23,16 @@
     "finnobackup": "ssh finnoconsult@finnoconsult.at sh /home/finnoconsult/backup.sh",
     "prefinnodeploy": "yarn finnobuild; yarn finnobackup",
     "finnodeploy": "scp -r ./public/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
+
+    "preblogdev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../blog/; node render.js -u=http://localhost:8080 ../blog/",
+    "blogdev": "http-server ./public",
+    "preblogtest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-blog.surge.sh ../blog/; node render.js -u=http://finnoconsult-blog.surge.sh ../blog/",
+    "blogtest": "surge ./public finnoconsult-blog.surge.sh",
+    "blogbuild": "node minify.js; node minify.js -p ../blog/; node render.js ../blog/",
+    "blogbackup": "ssh blog@blog.at sh /home/blog/backup.sh",
+    "preblogdeploy": "yarn finnobuild; yarn finnobackup",
+    "blogdeploy": "scp -r ./public/* blog@blog.at:/home/blog/public_html/",
+
     "preinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
     "innodev": "http-server ./public",
     "preinnotest": "node minify.js -d; node minify.js -d -p -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/; node render.js -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/",
