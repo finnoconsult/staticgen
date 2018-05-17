@@ -1,6 +1,8 @@
 - var links = []
-- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us")})
-- links.push({"subpage": "/references", "name": __("References")})
+- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us"), "class": path.match(/\/$/) && "active"  })
+- links.push({"subpage": "/references", "name": __("References"), "class": path.match(/\/reference/) && "active" })
+//- links.push({ "homepage": "/speedcreation", "name": __("SpeedCreation"), "class": path.match(/\/speedcreation$/) && "active"  })
+//- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active" })
 - links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": __("updated")})
 - links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("new")})
 nav.screen#navigation
@@ -8,4 +10,4 @@ nav.screen#navigation
 	each link, separator in links
 		= separator ? " " : ""
 		- var subDomainLink = link.subpage ? linkTo(locale, link.subpage, false) : (link.homepage===homepage ? linkTo(locale, '/', false) : link.homepage);
-		a(class=(link.homepage===homepage)&&"active", data-note=link.note, href=subDomainLink)= link.name
+		a(class=link.class, data-note=link.note, href=subDomainLink)= link.name
