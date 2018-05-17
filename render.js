@@ -18,7 +18,6 @@ const canonical = require("./plugins/canonical.js");
 
 
 const config = require("./config.js");
-console.log('config.layout', config.layout, (config.layout && config.layout.default) || "base.jade", (config.layout && config.layout.semmi) || "base.jade");
 
 metalsmith(config.folder.root)
 	.clean(false)
