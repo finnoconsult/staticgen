@@ -18,6 +18,7 @@ const canonical = require("./plugins/canonical.js");
 
 
 const config = require("./config.js");
+console.log('config.layout', config.layout, (config.layout && config.layout.default) || "base.jade", (config.layout && config.layout.semmi) || "base.jade");
 
 metalsmith(config.folder.root)
 	.clean(false)
@@ -91,7 +92,7 @@ metalsmith(config.folder.root)
 	.use(layouts({
 		engine: "jade",
 		// default: "blogpost.jade",
-		default: "base.jade",
+		default: (config.layout && config.layout.default) || "base.jade",
 		pattern: "**/*.html"
 	}))
 	.use(inlineSource({

@@ -45,6 +45,7 @@ module.exports = {
 		locales: path.join(__dirname, "locales"),
 		public: path.join(__dirname, "public")
 	},
+	layout: pkg.layout,
 	isDevelopment: switches.developmentMode === true,
 	isProduction: !switches.developmentMode,
 	homepageCentral: switches.url ? switches.url : "https://www.finnoconsult.at",
