@@ -1,14 +1,11 @@
 - var links = []
 - links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us")})
-- links.push({"homepage": "/references", "name": __("References")})
+- links.push({"subpage": "/references", "name": __("References")})
 - links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": __("updated")})
 - links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("new")})
 nav.screen#navigation
 	hr
 	each link, separator in links
 		= separator ? " " : ""
-		- var subDomainLink = linkTo(locale, link.homepage, false)
-		//- var subDomainLink = linkTo(locale, "/", link.homepage===homepage?null:link.homepage)
-		- if (locale.indexOf("de") !== 0) { subDomainLink = linkTo(locale, "/coming-soon") } /* TODO remove */
-		- if (locale.indexOf("de") === 0 && link.name === "FinnoScore") { subDomainLink = link.homepage } /* TODO remove */
+		- var subDomainLink = link.subpage ? linkTo(locale, link.subpage, false) : (link.homepage===homepage ? linkTo(locale, '/', false) : link.homepage);
 		a(class=(link.homepage===homepage)&&"active", data-note=link.note, href=subDomainLink)= link.name
