@@ -15,6 +15,7 @@ ctm(function (document) {
 					if (heading) {
 						anchor.textContent = heading.getAttribute("data-title") || heading.textContent;
 						element.previousSibling.appendChild(anchor);
+						if (heading.onclick) anchor.onclick = heading.onclick;
 					}
 				}
 			});
