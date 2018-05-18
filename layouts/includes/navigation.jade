@@ -1,10 +1,11 @@
 - var links = []
-- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us"), "class": path.match(/\/$/) && "active"  })
-- links.push({"subpage": "/references", "name": __("References"), "class": path.match(/\/reference/) && "active" })
+- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us"), "class": "https://www.finnoconsult.at"===homepage && linkTo(locale, "/") === path && "active"  })
+//- Workaround for blog
+- links.push({"subpage": (homepage.match(/blog\.finno/) ? "https://www.finnoconsult.at" : "") + "/references", "name": __("References"), "class": path.match(/\/reference/) && "active" })
 //- links.push({ "homepage": "/speedcreation", "name": __("SpeedCreation"), "class": path.match(/\/speedcreation$/) && "active"  })
-//- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active" })
 - links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": __("updated")})
-- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "note": __("new")})
+//- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active" })
+- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "class": 'https://blog.finnoconsult.at'===homepage && "active", "note": __("new")})
 nav.screen#navigation
 	hr
 	each link, separator in links
