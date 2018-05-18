@@ -14,6 +14,7 @@
   "scripts": {
     "prebuild": "node minify.js",
     "build": "node render.js",
+    "cleanpublic": "rm -rf ./public/*",
 
     "prefinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../website/; node render.js -u=http://localhost:8080 ../website/",
     "finnodev": "http-server ./public",
@@ -21,7 +22,7 @@
     "finnotest": "surge ./public finnoconsult-wip.surge.sh",
     "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
     "finnobackup": "ssh finnoconsult@finnoconsult.at sh /home/finnoconsult/backup.sh",
-    "prefinnodeploy": "yarn finnobuild; yarn finnobackup",
+    "prefinnodeploy": "yarn cleanpublic;yarn finnobuild; echo 'remember to create backup with [yarn finnobackup] command at least the first daily deploy'",
     "finnodeploy": "scp -r ./public/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
 
     "preblogdev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../blog/; node render.js -u=http://localhost:8080 ../blog/",
@@ -29,9 +30,9 @@
     "preblogtest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-blog.surge.sh ../blog/; node render.js -u=http://finnoconsult-blog.surge.sh ../blog/",
     "blogtest": "surge ./public finnoconsult-blog.surge.sh",
     "blogbuild": "node minify.js; node minify.js -p ../blog/; node render.js ../blog/",
-    "blogbackup": "ssh blog@blog.at sh /home/blog/backup.sh",
-    "preblogdeploy": "yarn finnobuild; yarn finnobackup",
-    "blogdeploy": "scp -r ./public/* blog@blog.at:/home/blog/public_html/",
+    "blogbackup": "ssh blog@blog.finnoconsult.at sh /home/blog/backup.sh",
+    "preblogdeploy": "yarn cleanpublic;yarn blogbuild; echo 'remember to create backup with [yarn blogbackup] command at least the first daily deploy'",
+    "blogdeploy": "scp -r ./public/* blog@blog.finnoconsult.at:/home/blog/public_html/",
 
     "preinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
     "innodev": "http-server ./public",
@@ -39,7 +40,7 @@
     "innotest": "surge ./public innovaciostanacsado-wip.surge.sh",
     "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
     "innobackup": "ssh innovacios@innovaciostanacsado.com sh /home/innovacios/backup.sh",
-    "preinnodeploy": "yarn innobuild; yarn innobackup",
+    "preinnodeploy": "yarn cleanpublic;yarn innobuild; echo 'remember to create backup with [yarn innobackup] command at least the first daily deploy'",
     "innodeploy": "scp -r ./public/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
   },
   "devDependencies": {
