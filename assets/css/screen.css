@@ -701,6 +701,45 @@ footer.site {
   opacity: 0;
 }
 
+.news{
+  position:absolute;
+  right:10%;
+  top:3em;
+}
+.news a{
+  display:block;
+  height:6em;
+  width:6em;
+  padding:0.75em .5em 0;
+  border-radius:50%;
+  text-align:center;
+  transform:rotate(9deg);
+  transition:transform .5s ease
+}
+.news a:active{
+  transform:rotate(9deg) scale(.7)
+}
+.news time{
+  color: white;
+  display:block;
+}
+
+.news2 {
+  top: 11em;
+  right:9.2%
+}
+.award {
+  z-index: 10;
+}
+.award a {
+  background: none;
+  width: 7em;
+  height: 6.8em;
+  padding:0
+}
+
+
+
 @media (max-width: 19.97em) {
 	html {
 		font-size: 5vw;
@@ -748,6 +787,18 @@ footer.site {
 	.legal .footer-segment:first-child {
 		margin-left: 0;
 	}
+  .news a {
+    width: 45pt;
+    height: 45pt;
+    font-size: 7.5pt;
+  }
+  .award a {
+    width: 50pt;
+  }
+  .news2 {
+    top: 3em;
+    right: 30%;
+  }
 }
 @media (min-width: 37.5em) {
 	.copyright {
@@ -910,12 +961,12 @@ footer.site {
 }
 
 @media (max-width: 47.97em), (min-width: 64em) {
-	table,
-	thead,
-	tbody,
-	tr,
-	th,
-	td {
+	table.responsive,
+	table.responsive thead,
+	table.responsive tbody,
+	table.responsive tr,
+	table.responsive th,
+	table.responsive td {
 		display: block;
 	}
 	.price {
@@ -955,7 +1006,7 @@ footer.site {
 	thead .col-compare {
 		margin-top: 2.875em;
 	}
-	tr {
+	table.responsive tr {
 		float: left;
 		width: 12em;
 	}
