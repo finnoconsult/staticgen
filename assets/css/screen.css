@@ -732,18 +732,59 @@ footer.site {
   z-index: 10;
 }
 .award a {
+  width: 12em;
+  height: 12em;
   background: none;
-  width: 7em;
-  height: 6.8em;
-  padding:0
+  /* height: 11.8em; */
+  padding:0;
+}
+.news.award {
+  right: 2%;
 }
 
 
 
-@media (max-width: 19.97em) {
-	html {
-		font-size: 5vw;
+
+
+@media (max-width: 47.97em) {
+	thead {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		width: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
 	}
+	tr + tr {
+		margin-top: 1em;
+	}
+	td[data-col] {
+		position: relative;
+		margin-left: 50%;
+	}
+	td[data-col]::after {
+		content: attr(data-col);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		width: 100%;
+		margin-right: 2px;
+		padding: .75em .5em;
+		background: #fff;
+		text-align: left;
+	}
+	.option {
+		max-width: 20em;
+		margin: 1.5em 0;
+		padding: .75em .5em;
+		border: 1px solid transparent;
+	}
+  .award a {
+    width: 8em;
+    height: 8em;
+  }
 }
 
 @media (max-width: 37.47em) and (orientation: portrait) {
@@ -792,12 +833,25 @@ footer.site {
     height: 45pt;
     font-size: 7.5pt;
   }
-  .award a {
-    width: 50pt;
+  .news.award {
+    right: 5%;
+    top: 20pt;
   }
   .news2 {
-    top: 3em;
     right: 30%;
+  }
+  .award a {
+    width: 95pt;
+    height: 95pt;
+  }
+}
+@media (max-width: 19.97em) {
+	html {
+		font-size: 5vw;
+	}
+  .award a {
+    width: 50pt;
+    height: 50pt;
   }
 }
 @media (min-width: 37.5em) {
@@ -920,43 +974,6 @@ footer.site {
 	}
 	.col-price {
 		width: 20%;
-	}
-}
-
-@media (max-width: 47.97em) {
-	thead {
-		position: absolute;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		width: 1px;
-		margin: -1px;
-		padding: 0;
-		border: 0;
-	}
-	tr + tr {
-		margin-top: 1em;
-	}
-	td[data-col] {
-		position: relative;
-		margin-left: 50%;
-	}
-	td[data-col]::after {
-		content: attr(data-col);
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 100%;
-		width: 100%;
-		margin-right: 2px;
-		padding: .75em .5em;
-		background: #fff;
-		text-align: left;
-	}
-	.option {
-		max-width: 20em;
-		margin: 1.5em 0;
-		padding: .75em .5em;
-		border: 1px solid transparent;
 	}
 }
 
