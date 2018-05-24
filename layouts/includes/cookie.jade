@@ -2,5 +2,5 @@ cookie.disclaimer
 	hr
 	block cookiedisclaimer
 		p= __("This website uses cookies to ensure you get the best experience on our website.")
-			a(href="https://cookiesandyou.com/", data-vital=__("Learn more"))=  __("Learn more")
+			a(href=linkTo(locale, "/privacy-policy#cookie", homepageCentral), data-vital=__("Learn more"))=  __("Learn more")
 			button#cookieaccept= __("Got it!")

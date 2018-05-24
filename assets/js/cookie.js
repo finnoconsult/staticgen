@@ -1,7 +1,16 @@
+function getDomain(chunks) {
+  var maxChunks = chunks || 2;
+  // var host = "finnoconsult.at";
+  var host = (window.location && window.location.hostname) || '';
+  var domainParts = host.split('.');
+  domain = (domainParts.length>maxChunks ? domainParts.slice(domainParts.length-maxChunks) : domainParts).join('.');
+  return domain;
+}
 function setCookie(key, value) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (200 * 24 * 60 * 60 * 1000));
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+
+    document.cookie = key + '=' + value + ';domain=' + getDomain() + ';expires=' + expires.toUTCString();
 }
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
@@ -10,7 +19,7 @@ function getCookie(key) {
 
 ctm(function (document, window) {
 	"use strict";
-  var cookieName = (window.location && window.location.hostname.replace(/\./,'')) + 'CookieAccepted';
+  var cookieName = (getDomain().replace(/\./gi,'')) + 'CookieAccepted';
 
   var keyValue = document.cookie.match('(^|;) ?' + cookieName + '=([^;]*)(;|$)');
 	var cd = document.querySelector("cookie.disclaimer");
@@ -24,9 +33,10 @@ ctm(function (document, window) {
         b.addEventListener("click", function (event) {
     			event.preventDefault();
     			cd.classList.toggle("accepted");
-          var expires = new Date();
-          expires.setTime(expires.getTime() + (200 * 24 * 60 * 60 * 1000)); // expires in 200 days
-          document.cookie = cookieName + '=' + true + ';expires=' + expires.toUTCString();
+          // var expires = new Date();
+          // expires.setTime(expires.getTime() + (200 * 24 * 60 * 60 * 1000)); // expires in 200 days
+          // document.cookie = cookieName + '=' + true + ';expires=' + expires.toUTCString();
+          setCookie(cookieName, true);
     		});
       }
     }
