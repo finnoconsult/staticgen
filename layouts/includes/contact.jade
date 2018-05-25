@@ -7,10 +7,17 @@ form(action="/contacting.php", method="post", encType="multipart/form-data")
 		label(for="email")= __("Your e-mail")
 		br
 		input(type="email", name="email", id="email", placeholder=__("contact@example.com"), required, maxlength="200")
-	p
+	p.fullwidth
 		label(for="message")= __("Your specific area of interest")
 		br
 		textarea(name="message", id="message", maxlength="7000", placeholder=__("I am interested in…\n\nPlease contact me at…"))
+	p
+		label(for="privacy-policy-accept")= __("Data privacy disclaimer")
+		br
+		input(type="checkbox" name="privacy-policy-accept", id="privacy-policy-accept", required, value="accepted", style="width: auto; display:initial")
+		label(for="privacy-policy-accept", style="font-weight: normal")= __("Hereby confirm that you had read and accept our")
+		| &nbsp;
+		a(href=linkTo(locale, '/privacy-policy'), target="_blank")= __("Privacy policy document")
 	p.form-action.screen
 		input(type="text", name="phone", value="", id="phone")
 		input(type="text", name="username", value="", id="username")

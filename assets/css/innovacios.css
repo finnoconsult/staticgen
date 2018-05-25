@@ -734,6 +734,9 @@ li.bubble-listing li::before {
 	main p {
 		max-width: inherit;
 	}
+	form p.fullwidth {
+    max-width: inherit;
+	}
 }
 @media (max-width: 48em) {
 	a.logo {

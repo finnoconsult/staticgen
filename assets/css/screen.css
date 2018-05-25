@@ -245,6 +245,9 @@ aside#contact {
 .fullwidth {
   max-width: 100%;
 }
+form p.fullwidth {
+  max-width: 36rem;
+}
 li.bubble {
 	display: inline-block;
 	margin: 2em 3em;
@@ -1063,6 +1066,12 @@ footer.site {
 		width: 20em;
 		max-width: none;
 	}
+  form p.fullwidth {
+    max-width: none;
+    float: none;
+    clear: both;
+    width: 100%;
+  }
 	form p:nth-child(even) {
 		float: right;
 	}
