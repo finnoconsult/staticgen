@@ -16,6 +16,10 @@
     "build": "node render.js",
     "cleanpublic": "rm -rf ./public/*",
 
+    "blueprintbuild": "node render.js",
+    "preblueprint": "yarn blueprintbuild",
+    "blueprint": "http-server ./public",
+
     "prefinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../website/; node render.js -u=http://localhost:8080 ../website/",
     "finnodev": "http-server ./public",
     "prefinnotest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
