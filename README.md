@@ -9,12 +9,12 @@ Several MetalSmith plugins are used to optimize the generated HTML, CSS and JS c
 - metalsmith-uglify
 - for more details see package.js dependencies.
 
-### render.js
+### The render.js module
 
 The content of the generated pages are stored separately in an other repository. See [FinnoConsult portfolio](#portfolio) for exact details.
 All of the content pages are generated from [Jade](http://jade-lang.com/) (a.k.a. [Pug](https://www.npmjs.com/package/pug) ) files, based on the well-designed templates located in this repository.
 
-### minify.js
+### The minify.js module
 
 This service optimises the belonging assets (CSS, JS) for the generated page.
 
@@ -27,7 +27,7 @@ Once downloaded the repository, you need to build the required Node.js modules:
 yarn install
 ```
 
-### using simply from [Mac|Unix] shellscript
+### Using simply from [Mac|Unix] shellscript
 
 In this case you can call the build script with a *relative_folder_reference* related repository.
 ```
@@ -35,7 +35,7 @@ In this case you can call the build script with a *relative_folder_reference* re
 ```
 The *relative_folder_reference* can be located anywhere related to your staticgen project.
 
-### using with one kind of Node package manager
+### Using with one kind of Node package manager
 
 ```
 yarn [build*]
@@ -45,18 +45,18 @@ yarn [build*]
 In this case you need to adhere with the strong of the local file structure, to cope with the built-in *yarn script* references.
 This project must be located to **./finnoconsult/staticgen**
 
-### <a name="portfolio"></a> generate webpages for FinnoConsult portfolio
+### <a name="portfolio"></a> Generate webpages for FinnoConsult portfolio
 
 All related projects has local
-- develompent build (yarn \*dev),
-- production build (yarn \*build),
-- production backup (yarn \*backup),
-- production deployment (yarn \*deploy),
+- develompent build (*yarn \*dev*),
+- production build (*yarn \*build*),
+- production backup (*yarn \*backup*),
+- production deployment (*yarn \*deploy*),
 feature set.
 
 All *\*build* scripts deploy content to the local **./finnoconsult/staticgen/public** subfolder
 
-#### finnoconsult.at
+#### Generate finnoconsult.at
 ```
 yarn finno[dev|build|backup|deploy]
 ```
@@ -67,7 +67,7 @@ Local folder structure:
 GitHub repository
 git clone https://github.com/finnoconsult/website ./finnoconsult/website
 
-#### blog.finnoconsult.at
+#### Generate blog.finnoconsult.at
 ```
 yarn blog[dev|build|backup|deploy]
 ```
@@ -78,7 +78,7 @@ GitHub repository
 git clone https://github.com/finnoconsult/finnoblog ./finnoconsult/blog
 
 
-#### innovaciostanacsado.com
+#### Generate innovaciostanacsado.com
 ```
 yarn inno[dev|build|backup|deploy]
 ```
@@ -88,7 +88,7 @@ Local folder structure:
 GitHub repository
 git clone https://github.com/finnoconsult/it-website ./innovaciostanacsado/website
 
-#### blueprint.finnoconsult.at
+#### Generate blueprint.finnoconsult.at
 You can generate our empty design, as a FInno HTML blueprint. For this we need no content, nor any content folder repository.
 ```
 yarn blueprint
