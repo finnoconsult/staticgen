@@ -47,14 +47,14 @@ This project must be located to **./finnoconsult/staticgen**
 
 ### <a name="portfolio"></a> Generate webpages for FinnoConsult portfolio
 
-All related projects has local
-- develompent build (*yarn \*dev*),
+All related projects has a
+- development build (*yarn \*dev*),
 - production build (*yarn \*build*),
 - production backup (*yarn \*backup*),
 - production deployment (*yarn \*deploy*),
 feature set.
 
-All *\*build* scripts deploy content to the local **./finnoconsult/staticgen/public** subfolder
+All *\*build* script deploys content to the local **./finnoconsult/staticgen/public** subfolder
 
 #### Generate finnoconsult.at
 ```
