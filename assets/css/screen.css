@@ -741,7 +741,7 @@ footer.site {
   /* height: 11.8em; */
   padding:0;
 }
-.award a[data-lang="de-at"]::after, .award a[data-lang="en-gb"]::after  {
+/* .award a[data-lang="de-at"]::after, .award a[data-lang="en-gb"]::after  {
   content:'Rang 3 Kategorie Mobile Apps';
   position: absolute;
   margin-left: -14em;
@@ -750,7 +750,7 @@ footer.site {
 }
 .award a[data-lang="en-gb"]::after  {
   content:'Rank 3 Category Mobile Apps';
-}
+} */
 .news.award {
   right: 2%;
 }
