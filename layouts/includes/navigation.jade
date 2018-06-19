@@ -8,8 +8,6 @@ mixin navigation-links(morelinks)
 	- links.concat(morelinks || [])
 	- (morelinks || []).forEach(function(item){links.push(item)})
 
-	- links.push({"homepage": "#todo", "name": __("Jetzt anmelden"), "class": "button--register"  })
-
 	ul
 		each link, separator in links
 			= separator ? " " : ""

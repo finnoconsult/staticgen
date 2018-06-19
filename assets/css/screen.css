@@ -63,6 +63,7 @@ nav {
 main {
   width: 100%;
   clear: both;
+  position: relative;
 }
 
 
@@ -78,6 +79,83 @@ main p {
 }
 main li {
 	/* margin: .3125em 0; */
+}
+
+main .icons{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  top:0;
+  right:0;
+  height: 100%;
+}
+main .icons .icon > *{
+  height: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.66rem;
+  border-left: solid 1px #e3e2eD;
+  border-left: solid 1px rgba(255, 255, 255, 0.2);
+}
+main .icon .sun {
+  padding: 1.33rem;
+  position: relative;
+  animation: jump-the-sun 4s linear infinite;
+}
+@keyframes jump-the-sun {
+  0% { transform: translateY(-2rem); }
+  20% { transform: translateY(-2.9rem); }
+  25% { transform: translateY(-3rem); }
+  30% { transform: translateY(-2.9rem); }
+  50% { transform: translateY(-2rem); }
+  70% { transform: translateY(-1.1rem); }
+  75% { transform: translateY(-1rem); }
+  80% { transform: translateY(-1.1rem); }
+  100% { transform: translateY(-2rem); }
+}
+main .icon .rain {
+  padding: 1.33rem;
+  position: relative;
+  animation: jump-the-rain 3s linear infinite;
+}
+@keyframes jump-the-rain {
+  0% { transform: translateY(1rem); }
+  20% { transform: translateY(-0.9rem); }
+  25% { transform: translateY(-1rem); }
+  30% { transform: translateY(-0.9rem); }
+  50% { transform: translateY(1rem); }
+  70% { transform: translateY(2.9rem); }
+  75% { transform: translateY(3rem); }
+  80% { transform: translateY(2.9rem); }
+  100% { transform: translateY(1rem); }
+}
+main .icon .sun img {
+  animation: rotate-the-sun 5s linear infinite;
+}
+@keyframes rotate-the-sun {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+main .icon > *::after{
+  animation: change-the-sun 2s linear infinite;
+  content: '€ 500';
+  background-color: #004899;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 1em;
+  position:absolute;
+}
+@keyframes change-the-sun {
+  0% {   content: '€ 300'; }
+  50% {   content: '€ 450'; }
+  100% { content: '€ 400'; }
+}
+
+main .icon .rain::after,
+main .icon .cloudy::after {
+  margin-top: 5em;
 }
 
 
@@ -153,17 +231,49 @@ section .content li.active {
   background-image: url(/img/list.active.svg);
 }
 
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
 footer ul{
   list-style: none;
 }
+footer .footer-text,
 footer .footer-links,
 footer .footer-links ul {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
+  align-items: flex-end;
+  justify-content: flex-start;
 }
+footer h4,
+footer p{
+  margin: 0;
+}
+footer h4 {
+  font-size: 1.77rem;
+}
+footer .footer-links .logo {
+  padding: 0;
+}
+footer .more,
+footer .security,
+footer .simple{
+  background-position: 18px 18px;
+  background-repeat: no-repeat;
+  background-size: 18px;
+}
+footer .simple{
+  background-image: url(/img/simple.svg);
+}
+footer .more{
+  background-image: url(/img/more.svg);
+}
+footer .security{
+  background-image: url(/img/security.svg);
+}
+
 
 
 .invert {
@@ -173,11 +283,22 @@ footer .footer-links ul {
 .invert h1,
 .invert h2,
 .invert h3,
+.invert h4,
+.invert h5,
 .invert ul,
 .invert span,
 .invert a,
 .invert p {
 	color: #fff;
+}
+
+footer .content{
+  padding-left: 20%;
+}
+footer .content:first-child:before{
+  content: url("/img/content/Group 3 Copy.png");
+  position: absolute;
+  margin-left: -20%;
 }
 
 

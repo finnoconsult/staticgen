@@ -1,16 +1,17 @@
 footer.invert
 	.content
-		ul
-			li.simple
-				h4 Einfach
-				p Intuitive und moderne Nutzerführung
-			li.security
-				h4 Sicher
-				p Sicherheit erlebbar in all seinen Facetten
-			li.more
-				h4 Mehr
-				p Mit Weitblick meine Finanzen verwalten und zusätzlich profitieren
-		button.button--register Jetzt anmelden
+		.footer-text
+			ul
+				li.simple
+					h4 Einfach
+					p Intuitive und moderne Nutzerführung
+				li.security
+					h4 Sicher
+					p Sicherheit erlebbar in all seinen Facetten
+				li.more
+					h4 Mehr
+					p Mit Weitblick meine Finanzen verwalten und zusätzlich profitieren
+			button.button--register Jetzt anmelden
 	hr
 	block footerlinks
 		.content.footer-links
@@ -24,8 +25,8 @@ footer.invert
 
 			+navigation-links(links)
 
-			a(href="https://twitter.com/todo")
-				abbr(title=__("@todo")) @todo
-			a(href="https://facebook.com/todo")
-				abbr(title=__("@todo")) @todo
+			a(href=constants.titles.twitter)
+				img(src="/img/twitter.svg")
+			a(href=constants.titles.facebook)
+				img(src="/img/facebook.svg")
 			= " "

@@ -6,4 +6,7 @@ header
 		nav.screen.nav-collapse#navigation
 			include ../includes/navigation
 
-			+navigation-links()
+			- var links = []
+			- links.push({"homepage": "#todo", "name": __("Jetzt anmelden"), "class": "button--register"  })
+
+			+navigation-links(links)
