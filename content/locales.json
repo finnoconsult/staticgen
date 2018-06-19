@@ -1,4 +1,3 @@
 [
-	{"id": "de-at", "name": "Deutsch", "default": true},
-	{"id": "en-gb", "name": "English"}
+	{"id": "de-de", "name": "Deutsch", "default": true}
 ]

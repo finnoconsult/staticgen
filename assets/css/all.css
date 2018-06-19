@@ -1,10 +1,52 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family:'Circular-Std-Book';
+    src: url('./fonts/CircularStd-Book.eot');
+	  src: url('./fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/CircularStd-Book.woff2') format('woff2'),
+		url('./fonts/CircularStd-Book.woff') format('woff'),
+		url('./fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FE;
+}
+
+/* @font-face {
+    font-family:'Circular-Std-Medium';
+    src: url('./fonts/CircularStd-Medium.eot');
+	  src: url('./fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/CircularStd-Medium.woff2') format('woff2'),
+		url('./fonts/CircularStd-Medium.woff') format('woff'),
+		url('./fonts/CircularStd-Medium.svg#CircularStd-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FE;
+}
+
+@font-face {
+    font-family:'Circular-Std-Bold';
+    src: url('./fonts/CircularStd-Bold.eot');
+	  src: url('./fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/CircularStd-Bold.woff2') format('woff2'),
+		url('./fonts/CircularStd-Bold.woff') format('woff'),
+		url('./fonts/CircularStd-Bold.svg#CircularStd-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FE;
+} */
+
+
+
 ::selection {
-	background: #2378b8;
-	color: #fff;
+	/* TODO:  */
 	text-shadow: none;
 }
 ::placeholder {
-	color: #ccd2dc;
+	/* TODO:  */
 }
 
 *,
@@ -26,9 +68,34 @@ hr {
 }
 
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font: 400 11pt/1.375 "Alegreya", serif;
+	font: 450 18px/1.25 "Circular-Std-Book", Helvetica, sans-serif;
 	color: #000;
+}
+.logo,
+/* h1,
+h2,
+h3, */
+figure,
+table,
+dt,
+label,
+.button,
+main a,
+aside a,
+time,
+em,
+strong,
+b {
+	font-family: "Circular-Std-Book", Helvetica, sans-serif;
+	/* font-family: "Circular-Std-Bold", "Circular-Std-Book", Helvetica, sans-serif; */
+	font-weight: 700;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 main {
 	display: block; /*IE*/
@@ -50,8 +117,19 @@ textarea {
 h1,
 h2,
 h3 {
-	font-size: 150%;
-	margin: 1.5em 0 .75em;
+	/* margin: 1.5em 0 .75em; */
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h1 {
+  font-size: 3.55rem;
+}
+h2 {
+  font-size: 2.66rem;
+}
+h3, h4 {
+  font-size: 1.33rem;
 }
 h1,
 h2,
@@ -59,24 +137,7 @@ h3,
 figure {
 	line-height: 1.25;
 }
-.logo,
-h1,
-h2,
-h3,
-figure,
-table,
-dt,
-label,
-.button,
-main a,
-aside a,
-time,
-em,
-strong,
-b {
-	font-family: "Alegreya Sans", sans-serif;
-	font-weight: 700;
-}
+
 .hide-link {
 	color: inherit;
 	font-family: inherit;
@@ -88,7 +149,7 @@ b {
 time,
 figure,
 td {
-	font-weight: 400;
+	font-weight: 450;
 }
 th,
 td {
@@ -107,7 +168,7 @@ em,
 main a,
 b,
 ins {
-	color: #00bd59;
+	/* TODO: */
 }
 footer.site,
 small,

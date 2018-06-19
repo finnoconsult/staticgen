@@ -1,51 +1,26 @@
 {
   "name": "staticgen",
   "description": "metalsmith static site generator",
-  "version": "1.5.12",
-  "homepage": "https://blueprint.finnoconsult.at",
+  "version": "2.0.0",
+  "homepage": "https://einfach-teo.finnoconsult.at",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/finnoconsult/staticgen.git"
   },
   "toBrowserify": [
-    "js/crypto.js"
   ],
   "scripts": {
-    "prebuild": "node minify.js",
-    "build": "node render.js",
     "cleanpublic": "rm -rf ./public/*",
 
-    "blueprintbuild": "node render.js",
-    "preblueprint": "yarn blueprintbuild",
-    "blueprint": "http-server ./public",
-
-    "prefinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../website/; node render.js -u=http://localhost:8080 ../website/",
-    "finnodev": "http-server ./public",
-    "prefinnotest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-wip.surge.sh ../website/; node render.js -u=http://finnoconsult-wip.surge.sh ../website/",
-    "finnotest": "surge ./public finnoconsult-wip.surge.sh",
-    "finnobuild": "node minify.js; node minify.js -p ../website/; node render.js ../website/",
-    "finnobackup": "ssh finnoconsult@finnoconsult.at sh /home/finnoconsult/backup.sh",
-    "prefinnodeploy": "yarn cleanpublic;yarn finnobuild; echo 'remember to create backup with [yarn finnobackup] command at least the first daily deploy'",
-    "finnodeploy": "scp -r ./public/* finnoconsult@finnoconsult.at:/home/finnoconsult/public_html/",
-
-    "preblogdev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../blog/; node render.js -u=http://localhost:8080 ../blog/",
-    "blogdev": "http-server ./public",
-    "preblogtest": "node minify.js -d; node minify.js -d -p -u=http://finnoconsult-blog.surge.sh ../blog/; node render.js -u=http://finnoconsult-blog.surge.sh ../blog/",
-    "blogtest": "surge ./public finnoconsult-blog.surge.sh",
-    "blogbuild": "node minify.js; node minify.js -p ../blog/; node render.js ../blog/",
-    "blogbackup": "ssh blog@blog.finnoconsult.at sh /home/blog/backup.sh",
-    "preblogdeploy": "yarn cleanpublic;yarn blogbuild; echo 'remember to create backup with [yarn blogbackup] command at least the first daily deploy'",
-    "blogdeploy": "scp -r ./public/* blog@blog.finnoconsult.at:/home/blog/public_html/",
-
-    "preinnodev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../../innovaciostanacsado/website/; node render.js -u=http://localhost:8080 ../../innovaciostanacsado/website/",
-    "innodev": "http-server ./public",
-    "preinnotest": "node minify.js -d; node minify.js -d -p -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/; node render.js -u=http://innovaciostanacsado-wip.surge.sh ../../innovaciostanacsado/website/",
-    "innotest": "surge ./public innovaciostanacsado-wip.surge.sh",
-    "innobuild": "node minify.js; node minify.js -p -u=http://www.innovaciostanacsado.com  ../../innovaciostanacsado/website/; node render.js -u=http://www.innovaciostanacsado.com ../../innovaciostanacsado/website/",
-    "innobackup": "ssh innovacios@innovaciostanacsado.com sh /home/innovacios/backup.sh",
-    "preinnodeploy": "yarn cleanpublic;yarn innobuild; echo 'remember to create backup with [yarn innobackup] command at least the first daily deploy'",
-    "innodeploy": "scp -r ./public/* innovacios@innovaciostanacsado.com:/home/innovacios/public_html/"
+    "prespardadev": "node minify.js -d; node minify.js -d -p -u=http://localhost:8080 ../../sparda-landingpage/website/; node render.js -u=http://localhost:8080 ../../sparda-landingpage/website/",
+    "spardadev": "http-server ./public",
+    "prespardatest": "node minify.js -d; node minify.js -d -p -u=http://einfach-teo.surge.sh ../../sparda-landingpage/website/; node render.js -u=http://einfach-teo.surge.sh ../../sparda-landingpage/website/",
+    "spardatest": "surge ./public einfach-teo.surge.sh",
+    "spardabuild": "node minify.js; node minify.js -p -u=http://einfach-teo.finnoconsult.at  ../../sparda-landingpage/website/; node render.js -u=http://einfach-teo.finnoconsult.at ../../sparda-landingpage/website/",
+    "spardabackup": "ssh sparda@einfach-teo.finnoconsult.at sh /home/innovacios/backup.sh",
+    "prespardadeploy": "yarn cleanpublic;yarn spardabuild; echo 'remember to create backup with [yarn spardabackup] command at least the first daily deploy'",
+    "spardadeploy": "scp -r ./public/* innovacios@einfach-teo.finnoconsult.at:/home/innovacios/public_html/"
   },
   "devDependencies": {
     "file-exists": "^5.0.1",

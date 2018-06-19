@@ -1,7 +1,7 @@
 {
 	"Home page": "Startseite",
 	"About us": "Über uns",
-	"References": "Referenzprojekte",
+	"References": "References",
 	"Blog": "Blog",
 	"Menu": "Menü",
 	"new": "neu",
@@ -47,6 +47,21 @@
 	"Learn more": "Erfahren mehr",
 	"Got it!": "Kapiert!",
 	"Links": "Links",
-	"References": "References",
-	"Privacy policy": "Datenschutz"
+	"Privacy policy": "Datenschutz",
+	"Data privacy disclaimer": "Data privacy disclaimer",
+	"Hereby confirm that you had read and accept our": "Hereby confirm that you had read and accept our",
+	"Privacy policy document": "Privacy policy document",
+	"Innovációs Tanácsadó": "Innovációs Tanácsadó",
+	"InnovaciosLogoText": "InnovaciosLogoText",
+	"InnovaciosLogoText2": "InnovaciosLogoText2",
+	"SpeedCreation": "SpeedCreation",
+	"FinnoScore": "FinnoScore",
+	"Impressum": "Impressum",
+	"Über uns": "Über uns",
+	"FAQ": "FAQ",
+	"Kontakt": "Kontakt",
+	"Jetzt anmelden": "Jetzt anmelden",
+	"teo": "teo",
+	"Datenschutz": "Datenschutz",
+	"@todo": "@todo"
 }

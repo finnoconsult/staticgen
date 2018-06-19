@@ -1,18 +1,1 @@
 extends ./extended.jade
-
-block title
-	title= title
-
-append styles
-	link(rel="stylesheet", media="screen", data-inline, href="/css/interactive.css")
-
-block main
-	main
-		h1.print= heading || title
-		!= contents
-		aside.narrative#contact
-			h2(data-title=__("Contact"))= __("How can we help you?")
-			include ./contactForm
-
-append scripts
-	script(data-inline, src="/js/appear.js")

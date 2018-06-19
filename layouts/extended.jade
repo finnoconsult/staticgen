@@ -1,11 +1,14 @@
 extends ./base.jade
 
+append styles
+	link(rel="stylesheet", media="screen", data-inline, href="/css/interactive.css")
+
+block title
+	title= title
+
 block main
-	main
-		h1.print= heading || title
-		!= contents
+	!= contents
 
 append scripts
+	script(data-inline, src="/js/appear.js")
 	script(data-inline, src="/js/slide.js")
-	if basePath === "/imprint"
-		script(data-inline, src="/js/mailto.js")

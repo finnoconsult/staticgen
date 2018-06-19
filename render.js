@@ -27,8 +27,8 @@ metalsmith(config.folder.root)
 		linkTo: config.linkTo,
 		urlify: config.urlify,
 		moment: require("moment"),
-		sharingLinks: require("./assets/social.json"), /*TODO json.js*/
-		knownAuthors: require("./assets/knownAuthors.json"), /*TODO json.js*/
+		// sharingLinks: require("./assets/social.json"), /*TODO json.js*/
+		// knownAuthors: require("./assets/knownAuthors.json"), /*TODO json.js*/
 		homepageCentral: config.homepage === config.homepageCentral ? null : config.homepageCentral,
 		version: config.version,
 		dates: config.dates,

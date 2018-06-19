@@ -1,14 +1,19 @@
-- var links = []
-- links.push({"homepage": "https://www.finnoconsult.at", "name": __("About us"), "class": "https://www.finnoconsult.at"===homepage && linkTo(locale, "/") === path && "active"  })
-//- Workaround for blog
-- links.push({"subpage": (homepage.match(/blog\.finno/) ? "https://www.finnoconsult.at" : "") + "/references", "name": __("References"), "class": path.match(/\/reference/) && "active" })
-//- links.push({ "homepage": "/speedcreation", "name": __("SpeedCreation"), "class": path.match(/\/speedcreation$/) && "active"  })
-- links.push({"homepage": "https://finnoscore.finnoconsult.at", "name": "FinnoScore", "note": __("updated")})
-//- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active" })
-- links.push({"homepage": "https://blog.finnoconsult.at", "name": __("Blog"), "class": 'https://blog.finnoconsult.at'===homepage && "active", "note": __("new")})
-nav.screen#navigation
-	hr
-	each link, separator in links
-		= separator ? " " : ""
-		- var subDomainLink = link.subpage ? linkTo(locale, link.subpage, false) : (link.homepage===homepage ? linkTo(locale, '/', false) : link.homepage);
-		a(class=link.class, data-note=link.note, href=subDomainLink)= link.name
+mixin navigation-links(morelinks)
+
+	- var links = []
+	- links.push({"homepage": "#uberuns", "name": __("Über uns"), "class": ""  })
+	- links.push({"homepage": "#faq", "name": __("FAQ"), "class": ""  })
+	- links.push({"homepage": "#kontakt", "name": __("Kontakt"), "class": ""  })
+
+	- links.concat(morelinks || [])
+	- (morelinks || []).forEach(function(item){links.push(item)})
+
+	- links.push({"homepage": "#todo", "name": __("Jetzt anmelden"), "class": "button--register"  })
+
+	ul
+		each link, separator in links
+			= separator ? " " : ""
+			- var subDomainLink = link.subpage ? linkTo(locale, link.subpage, false) : (link.homepage===homepage ? linkTo(locale, '/', false) : link.homepage);
+			li.menu-item
+				//- data-scroll,
+				a(class=link.class, data-note=link.note, href=subDomainLink)= link.name
