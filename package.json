@@ -1,7 +1,7 @@
 {
   "name": "staticgen",
   "description": "metalsmith static site generator",
-  "version": "1.5.12",
+  "version": "1.5.16",
   "homepage": "https://blueprint.finnoconsult.at",
   "license": "CC-BY-4.0",
   "repository": {
