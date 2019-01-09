@@ -65,6 +65,9 @@ main .prelude {
 	margin-top: -2em;
 	margin-bottom: 1.5em;
 }
+p + p.post-teaser {
+	margin-top: 2em;
+}
 .post-teaser .white-border{
 	border: solid 2em white;
 }

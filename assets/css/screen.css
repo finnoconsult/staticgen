@@ -716,11 +716,15 @@ footer.site {
   padding:0.75em .5em 0;
   border-radius:50%;
   text-align:center;
-  transform:rotate(9deg);
-  transition:transform .5s ease
+  /* transform:rotate(9deg); */
+  transition:transform .5s ease;
 }
 .news a:active{
-  transform:rotate(9deg) scale(.7)
+  transform:scale(.7);
+  /* transform:rotate(9deg) scale(.7) */
+}
+.news a img{
+  transform:rotate(9deg);
 }
 .news time{
   color: white;
@@ -759,6 +763,15 @@ footer.site {
 
 
 
+@media (max-width: 50em) {
+  .award a {
+    width: 8em;
+    height: 8em;
+  }
+  .award a span{
+    font-size: 70%;
+  }
+}
 @media (max-width: 47.97em) {
 	thead {
 		position: absolute;
@@ -794,10 +807,6 @@ footer.site {
 		padding: .75em .5em;
 		border: 1px solid transparent;
 	}
-  .award a {
-    width: 8em;
-    height: 8em;
-  }
 }
 
 @media (max-width: 37.47em) and (orientation: portrait) {
@@ -848,14 +857,23 @@ footer.site {
   }
   .news.award {
     right: 5%;
-    top: 20pt;
+    top: 25pt;
+    display: flex;
+  }
+  .news.award span{
+    font: 0/0 a;
+  	text-indent: 200%;
+  	overflow: hidden;
+    color: transparent;
   }
   .news2 {
     right: 30%;
   }
   .award a {
-    width: 95pt;
-    height: 95pt;
+    /* width: 95pt;
+    height: 95pt; */
+    width: 80pt;
+    height: 80pt;
   }
 }
 @media (max-width: 19.97em) {
