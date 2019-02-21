@@ -61,6 +61,12 @@ block main
 						= " " + elsewhere.name
 					dd
 						a.hide-link(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.indexOf("/") + 2)
+				if cv
+					each elsewhere in cv
+						dt.icon
+							img(data-inline, src="/img/icon-fa-cv.svg")
+						dd
+							a.hide-link(rel="me", href=elsewhere.url)= elsewhere.url.slice(elsewhere.url.lastIndexOf("/")+1)
 
 		block office
 			dl
