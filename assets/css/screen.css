@@ -355,6 +355,22 @@ li.bubble b{
 	width: 18em;
 	margin: 5em auto;
 }
+.bubble-xxl::before {
+  top: -5em;
+  right: -5em;
+  bottom: -5em;
+  left: -5em;
+}
+.bubble-xxl {
+  max-width: 100%;
+	width: 25rem;
+	height: 25rem;
+}
+@media (max-width: 37.5em) {
+  .bubble-xl, .bubble-xxl {
+    height: auto;
+  }
+}
 p.bubble-xl {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -418,6 +434,8 @@ li.bubble-listing li:first-child::before {
 .ourscope ul li {
   font-weight: bold;
   list-style-type: none;
+}
+.bubble.ourscope ul li {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 120%;
 }
@@ -499,6 +517,7 @@ main .narrative .triangle-down h2{
 
 main h2,
 main h3,
+main h4,
 main ul,
 main dl,
 main p {

@@ -1,7 +1,8 @@
 - var links = []
 - links.push({ "homepage": "/", "name": __("About us"), "class": path.match(/\/$/) && "active"  })
 - links.push({ "homepage": "/speedcreation", "name": __("SpeedCreation"), "class": path.match(/\/speedcreation$/) && "active"  })
-- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active"  })
+//- links.push({ "homepage": "/finnoscore", "name": __("FinnoScore"), "class": path.match(/\/finnoscore$/) && "active"  })
+- links.push({ "homepage": "/career", "name": __("Work for us"), "class": "badge bagde1 popup " + (path.match(/\/career$/) && "active")  })
 //- links.push({ "homepage": "/prezi", "name": __("Prezi!"), "class": path.match(/\/detail$/) && "active"  })
 //- links.push({ "homepage": "/imprint", "name":  __("Imprint"), "class": path.match(/\/imprint/) && "active" })
 //- || path === "/imprint"
@@ -12,7 +13,7 @@ nav(class="screen " + (path != "/contact" && "withButton"), id="navigation")
 	each link, separator in links
 		= separator ? " " : ""
 		- var subDomainLink = linkTo(locale, link.homepage, false)
-		//- NOTE: only Hungarian content available, others should show the landing 
+		//- NOTE: only Hungarian content available, others should show the landing
 		- var landingPageRegex = new RegExp(locale + "/$");
 		- if (locale.indexOf("hu") !== 0 && !subDomainLink.match(landingPageRegex)) { subDomainLink = linkTo(locale, "/#activation") }
 		a(class=link.class, data-note=link.homepage, href=subDomainLink)= link.name
