@@ -11,6 +11,7 @@ append styles
 		| .videoControl video { width: 100%; height: 100%; display: grid; outline: none; }
 		| .videoContainer, .videoContainer video, .videoContainer h1 { transition: all 1s ease;}
 		| .videoContainer.played { height: 5em; }
+		| @media(max-width: 30em) {.videoContainer.played { height: 11em; }}
 		| .videoContainer.played .videoControl { opacity: 0; }
 		| .videoContainer.played h1 { opacity: 1; }
 
