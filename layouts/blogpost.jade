@@ -7,8 +7,8 @@ append styles
 		| .post-teaser{max-width: 50em;}
 		| .videoContainer { display: grid; width: 100%; height: auto; grid-template-areas: "header"; height: 53vw; margin-bottom: 5em; }
 		| .videoContainer h1 { grid-area: header; opacity: 0; }
-		| .videoControl { grid-area: header; margin: auto; width: 100%; height: 100%; display: grid; background: none; border: none; outline: none; }
-		| .videoControl video { width: 100%; height: 100%; display: grid; transform: scale(1.08) translateZ(0); outline: none; }
+		| .videoControl { grid-area: header; overflow: hidden; transform: scale(1.08) translateZ(0); margin: auto; width: 100%; height: 100%; display: grid; background: none; border: none; outline: none; }
+		| .videoControl video { width: 100%; height: 100%; display: grid; outline: none; }
 		| .videoContainer, .videoContainer video, .videoContainer h1 { transition: all 1s ease;}
 		| .videoContainer.played { height: 5em; }
 		| .videoContainer.played .videoControl { opacity: 0; }
@@ -25,10 +25,10 @@ block main
 					video(src=media.video, id="blogpostvideo" width="640px", height="360px", autoplay="autoplay", poster="/img/play.svg")
 			script
 				| var video = document.querySelector('video#blogpostvideo');
-				| function playVideo() {if (video.paused){console.log('playing'); video.play();}}
-				| playVideo();
-				| console.log(video.paused);
-				| setTimeout(function () {console.log(video.paused);}, 1000);
+				| function playVideo() {if (video.paused && !(video.played && video.played.length > 0)){video.play();}}
+				//- | playVideo();
+				//- | console.log(video.paused);
+				//- | setTimeout(function () {console.log(video.paused);}, 1000);
 				| var videoContainer = document.querySelector('div.videoContainer');
 				| video.addEventListener('ended',function() {videoContainer.classList.add('played');});
 		p.post-teaser
