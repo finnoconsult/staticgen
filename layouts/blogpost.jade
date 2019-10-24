@@ -1,7 +1,11 @@
 extends ./blog.jade
 
 
+append scripts
+	script(data-inline, src="/js/gallery.js")
+
 append styles
+	link(rel="stylesheet", media="screen", data-inline, href="/css/gallery.css")
 	style
 		| body{ border-left:2px solid #00bd59;}
 		| .post-teaser{max-width: 50em;}
@@ -16,7 +20,7 @@ append styles
 		| .videoContainer.played h1 { opacity: 1; }
 
 block main
-	main.narrative
+	main.narrative(onclick="galleryCloseAll()")
 		if (heading || title) && !media.video
 			h1= heading || title
 		if media.video
@@ -74,3 +78,7 @@ block main
 							strong= relatedArticle.heading || relatedArticle.title
 							br
 							span= relatedArticle.description
+
+
+//- append scripts
+//- 	script(data-inline, src="/js/slide.js")

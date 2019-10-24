@@ -1,0 +1,68 @@
+.mozaik {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); grid-gap: 8px; align-items: stretch; max-width: 70rem; margin: auto;}
+.mozaik.mozaik-portrait {max-width: 40rem; margin: auto;}
+.mozaik img {border: 1px solid #ccc; box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3); max-width: 100%; padding: 8px; }
+@media(max-width: 30em) { .mozaik { gap: 6px; } }
+@media(max-width: 30em) { .mozaik img { padding: 8px; background: white; height: 100px; object-fit: cover; width: 100%; } }
+@media(max-width: 30em) { .mozaik img.notcentered { display: none; } }
+@media(max-width: 30em) { .mozaik.mozaik-portrait {grid-template-columns: repeat(3, 1fr);} }
+/* @media(max-width: 30em) { .mozaik.mozaik-portrait img {padding: 8px; background: white; height: auto; width: 30%; object-fit: cover; } } */
+
+
+
+@keyframes css-gallery-zoom-center {
+  from {
+    position: fixed;
+    max-width: 600px;
+    width: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+  to {
+    position: fixed;
+    max-width: 600px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 180px;
+  }
+
+}
+
+@media(min-width: 800px) {
+  /* .css-gallery [id^=gallery] {
+    margin-top: 70px;
+  } */
+  .css-gallery [id^=gallery] img {
+    transition: all 1s ease, box-shadow 0s;
+    height: auto;
+    background: white;
+    /* transform-origin: top center; */
+  }
+  .css-gallery [id^=gallery]:target {
+    background: #ccc;
+  }
+  .css-gallery [id^=gallery]:target img {
+    border: 1px solid #00bd59;
+    display: block;
+    position: relative;
+    z-index: 3000;
+
+    animation: css-gallery-zoom-center 1s ease forwards;
+    /* box-shadow: 0px 0px 300vw 300vh rgba(0,0,0,0.1);
+    transform: scale(4) translateY(100px) translateZ(0px); */
+  }
+  /* .mozaik.css-gallery [id^=gallery]:last-child:target img {
+    transform: scale(4) translateX(-100px) translateY(100px) translateZ(0px);
+  } */
+
+  .css-gallery.mozaik.mozaik-portrait [id^=gallery]:target img {
+    animation: none;
+  }
+}
