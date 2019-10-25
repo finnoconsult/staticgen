@@ -31,6 +31,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 180px;
+    z-index: 3000;
   }
 
 }
@@ -51,8 +52,7 @@
   .css-gallery [id^=gallery]:target img {
     border: 1px solid #00bd59;
     display: block;
-    position: relative;
-    z-index: 3000;
+    position: fixed;
 
     animation: css-gallery-zoom-center 1s ease forwards;
     /* box-shadow: 0px 0px 300vw 300vh rgba(0,0,0,0.1);
@@ -64,5 +64,16 @@
 
   .css-gallery.mozaik.mozaik-portrait [id^=gallery]:target img {
     animation: none;
+  }
+
+}
+
+/* https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/ */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  @media(min-width: 800px) {
+    .css-gallery [id^=gallery]:target img {
+      border: solid 10px salmon;
+      position: relative;
+    }
   }
 }
