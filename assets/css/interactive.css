@@ -193,6 +193,63 @@
 	.js #clients .bubble:nth-child(20) {
 		transition-delay: 2.0s;
 	}
+	.js #clients .bubble:nth-child(21) {
+		transition-delay: 2.1s;
+	}
+	.js #clients .bubble:nth-child(22) {
+		transition-delay: 2.2s;
+	}
+	.js #clients .bubble:nth-child(23) {
+		transition-delay: 2.3s;
+	}
+	.js #clients .bubble:nth-child(24) {
+		transition-delay: 2.4s;
+	}
+	.js #clients .bubble:nth-child(25) {
+		transition-delay: 2.5s;
+	}
+	.js #clients .bubble:nth-child(26) {
+		transition-delay: 2.6s;
+	}
+	.js #clients .bubble:nth-child(27) {
+		transition-delay: 2.7s;
+	}
+	.js #clients .bubble:nth-child(28) {
+		transition-delay: 2.8s;
+	}
+	.js #clients .bubble:nth-child(29) {
+		transition-delay: 2.9s;
+	}
+	.js #clients .bubble:nth-child(30) {
+		transition-delay: 3.0s;
+	}
+	.js #clients .bubble:nth-child(31) {
+		transition-delay: 3.1s;
+	}
+	.js #clients .bubble:nth-child(32) {
+		transition-delay: 3.2s;
+	}
+	.js #clients .bubble:nth-child(33) {
+		transition-delay: 3.3s;
+	}
+	.js #clients .bubble:nth-child(34) {
+		transition-delay: 3.4s;
+	}
+	.js #clients .bubble:nth-child(35) {
+		transition-delay: 3.5s;
+	}
+	.js #clients .bubble:nth-child(36) {
+		transition-delay: 3.6s;
+	}
+	.js #clients .bubble:nth-child(37) {
+		transition-delay: 3.7s;
+	}
+	.js #clients .bubble:nth-child(38) {
+		transition-delay: 3.8s;
+	}
+	.js #clients .bubble:nth-child(39) {
+		transition-delay: 3.9s;
+	}
 }
 
 @media screen and (min-width: 64em) {
