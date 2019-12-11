@@ -37,7 +37,7 @@ block main
 				| var videoContainer = document.querySelector('div.videoContainer');
 				| video.addEventListener('ended',function() {videoContainer.classList.add('played');});
 		p.post-teaser
-			img(src=media.hero, alt="")
+			img(src=media.hero, alt="", style=media.herostyle)
 		p.created
 			span.print= __("Written by ")
 			a.avatar(href=linkTo(locale, "/author/" + urlify(author)))
