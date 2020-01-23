@@ -1,0 +1,11 @@
+.videoBlock {
+  border: solid 1px black;
+  border-radius: 20px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
