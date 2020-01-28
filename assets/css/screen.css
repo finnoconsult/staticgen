@@ -112,7 +112,7 @@ a[href="#navigation"]::after {
 	min-height: 100vh;
 	padding: 4em 2rem 6em;
 	background: #f2f4f6;
-	background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #f2f4f6;
+	/* background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #f2f4f6; */
 	background-size: cover;
 }
 div.narrative {

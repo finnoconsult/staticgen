@@ -8,7 +8,7 @@
 
   position: relative;
 
-  margin-top: 32px;
+  margin-top: 32px;  
 }
 
 .tik, .videoOverlay {
@@ -32,6 +32,12 @@
   background-image: url("img/play-tik.svg");
   background-repeat: no-repeat;
   background-size: 80px;  
+}
+
+@media (min-width: 720px) {
+  .videobox {
+    background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #fff;
+  }  
 }
 
 @media (max-width: 900px) {
