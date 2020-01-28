@@ -33,3 +33,36 @@
   background-repeat: no-repeat;
   background-size: 80px;  
 }
+
+@media (max-width: 900px) {
+  .tik, .videoOverlay {
+    width: 270px;
+    height: 480px;  
+  }
+
+  .motto {
+    width: 20em;
+  }
+}
+
+@media (max-width: 720px) {
+  .videobox {  
+    flex-direction: column;
+    width: 100vw;
+
+    box-shadow: none;
+    border-radius: 0;
+
+    margin-top: 0;
+  }
+
+  .tik {
+    width: 100%;
+    height: auto;
+  }
+
+  .videoOverlay {
+    width: 100%;
+    height: 100%;
+  }
+}
