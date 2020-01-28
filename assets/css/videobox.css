@@ -35,6 +35,7 @@
 
   cursor: pointer;
 
+  background-color: #00bd59;
   background-position: center;
   background-image: url("/img/play-tik.svg");
   background-repeat: no-repeat;
