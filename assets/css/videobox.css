@@ -1,16 +1,35 @@
 .videobox {
   border-radius: 16px;
   box-shadow: 0 0 6px 0px  rgba(0,0,0,0.2);
+  overflow: hidden;
 
   display: flex;
   align-items: center;
+
+  position: relative;
+
+  margin-top: 32px;
 }
 
-.tik {
-  width: 390px;
-  height: 822px;
+.tik, .videoOverlay {
+  width: 360px;
+  height: 640px;  
 }
 
 .motto {
   margin: 0 32px;
+}
+
+.videoOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  cursor: pointer;
+
+  background-position: center;
+  background-image: url("img/play-tik.svg");
+  background-repeat: no-repeat;
+  background-size: 80px;  
 }

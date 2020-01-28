@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="89px" viewBox="0 0 81 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M529.248156,448.413874 L563.985675,507.576212 C565.104225,509.481242 564.466657,511.932339 562.561626,513.050889 C561.947569,513.411436 561.248395,513.601526 560.536312,513.601526 L494.510636,513.601526 C492.301497,513.601526 490.510636,511.810665 490.510636,509.601526 C490.510636,508.889443 490.700726,508.190269 491.061273,507.576212 L525.798793,448.413874 C526.358068,447.461359 527.583616,447.142574 528.536131,447.701849 C528.830314,447.874581 529.075424,448.119691 529.248156,448.413874 Z" id="path-1"></path>
+        <filter x="-11.3%" y="-14.8%" width="122.5%" height="132.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-485.000000, -435.000000)">
+            <g id="Triangle" transform="translate(527.523474, 479.539026) rotate(-270.000000) translate(-527.523474, -479.539026) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
