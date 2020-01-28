@@ -11,6 +11,11 @@
   margin-top: 32px;  
 }
 
+.videoWithControls {
+  position: relative;
+  height: 640px;
+}
+
 .tik, .videoOverlay {
   width: 360px;
   height: 640px;  
@@ -24,6 +29,8 @@
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;  
   z-index: 1;
 
   cursor: pointer;
@@ -41,6 +48,10 @@
 }
 
 @media (max-width: 900px) {
+  .videoWithControls {
+    height: 480px;
+  }
+
   .tik, .videoOverlay {
     width: 270px;
     height: 480px;  
@@ -54,7 +65,7 @@
 @media (max-width: 720px) {
   .videobox {  
     flex-direction: column;
-    width: 100vw;
+    width: 100vw;    
 
     box-shadow: none;
     border-radius: 0;
@@ -62,10 +73,19 @@
     margin-top: 0;
   }
 
+  .videoWithControls {
+    flex: 1;
+  }
+
+  .tik, .videoOverlay {
+    width: auto;
+    height: auto;  
+  }
+
   .tik {
     width: 100%;
     height: auto;
-  }
+  }  
 
   .videoOverlay {
     width: 100%;
