@@ -36,7 +36,7 @@
   cursor: pointer;
 
   background-position: center;
-  background-image: url("img/play-tik.svg");
+  background-image: url("/img/play-tik.svg");
   background-repeat: no-repeat;
   background-size: 80px;  
 }
