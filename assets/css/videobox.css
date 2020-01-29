@@ -22,7 +22,8 @@
 }
 
 .motto {
-  margin: 0 32px;
+  margin: 0 100px;
+  width: 400px;
 }
 
 .videoOverlay {
@@ -40,6 +41,40 @@
   background-image: url("/img/play-tik.svg");
   background-repeat: no-repeat;
   background-size: 80px;  
+}
+
+.muteButton {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 32px;
+  height: 32px;
+
+  z-index: 2;
+  
+  cursor: pointer;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: 0.1s opacity ease-out;
+}
+
+.muteButtonEnableSound {  
+  background-image: url("/img/volume-mute.svg");
+}
+
+.muteButtonDisableSound {
+  background-image: url("/img/volume-up.svg");
+}
+
+.muteButtonShown {
+  opacity: 1;
+}
+
+.muteButtonHidden {
+  opacity: 0;
 }
 
 @media (min-width: 720px) {
@@ -85,8 +120,12 @@
 
   .tik {
     width: 100%;
-    height: auto;
+    height: auto;    
   }  
+
+  .muteButtonHidden {
+    opacity: 1;
+  }
 
   .videoOverlay {
     width: 100%;
