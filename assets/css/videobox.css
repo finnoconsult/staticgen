@@ -18,7 +18,7 @@
 
 .tik, .videoOverlay {
   width: 360px;
-  height: 640px;  
+  height: 640px;    
 }
 
 .motto {
@@ -80,7 +80,13 @@
 @media (min-width: 720px) {
   .videobox {
     background: linear-gradient(301.75deg, #00bd59 0, #00bd59 4em, rgba(0,189,89,0) 4em) center no-repeat #fff;
-  }  
+  }
+
+  .tik, .videoOverlay {
+    /* Needed for web Safari */
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;;
+  }
 }
 
 @media (max-width: 900px) {
